@@ -34,7 +34,7 @@ import edu.upf.taln.welcome.dms.commons.output.DMOutput;
  * @author jens.grivolla
  * 
  */
-@Path("/api/dms")
+@Path("/dms")
 @Produces(MediaType.APPLICATION_JSON)
 public class DMSService {
 
@@ -52,7 +52,7 @@ public class DMSService {
 	@GET
 	@Path("/description")
 	@Operation(summary = "Retrieves the available configurations.",
-		description = "Returns the list of available configurations, it is, the list of languages and available analysis module for each one.",
+		description = "Returns the list of available configurations.",
 		responses = {
 		        @ApiResponse(description = "The available configurations",
 		        			content = @Content(schema = @Schema(implementation = ServiceDescription.class)
@@ -60,11 +60,7 @@ public class DMSService {
 	})
 	public ServiceDescription getAvailableConfigurations() throws WelcomeException {
 
-        LanguageConfiguration es_config = new LanguageConfiguration();
-		es_config.setLanguage("es");
-
 		List<LanguageConfiguration> configList = new ArrayList<>();
-		configList.add(es_config);
 
 		ServiceDescription description = new ServiceDescription();
 		description.setConfigurations(configList);
@@ -75,18 +71,18 @@ public class DMSService {
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Operation(summary = "Performs a deep syntactic analysis of the input data.",
-		description = "Returns the result of the deep syntatic analysis, it is, a predicate-argument structure.",
+	@Operation(summary = "Determines the data needed to generate the next turn utterance given the input data.",
+		description = "Returns the data needed to generate the next utterance.",
 		responses = {
-		        @ApiResponse(description = "The deep analysis result.",
+		        @ApiResponse(description = "The data needed to generate the next utterance.",
 		        			content = @Content(schema = @Schema(implementation = DMOutput.class)
 		        ))
 	})
-	public DMOutput analyze(
-			@Parameter(description = "Container for analysis input data.", required = true) DMInput container) throws WelcomeException {
+	public DMOutput realize_next_turn(
+			@Parameter(description = "Container for dms input data.", required = true) DMInput container) throws WelcomeException {
 
         DMOutput output = new DMOutput();
-        output.setConll(container.getData().getConll());
+        output.setConll("");
         
 		return output;
 	}

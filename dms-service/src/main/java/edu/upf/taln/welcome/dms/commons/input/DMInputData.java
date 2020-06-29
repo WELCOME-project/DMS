@@ -9,13 +9,13 @@ import javax.validation.constraints.NotNull;
 public class DMInputData {
     
     @NotNull
-    private String conll;
+    private Frame frame;
 
-    public String getConll() {
-        return conll;
-    }
-
-    public void setConll(String conll) {
-        this.conll = conll;
-    }    
+    public void setFrame(Frame frame) {
+		this.frame = frame;
+	}
+    
+    public Frame getFrame() {
+		return frame;
+	}
 }
