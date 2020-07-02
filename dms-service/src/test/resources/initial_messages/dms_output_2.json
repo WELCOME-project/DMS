@@ -1,0 +1,29 @@
+{
+  "data" : {
+    "userId" : 1,
+    "dialogueSession" : 1,
+    "dialogueTurn" : 4,
+    "language" : "en",
+    "language_conf_score" : 0.5,
+    "speechActs" : [ {
+      "id" : "act_1",
+      "type" : "conventional opening",
+      "template" : null,
+      "data" : null
+    }, {
+      "id" : "act_2",
+      "type" : "declarative wh-question",
+      "template" : null,
+      "data" : {
+        "request_info" : {
+          "name" : "Karim",
+          "address" : {
+            "city" : "Terrassa",
+            "street" : null,
+            "number" : null
+          }
+        }
+      }
+    } ]
+  }
+}

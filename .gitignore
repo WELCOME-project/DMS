@@ -31,3 +31,4 @@ nb-configuration.xml
 nbactions*.xml
 **/nbactions*.xml
 
+/dms-service/nbproject/

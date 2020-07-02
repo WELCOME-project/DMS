@@ -26,6 +26,8 @@ import edu.upf.taln.welcome.dms.commons.input.ServiceDescription;
 import edu.upf.taln.welcome.dms.commons.input.DMInput;
 import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.output.DMOutput;
+import edu.upf.taln.welcome.dms.commons.output.DMOutputData;
+import edu.upf.taln.welcome.dms.utils.SampleResponses;
 
 
 /**
@@ -79,10 +81,10 @@ public class DMSService {
 		        ))
 	})
 	public DMOutput realize_next_turn(
-			@Parameter(description = "Container for dms input data.", required = true) DMInput container) throws WelcomeException {
+			@Parameter(description = "Container for dms input data.", required = true) DMInput input) throws WelcomeException {
 
-        DMOutput output = new DMOutput();
-        output.setConll("");
+        int turn = input.getMetadata().getDialogueTurn();
+        DMOutput output = SampleResponses.generateResponse(turn);
         
 		return output;
 	}

@@ -1,21 +1,29 @@
 package edu.upf.taln.welcome.dms.commons.output;
 
-import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
  *
  * @author rcarlini
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class DMOutput {
     
-    @NotNull
-    private String conll;
+    private DMOutputMetadata metadata;
+    private DMOutputData data;
 
-    public String getConll() {
-        return conll;
+    public DMOutputMetadata getMetadata() {
+        return metadata;
     }
 
-    public void setConll(String conll) {
-        this.conll = conll;
-    }    
-}
+    public void setMetadata(DMOutputMetadata metadata) {
+        this.metadata = metadata;
+    }
+
+    public DMOutputData getData() {
+        return data;
+    }
+
+    public void setData(DMOutputData data) {
+        this.data = data;
+    }}

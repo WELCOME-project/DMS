@@ -1,0 +1,113 @@
+{
+  "data" : {
+    "userId" : 1,
+    "dialogueSession" : 1,
+    "dialogueTurn" : 6,
+    "language" : "en",
+    "language_conf_score" : 0.5,
+    "speechActs" : [ {
+      "id" : "act_1",
+      "type" : "response acknowledgement",
+      "template" : null,
+      "data" : null
+    }, {
+      "id" : "act_2",
+      "type" : "action directive",
+      "template" : "inform_registration_process.requirement_resgistration",
+      "data" : {
+        "TCN" : {
+          "name" : "Karim",
+          "address" : {
+            "city" : "Terrassa",
+            "street" : null,
+            "number" : null
+          }
+        }
+      }
+    }, {
+      "id" : "act_3",
+      "type" : "non opinion statement",
+      "template" : "If you move to a new address, you will need to update your registration.",
+      "data" : null
+    }, {
+      "id" : "act_4",
+      "type" : "non opinion statement",
+      "template" : "inform_registration_process.closest_office",
+      "data" : {
+        "registration_office" : {
+          "name" : "Registration_office",
+          "address" : {
+            "city" : "Terrassa",
+            "street" : "Raval de Montserrat",
+            "number" : "14",
+            "building" : null
+          },
+          "hours" : [ {
+            "day" : "Weekday",
+            "opening" : "9:00",
+            "closing" : "15:00"
+          } ]
+        }
+      }
+    }, {
+      "id" : "act_5",
+      "type" : "commit",
+      "template" : "Once you have registered, we will process your application.",
+      "data" : null
+    }, {
+      "id" : "act_6",
+      "type" : "offer",
+      "template" : "I can already give you some information on the First Reception Service.",
+      "data" : null
+    }, {
+      "id" : "act_7",
+      "type" : "non opinion statement",
+      "template" : "inform_course.module_info",
+      "data" : {
+        "module_info" : {
+          "name" : "Catalan_language",
+          "address" : {
+            "city" : "Terrassa",
+            "street" : "Carrer de València",
+            "number" : "142",
+            "building" : "Col·legi Sagrat Cor"
+          },
+          "hours" : [ {
+            "day" : "Monday",
+            "opening" : "19:00",
+            "closing" : "21:00"
+          }, {
+            "day" : "Friday",
+            "opening" : "19:00",
+            "closing" : "21:00"
+          } ]
+        }
+      }
+    }, {
+      "id" : "act_8",
+      "type" : "non opinion statement",
+      "template" : "inform_course.module_info",
+      "data" : {
+        "module_info" : {
+          "name" : "Labour_society",
+          "address" : {
+            "city" : "Terrassa",
+            "street" : "Plaça de la Vila",
+            "number" : "1",
+            "building" : "City Council"
+          },
+          "hours" : [ {
+            "day" : "Wednesday",
+            "opening" : "19:00",
+            "closing" : "21:00"
+          } ]
+        }
+      }
+    }, {
+      "id" : "act_9",
+      "type" : "conventional closing",
+      "template" : null,
+      "data" : null
+    } ]
+  }
+}
