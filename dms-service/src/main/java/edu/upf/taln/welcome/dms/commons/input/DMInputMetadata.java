@@ -9,7 +9,7 @@ public class DMInputMetadata {
 	private String agentName;
 	private String type;
 	private String speechActID;
-    private int dialogueTurn;
+    private Integer dialogueTurn;
 
 	public String getAgentName() {
 		return agentName;
@@ -35,7 +35,7 @@ public class DMInputMetadata {
 		this.speechActID = speechActID;
 	}
 
-    public int getDialogueTurn() {
+    public Integer getDialogueTurn() {
         return dialogueTurn;
     }
 

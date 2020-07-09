@@ -25,9 +25,12 @@ import edu.upf.taln.welcome.dms.commons.input.LanguageConfiguration;
 import edu.upf.taln.welcome.dms.commons.input.ServiceDescription;
 import edu.upf.taln.welcome.dms.commons.input.DMInput;
 import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
+import edu.upf.taln.welcome.dms.commons.input.DMInputData;
+import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.output.DMOutput;
 import edu.upf.taln.welcome.dms.commons.output.DMOutputData;
 import edu.upf.taln.welcome.dms.utils.SampleResponses;
+import java.util.HashSet;
 
 
 /**
@@ -83,7 +86,24 @@ public class DMSService {
 	public DMOutput realize_next_turn(
 			@Parameter(description = "Container for dms input data.", required = true) DMInput input) throws WelcomeException {
 
-        int turn = input.getMetadata().getDialogueTurn();
+        Integer turn = input.getMetadata().getDialogueTurn();
+        HashSet<Integer> availableTurns = new HashSet<>();
+        availableTurns.add(1);
+        availableTurns.add(3);
+        availableTurns.add(5);
+        
+        if (!availableTurns.contains(turn)) {
+            DMInputData data = input.getData();
+            Frame frame = data.getFrame();
+            if (frame.getName() == null || frame.getName().isBlank()) {
+                turn = 1;
+            } else if (frame.getAddress() == null || frame.getAddress().isBlank()) {
+                turn = 3;
+            } else {
+                turn = 5;
+            }
+        }
+
         DMOutput output = SampleResponses.generateResponse(turn);
         
 		return output;
