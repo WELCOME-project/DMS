@@ -23,7 +23,13 @@
             <artifactId>dms-commons</artifactId>
             <version>${project.version}</version>
 		</dependency>
-
+        
+		<dependency>
+            <groupId>edu.upf.taln.welcome</groupId>
+            <artifactId>slas-commons</artifactId>
+            <version>${project.version}</version>
+		</dependency>
+        
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
 			<artifactId>swagger-jaxrs2</artifactId>
@@ -131,6 +137,7 @@
             <version>1.1.6</version>
             <scope>test</scope>
         </dependency>
+        
 	</dependencies>
 
 	<build>

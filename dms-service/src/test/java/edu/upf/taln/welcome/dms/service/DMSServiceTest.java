@@ -42,10 +42,10 @@ public class DMSServiceTest {
         ObjectMapper mapper = new ObjectMapper();
         DMSService instance = new DMSService();
         
-        System.out.println("realize_next_turn");
         String expResult = FileUtils.readFileToString(expected, "utf-8");
         DMOutput output = instance.realize_next_turn(input);
         String result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(output);
+        System.out.println(result);
         assertEquals(expResult, result);
     }
     
@@ -61,6 +61,10 @@ public class DMSServiceTest {
         input.setMetadata(metadata);
         input.setData(data);
 
+//        File turn0File = new File("src/test/resources/initial_messages/dms_output_turn0.json");
+//        testSample(input, turn0File);
+
+        
         File turn2File = new File("src/test/resources/initial_messages/dms_output_1.json");
         testSample(input, turn2File);
 

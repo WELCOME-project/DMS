@@ -1,5 +1,7 @@
 package edu.upf.taln.welcome.dms.utils;
 
+import edu.upf.taln.welcome.dms.commons.output.TemplateHoursData;
+import edu.upf.taln.welcome.dms.commons.output.BuildingAddress;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

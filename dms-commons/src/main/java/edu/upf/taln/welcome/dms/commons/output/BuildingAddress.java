@@ -1,4 +1,4 @@
-package edu.upf.taln.welcome.dms.utils;
+package edu.upf.taln.welcome.dms.commons.output;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
