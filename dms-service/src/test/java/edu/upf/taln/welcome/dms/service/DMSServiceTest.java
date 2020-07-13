@@ -1,15 +1,22 @@
 package edu.upf.taln.welcome.dms.service;
 
+
 import java.io.File;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import javax.json.JsonObject;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 import org.apache.commons.io.FileUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import com.apicatalog.jsonld.JsonLd;
+import com.apicatalog.jsonld.api.JsonLdError;
+import com.apicatalog.jsonld.document.Document;
+import com.apicatalog.jsonld.document.DocumentParser;
+import com.apicatalog.jsonld.http.media.MediaType;
 
 import edu.upf.taln.welcome.dms.commons.input.DMInput;
 import edu.upf.taln.welcome.dms.commons.input.DMInputData;
@@ -17,30 +24,12 @@ import edu.upf.taln.welcome.dms.commons.input.DMInputMetadata;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.output.DMOutput;
 
+
 /**
  *
  * @author rcarlini
  */
 public class DMSServiceTest {
-    
-    public DMSServiceTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Base test to check outputs
@@ -118,4 +107,11 @@ public class DMSServiceTest {
         testSample(input, turn2File);
     }
 
+    @Test
+    public void testJsonLD() throws FileNotFoundException, JsonLdError {
+        FileReader reader = new FileReader("src/test/resources/initial_messages/turn1.json");
+        Document doc = DocumentParser.parse(MediaType.JSON_LD, reader);
+        JsonObject compacted = JsonLd.compact(doc, doc).get();
+        System.out.println(compacted);
+    }
 }

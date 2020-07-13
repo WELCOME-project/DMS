@@ -18,6 +18,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+            <groupId>edu.upf.taln.welcome</groupId>
+            <artifactId>dms-commons</artifactId>
+            <version>${project.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
@@ -111,8 +116,21 @@
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
             <scope>test</scope>
-        </dependency>        
-
+        </dependency>
+        
+        <dependency>
+            <groupId>com.apicatalog</groupId>
+            <artifactId>titanium-json-ld</artifactId>
+            <version>0.8.3</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.json</artifactId>
+            <version>1.1.6</version>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
