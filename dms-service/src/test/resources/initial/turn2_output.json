@@ -11,6 +11,7 @@
       "template" : null,
       "data" : {
         "request_info" : {
+          "type" : "TemplatePersonalData",
           "name" : "Karim",
           "address" : {
             "city" : "Terrassa",

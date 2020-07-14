@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * @author rcarlini
  */
 
-@JsonPropertyOrder({ "name", "address" })
+@JsonPropertyOrder({ "type", "name", "address" })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TemplatePersonalData implements TemplateData {
+public class TemplatePersonalData extends TemplateData {
     
     private String name;
     private Address address;

@@ -12,6 +12,7 @@ import edu.upf.taln.welcome.dms.commons.output.DMOutput;
 import edu.upf.taln.welcome.dms.commons.output.DMOutputData;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.output.TemplateData;
+import edu.upf.taln.welcome.dms.commons.output.TemplateHandshakeData;
 import edu.upf.taln.welcome.dms.commons.output.TemplatePersonalData;
 import edu.upf.taln.welcome.dms.commons.output.TimePeriod;
 
@@ -33,11 +34,8 @@ public class SampleResponses {
                     speechActs.add(speechAct);
                 }
                 {
-                    TemplateData templateData = new TemplateData() {
-                        public String getLanguage() {
-                            return "en";
-                        }
-                    };
+                    TemplateHandshakeData templateData = new TemplateHandshakeData();
+                    templateData.setLanguage("en");
 
                     HashMap<String, TemplateData> data = new HashMap<>();
                     data.put("handshake", templateData);

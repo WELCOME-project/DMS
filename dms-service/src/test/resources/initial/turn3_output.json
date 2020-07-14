@@ -11,6 +11,7 @@
       "template" : "inform_registration_process.requirement_resgistration",
       "data" : {
         "TCN" : {
+          "type" : "TemplatePersonalData",
           "name" : "Karim",
           "address" : {
             "city" : "Terrassa",
@@ -30,6 +31,7 @@
       "template" : "inform_registration_process.closest_office",
       "data" : {
         "registration_office" : {
+          "type" : "TemplateHoursData",
           "name" : "Registration_office",
           "address" : {
             "city" : "Terrassa",
@@ -60,6 +62,7 @@
       "template" : "inform_course.module_info",
       "data" : {
         "module_info" : {
+          "type" : "TemplateHoursData",
           "name" : "Catalan_language",
           "address" : {
             "city" : "Terrassa",
@@ -84,6 +87,7 @@
       "template" : "inform_course.module_info",
       "data" : {
         "module_info" : {
+          "type" : "TemplateHoursData",
           "name" : "Labour_society",
           "address" : {
             "city" : "Terrassa",

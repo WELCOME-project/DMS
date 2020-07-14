@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  *
  * @author rcarlini
  */
-@JsonPropertyOrder({ "name", "address", "hours" })
-public class TemplateHoursData extends TemplatePersonalData implements TemplateData {
+@JsonPropertyOrder({ "type", "name", "address", "hours" })
+public class TemplateHoursData extends TemplatePersonalData {
 
     private List<TimePeriod> hours;
 
