@@ -33,82 +33,44 @@ public class DMSServiceTest {
 
     /**
      * Base test to check outputs
-     * @param input
-     * @param expected
+     * @param inputFile
+     * @param expectedFile
      * @throws java.lang.Exception
      */
-    public void testSample(DMInput input, File expected) throws Exception {
+    public void testSample(File inputFile, File expectedFile) throws Exception {
         
         ObjectMapper mapper = new ObjectMapper();
+        DMInput input = mapper.readValue(inputFile, DMInput.class);
+
         DMSService instance = new DMSService();
         
-        String expResult = FileUtils.readFileToString(expected, "utf-8");
         DMOutput output = instance.realize_next_turn(input);
         String result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(output);
         System.out.println(result);
-        assertEquals(expResult, result);
+
+        String expected = FileUtils.readFileToString(expectedFile, "utf-8");
+        assertEquals(expected, result);
     }
-    
+
     @Test
     public void testSampleInitialExtrapolateTurn() throws Exception {
-
-        Frame frame = new Frame();
-        DMInputData data = new DMInputData();
-        data.setFrame(frame);
-        DMInputMetadata metadata = new DMInputMetadata();
-        //metadata.setDialogueTurn(1);
-        DMInput input = new DMInput();
-        input.setMetadata(metadata);
-        input.setData(data);
-
-//        File turn0File = new File("src/test/resources/initial_messages/dms_output_turn0.json");
-//        testSample(input, turn0File);
-
         
-        File turn2File = new File("src/test/resources/initial_messages/dms_output_1.json");
-        testSample(input, turn2File);
+        File inputFile0 = new File("src/test/resources/initial/turn0_input.json");
+        File expectedFile0= new File("src/test/resources/initial/turn0_output.json");
+        testSample(inputFile0, expectedFile0);
 
-        frame.setName("Karim");
-        File turn4File = new File("src/test/resources/initial_messages/dms_output_2.json");
-        testSample(input, turn4File);
+        File inputFile1 = new File("src/test/resources/initial/turn1_input.json");
+        File expectedFile1 = new File("src/test/resources/initial/turn1_output.json");
+        testSample(inputFile1, expectedFile1);
 
-        frame.setAddress("Sant Pau, 2");
-        File turn6File = new File("src/test/resources/initial_messages/dms_output_3.json");
-        testSample(input, turn6File);
-    }
-    
-    @Test
-    public void testSampleInitial1() throws Exception {
 
-        DMInputMetadata metadata = new DMInputMetadata();
-        metadata.setDialogueTurn(1);
-        DMInput input = new DMInput();
-        input.setMetadata(metadata);
+        File inputFile2 = new File("src/test/resources/initial/turn2_input.json");
+        File expectedFile2 = new File("src/test/resources/initial/turn2_output.json");
+        testSample(inputFile2, expectedFile2);
 
-        File turn2File = new File("src/test/resources/initial_messages/dms_output_1.json");
-        testSample(input, turn2File);
-    }
-    
-    @Test
-    public void testSampleInitial2() throws Exception {
-        DMInputMetadata metadata = new DMInputMetadata();
-        metadata.setDialogueTurn(3);
-        DMInput input = new DMInput();
-        input.setMetadata(metadata);
-        
-        File turn2File = new File("src/test/resources/initial_messages/dms_output_2.json");
-        testSample(input, turn2File);
-    }
-    
-    @Test
-    public void testSampleInitial3() throws Exception {
-        DMInputMetadata metadata = new DMInputMetadata();
-        metadata.setDialogueTurn(5);
-        DMInput input = new DMInput();
-        input.setMetadata(metadata);
-
-        File turn2File = new File("src/test/resources/initial_messages/dms_output_3.json");
-        testSample(input, turn2File);
+        File inputFile3 = new File("src/test/resources/initial/turn3_input.json");
+        File expectedFile3 = new File("src/test/resources/initial/turn3_output.json");
+        testSample(inputFile3, expectedFile3);
     }
 
     @Test

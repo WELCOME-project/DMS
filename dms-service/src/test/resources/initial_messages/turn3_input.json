@@ -1,28 +1,80 @@
-[{"@id":"http://www.semanticweb.org/welcome#catalan_language",
-"@type":["http://www.semanticweb.org/welcome#Course",
-"http://www.w3.org/2002/07/owl#NamedIndividual"],
-"http://www.semanticweb.org/welcome#hasClosingTime":[{"@id":"http://www.semanticweb.org/welcome#21"}],
-"http://www.semanticweb.org/welcome#hasOpeningTime":[{"@id":"http://www.semanticweb.org/welcome#19"}],
-"http://www.semanticweb.org/welcome#hasOperatingDay":[{"@id":"http://www.semanticweb.org/welcome#Friday"},{"@id":"http://www.semanticweb.org/welcome#Monday"}],
-"http://www.semanticweb.org/welcome#isPovidedBy":[{"@id":"http://www.semanticweb.org/welcome#training_office_1"}]},
-{"@id":"http://www.semanticweb.org/welcome#inform_registration_process_1",
-"@type":["http://www.semanticweb.org/welcome#InformRegistrationProcess"],
-"http://www.semanticweb.org/welcome#hasDIPAddress":[{"@id":"http://www.semanticweb.org/welcome#not_communicated"}],
-"http://www.semanticweb.org/welcome#hasDIPOpeningHour":[{"@id":"http://www.semanticweb.org/welcome#not_communicated"}]},
-{"@id":"http://www.semanticweb.org/welcome#physical_address_2",
-"http://www.semanticweb.org/welcome#hasCity":[{"@id":"http://www.semanticweb.org/welcome#Terrassa"}],
-"http://www.semanticweb.org/welcome#hasCountry":[{"@id":"http://www.semanticweb.org/welcome#Spain"}],
-"http://www.semanticweb.org/welcome#hasStreetName":[{"@id":"http://www.semanticweb.org/welcome#raval_de_montserrat"}],
-"http://www.semanticweb.org/welcome#hasStreetNumber":[{"@id":"http://www.semanticweb.org/welcome#14"}]},
-{"@id":"http://www.semanticweb.org/welcome#physical_address_3",
-"http://www.semanticweb.org/welcome#hasCity":[{"@id":"http://www.semanticweb.org/welcome#Terrassa"}],
-"http://www.semanticweb.org/welcome#hasCountry":[{"@id":"http://www.semanticweb.org/welcome#Spain"}],
-"http://www.semanticweb.org/welcome#hasStreetName":[{"@id":"http://www.semanticweb.org/welcome#carrer_de_valència"}],
-"http://www.semanticweb.org/welcome#hasStreetNumber":[{"@id":"http://www.semanticweb.org/welcome#142"}]},
-{"@id":"http://www.semanticweb.org/welcome#registration_office_terrassa",
-"http://www.semanticweb.org/welcome#hasClosingTime":[{"@id":"http://www.semanticweb.org/welcome#15"}],
-"http://www.semanticweb.org/welcome#hasOpeningTime":[{"@id":"http://www.semanticweb.org/welcome#9"}],
-"http://www.semanticweb.org/welcome#hasOperatingDay":[{"@id":"http://www.semanticweb.org/welcome#Weekday"}],
-"http://www.semanticweb.org/welcome#hasPhysicalAddress":[{"@id":"http://www.semanticweb.org/welcome#physical_address_2"}]},
-{"@id":"http://www.semanticweb.org/welcome#training_office_1",
-"http://www.semanticweb.org/welcome#hasPhysicalAddress":[{"@id":"http://www.semanticweb.org/welcome#physical_address_3"}]}]
+[{
+        "@id": "http://www.semanticweb.org/welcome#catalan_language",
+        "@type": ["http://www.semanticweb.org/welcome#Course",
+            "http://www.w3.org/2002/07/owl#NamedIndividual"],
+        "http://www.semanticweb.org/welcome#hasClosingTime": [{
+                "@id": "http://www.semanticweb.org/welcome#21"
+            }],
+        "http://www.semanticweb.org/welcome#hasOpeningTime": [{
+                "@id": "http://www.semanticweb.org/welcome#19"
+            }],
+        "http://www.semanticweb.org/welcome#hasOperatingDay": [{
+                "@id": "http://www.semanticweb.org/welcome#Friday"
+            }, {
+                "@id": "http://www.semanticweb.org/welcome#Monday"
+            }],
+        "http://www.semanticweb.org/welcome#isPovidedBy": [{
+                "@id": "http://www.semanticweb.org/welcome#training_office_1"
+            }]
+    },
+    {
+        "@id": "http://www.semanticweb.org/welcome#inform_registration_process_1",
+        "@type": ["http://www.semanticweb.org/welcome#InformRegistrationProcess"],
+        "http://www.semanticweb.org/welcome#hasDIPAddress": [{
+                "@id": "http://www.semanticweb.org/welcome#not_communicated"
+            }],
+        "http://www.semanticweb.org/welcome#hasDIPOpeningHour": [{
+                "@id": "http://www.semanticweb.org/welcome#not_communicated"
+            }]
+    },
+    {
+        "@id": "http://www.semanticweb.org/welcome#physical_address_2",
+        "http://www.semanticweb.org/welcome#hasCity": [{
+                "@id": "http://www.semanticweb.org/welcome#Terrassa"
+            }],
+        "http://www.semanticweb.org/welcome#hasCountry": [{
+                "@id": "http://www.semanticweb.org/welcome#Spain"
+            }],
+        "http://www.semanticweb.org/welcome#hasStreetName": [{
+                "@id": "http://www.semanticweb.org/welcome#raval_de_montserrat"
+            }],
+        "http://www.semanticweb.org/welcome#hasStreetNumber": [{
+                "@id": "http://www.semanticweb.org/welcome#14"
+            }]
+    },
+    {
+        "@id": "http://www.semanticweb.org/welcome#physical_address_3",
+        "http://www.semanticweb.org/welcome#hasCity": [{
+                "@id": "http://www.semanticweb.org/welcome#Terrassa"
+            }],
+        "http://www.semanticweb.org/welcome#hasCountry": [{
+                "@id": "http://www.semanticweb.org/welcome#Spain"
+            }],
+        "http://www.semanticweb.org/welcome#hasStreetName": [{
+                "@id": "http://www.semanticweb.org/welcome#carrer_de_valència"
+            }],
+        "http://www.semanticweb.org/welcome#hasStreetNumber": [{
+                "@id": "http://www.semanticweb.org/welcome#142"
+            }]
+    },
+    {
+        "@id": "http://www.semanticweb.org/welcome#registration_office_terrassa",
+        "http://www.semanticweb.org/welcome#hasClosingTime": [{
+                "@id": "http://www.semanticweb.org/welcome#15"
+            }],
+        "http://www.semanticweb.org/welcome#hasOpeningTime": [{
+                "@id": "http://www.semanticweb.org/welcome#9"
+            }],
+        "http://www.semanticweb.org/welcome#hasOperatingDay": [{
+                "@id": "http://www.semanticweb.org/welcome#Weekday"
+            }],
+        "http://www.semanticweb.org/welcome#hasPhysicalAddress": [{
+                "@id": "http://www.semanticweb.org/welcome#physical_address_2"
+            }]
+    },
+    {
+        "@id": "http://www.semanticweb.org/welcome#training_office_1",
+        "http://www.semanticweb.org/welcome#hasPhysicalAddress": [{
+                "@id": "http://www.semanticweb.org/welcome#physical_address_3"
+            }]
+    }]

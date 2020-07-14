@@ -1,22 +1,19 @@
 package edu.upf.taln.welcome.dms.commons.input;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class DMInput {
-    private DMInputMetadata metadata;
-    private DMInputData data;
 
-    public DMInputMetadata getMetadata() {
-        return metadata;
+    @JsonFormat(shape=JsonFormat.Shape.ARRAY)
+    private List<KBInfo> kbInfoList;
+
+    public List<KBInfo> getKbInfoList() {
+        return kbInfoList;
     }
 
-    public void setMetadata(DMInputMetadata metadata) {
-        this.metadata = metadata;
-    }
-
-    public DMInputData getData() {
-        return data;
-    }
-
-    public void setData(DMInputData data) {
-        this.data = data;
+    public void setKbInfoList(List<KBInfo> kbInfoList) {
+        this.kbInfoList = kbInfoList;
     }
 }

@@ -1,5 +1,6 @@
 package edu.upf.taln.welcome.dms.commons.output;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -7,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * @author rcarlini
  */
 @JsonPropertyOrder({ "city", "street", "number" })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
     private String city;
     private String street;
