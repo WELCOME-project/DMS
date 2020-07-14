@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * @author rcarlini
  */
 @JsonPropertyOrder({ "name", "age", "country_of_origin", "time_arrival_current_residence", "address", "hours" })
-public class TemplateRequestData extends TemplateData {
+public class TemplateRequestData extends TemplatePersonalData implements TemplateData {
 
     private String age;
     @JsonProperty("country_of_origin")

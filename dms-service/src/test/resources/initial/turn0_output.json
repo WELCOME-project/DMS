@@ -1,0 +1,19 @@
+{
+  "data" : {
+    "speechActs" : [ {
+      "id" : "act_1",
+      "type" : "conventional opening",
+      "template" : null,
+      "data" : null
+    }, {
+      "id" : "act_2",
+      "type" : "Yes-no question",
+      "template" : null,
+      "data" : {
+        "handshake" : {
+          "language" : "en"
+        }
+      }
+    } ]
+  }
+}

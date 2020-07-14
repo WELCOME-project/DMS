@@ -4,15 +4,12 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import edu.upf.taln.welcome.dms.commons.output.TemplateData;
-import edu.upf.taln.welcome.dms.commons.output.TimePeriod;
-
 /**
  *
  * @author rcarlini
  */
 @JsonPropertyOrder({ "name", "address", "hours" })
-public class TemplateHoursData extends TemplateData {
+public class TemplateHoursData extends TemplatePersonalData implements TemplateData {
 
     private List<TimePeriod> hours;
 

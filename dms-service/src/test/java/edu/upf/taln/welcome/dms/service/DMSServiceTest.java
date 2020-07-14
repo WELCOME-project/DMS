@@ -18,10 +18,7 @@ import com.apicatalog.jsonld.document.Document;
 import com.apicatalog.jsonld.document.DocumentParser;
 import com.apicatalog.jsonld.http.media.MediaType;
 
-import edu.upf.taln.welcome.dms.commons.input.DMInput;
-import edu.upf.taln.welcome.dms.commons.input.DMInputData;
-import edu.upf.taln.welcome.dms.commons.input.DMInputMetadata;
-import edu.upf.taln.welcome.dms.commons.input.Frame;
+import edu.upf.taln.welcome.dms.commons.input.KBInfo;
 import edu.upf.taln.welcome.dms.commons.output.DMOutput;
 
 
@@ -40,7 +37,7 @@ public class DMSServiceTest {
     public void testSample(File inputFile, File expectedFile) throws Exception {
         
         ObjectMapper mapper = new ObjectMapper();
-        DMInput input = mapper.readValue(inputFile, DMInput.class);
+        KBInfo[] input = mapper.readValue(inputFile, KBInfo[].class);
 
         DMSService instance = new DMSService();
         
@@ -73,7 +70,7 @@ public class DMSServiceTest {
         testSample(inputFile3, expectedFile3);
     }
 
-    @Test
+    //@Test
     public void testJsonLD() throws FileNotFoundException, JsonLdError {
         FileReader reader = new FileReader("src/test/resources/initial_messages/turn1.json");
         Document doc = DocumentParser.parse(MediaType.JSON_LD, reader);

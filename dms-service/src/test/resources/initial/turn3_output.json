@@ -1,10 +1,5 @@
 {
   "data" : {
-    "userId" : 1,
-    "dialogueSession" : 1,
-    "dialogueTurn" : 6,
-    "language" : "en",
-    "language_conf_score" : 0.5,
     "speechActs" : [ {
       "id" : "act_1",
       "type" : "response acknowledgement",

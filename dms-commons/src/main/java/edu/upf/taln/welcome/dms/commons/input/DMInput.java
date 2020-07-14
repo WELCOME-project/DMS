@@ -1,19 +1,5 @@
 package edu.upf.taln.welcome.dms.commons.input;
 
-import java.util.List;
+import java.util.ArrayList;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-public class DMInput {
-
-    @JsonFormat(shape=JsonFormat.Shape.ARRAY)
-    private List<KBInfo> kbInfoList;
-
-    public List<KBInfo> getKbInfoList() {
-        return kbInfoList;
-    }
-
-    public void setKbInfoList(List<KBInfo> kbInfoList) {
-        this.kbInfoList = kbInfoList;
-    }
-}
+public class DMInput extends ArrayList<KBInfo> {}

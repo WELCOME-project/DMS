@@ -12,6 +12,7 @@ import edu.upf.taln.welcome.dms.commons.output.DMOutput;
 import edu.upf.taln.welcome.dms.commons.output.DMOutputData;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.output.TemplateData;
+import edu.upf.taln.welcome.dms.commons.output.TemplatePersonalData;
 import edu.upf.taln.welcome.dms.commons.output.TimePeriod;
 
 /**
@@ -32,20 +33,22 @@ public class SampleResponses {
                     speechActs.add(speechAct);
                 }
                 {
-                    TemplateData templateData = new TemplateRequestData();
-                    templateData.setAddress(new Address());
+                    TemplateData templateData = new TemplateData() {
+                        public String getLanguage() {
+                            return "en";
+                        }
+                    };
 
                     HashMap<String, TemplateData> data = new HashMap<>();
-                    data.put("request_info", templateData);
+                    data.put("handshake", templateData);
                     
                     SpeechAct speechAct = new SpeechAct();
                     speechAct.setId("act_2");
-                    speechAct.setType("declarative wh-question");
+                    speechAct.setType("Yes-no question");
                     speechAct.setData(data);
                     speechActs.add(speechAct);
                 }
                 break;
-
             case 3:
                 {
                     SpeechAct speechAct = new SpeechAct();
@@ -54,12 +57,8 @@ public class SampleResponses {
                     speechActs.add(speechAct);
                 }
                 {
-                    Address address = new Address();
-                    address.setCity("Terrassa");
-
-                    TemplateData templateData = new TemplateData();
-                    templateData.setName("Karim");
-                    templateData.setAddress(address);
+                    TemplateRequestData templateData = new TemplateRequestData();
+                    templateData.setAddress(new Address());
 
                     HashMap<String, TemplateData> data = new HashMap<>();
                     data.put("request_info", templateData);
@@ -76,6 +75,32 @@ public class SampleResponses {
                 {
                     SpeechAct speechAct = new SpeechAct();
                     speechAct.setId("act_1");
+                    speechAct.setType("conventional opening");
+                    speechActs.add(speechAct);
+                }
+                {
+                    Address address = new Address();
+                    address.setCity("Terrassa");
+
+                    TemplatePersonalData templateData = new TemplatePersonalData();
+                    templateData.setName("Karim");
+                    templateData.setAddress(address);
+
+                    HashMap<String, TemplateData> data = new HashMap<>();
+                    data.put("request_info", templateData);
+                    
+                    SpeechAct speechAct = new SpeechAct();
+                    speechAct.setId("act_2");
+                    speechAct.setType("declarative wh-question");
+                    speechAct.setData(data);
+                    speechActs.add(speechAct);
+                }
+                break;
+
+            case 7:
+                {
+                    SpeechAct speechAct = new SpeechAct();
+                    speechAct.setId("act_1");
                     speechAct.setType("response acknowledgement");
                     speechActs.add(speechAct);
                 }
@@ -83,7 +108,7 @@ public class SampleResponses {
                     Address address = new Address();
                     address.setCity("Terrassa");
 
-                    TemplateData templateData = new TemplateData();
+                    TemplatePersonalData templateData = new TemplatePersonalData();
                     templateData.setName("Karim");
                     templateData.setAddress(address);
 
@@ -226,11 +251,6 @@ public class SampleResponses {
         }
 
         DMOutputData data = new DMOutputData();
-        data.setDialogueSession(1);
-        data.setUserId(1);
-        data.setDialogueTurn(turn+1);
-        data.setLanguage("en");
-        data.setLanguageConfidence(0.5);
         data.setSpeechActs(speechActs);
         
         DMOutput output = new DMOutput();

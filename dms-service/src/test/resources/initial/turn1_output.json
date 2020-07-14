@@ -1,10 +1,5 @@
 {
   "data" : {
-    "userId" : 1,
-    "dialogueSession" : 1,
-    "dialogueTurn" : 4,
-    "language" : "en",
-    "language_conf_score" : 0.5,
     "speechActs" : [ {
       "id" : "act_1",
       "type" : "conventional opening",
@@ -16,9 +11,12 @@
       "template" : null,
       "data" : {
         "request_info" : {
-          "name" : "Karim",
+          "name" : null,
+          "age" : null,
+          "country_of_origin" : null,
+          "time_arrival_current_residence" : null,
           "address" : {
-            "city" : "Terrassa",
+            "city" : null,
             "street" : null,
             "number" : null
           }
