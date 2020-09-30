@@ -15,12 +15,18 @@ import javax.servlet.ServletConfig;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Context;
 
+import java.util.logging.Logger;
+
 @ApplicationPath("api")
 public class ServiceApplication extends ResourceConfig {
+	
+	Logger logger = Logger.getLogger(this.getClass().getName());
 	
     public ServiceApplication(@Context ServletConfig servletConfig) {
         super();
 
+        logger.info("Starting application...");
+        
         OpenAPI oas = new OpenAPI();
         Info info = new Info()
                 .title("TALN Dialog Management Service")
@@ -39,7 +45,7 @@ public class ServiceApplication extends ResourceConfig {
         SwaggerConfiguration oasConfig = new SwaggerConfiguration()
                 .openAPI(oas)
                 .prettyPrint(true)
-//                .resourcePackages(Stream.of("edu.upf.taln.welcome.nlg.service").collect(Collectors.toSet()))
+//                .resourcePackages(Stream.of("edu.upf.taln.welcome.dms.service").collect(Collectors.toSet()))
                 ;
 
         openApiResource.setOpenApiConfiguration(oasConfig);
@@ -47,6 +53,8 @@ public class ServiceApplication extends ResourceConfig {
         
         String packageName = this.getClass().getPackage().getName();        
         packages(packageName);
+        
+        logger.info("Application started successfully!");
     }	
 	
 }

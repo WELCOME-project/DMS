@@ -1,0 +1,11 @@
+[{
+  "@id": "http://www.semanticweb.org/welcome#handshaking_1",
+  "@type": ["http://www.semanticweb.org/welcome#Handshaking"],
+  "http://www.semanticweb.org/welcome#hasDIPLanguage": [{
+      "@id": "http://www.semanticweb.org/welcome#EN"
+    }],
+  "http://www.semanticweb.org/welcome#hasDIPLanguageScore": [{
+      "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      "@value": "22"
+    }]
+}]
