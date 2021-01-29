@@ -32,3 +32,4 @@ nbactions*.xml
 **/nbactions*.xml
 
 /dms-service/nbproject/
+/dms-core/nbproject/

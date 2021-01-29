@@ -2,9 +2,7 @@ package edu.upf.taln.welcome.dms.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.io.StringReader;
 import java.util.logging.Logger;
-import java.util.logging.Level;
 
 import javax.servlet.ServletConfig;
 import javax.ws.rs.Consumes;
@@ -19,7 +17,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -29,20 +26,11 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-import com.apicatalog.jsonld.JsonLd;
-import com.apicatalog.jsonld.api.JsonLdError;
-import com.apicatalog.jsonld.document.Document;
-import com.apicatalog.jsonld.document.DocumentParser;
-import com.apicatalog.rdf.RdfDataset;
-import com.apicatalog.rdf.RdfNQuad;
-import com.apicatalog.rdf.RdfSubject;
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 import edu.upf.taln.welcome.dms.commons.input.LanguageConfiguration;
 import edu.upf.taln.welcome.dms.commons.input.ServiceDescription;
 import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.output.DMOutput;
-import edu.upf.taln.welcome.dms.utils.SampleResponses;
+import edu.upf.taln.welcome.dms.core.DialogManager;
 
 
 /**
@@ -147,48 +135,8 @@ public class DMSService {
 	public DMOutput realize_next_turn(
 			@Parameter(description = "Container for dms input data.", required = true) JsonNode input) throws WelcomeException {
 
-        int turn = 1;
-        if (input.size() == 0) {
-            turn = 1;
-            
-        } else {
-            try {
-                ObjectMapper mapper = new ObjectMapper();
-                StringReader sReader = new StringReader(mapper.writeValueAsString(input));
-                
-                Document doc = DocumentParser.parse(com.apicatalog.jsonld.http.media.MediaType.JSON_LD, sReader);
-                RdfDataset rdf = JsonLd.toRdf(doc).get();
-                
-                List<RdfNQuad> triples = rdf.toList();
-                RdfNQuad first = triples.get(0);
-                RdfSubject subject = first.getSubject();
-                System.out.println(subject.toString());
-                
-                switch(subject.toString()) {
-                    case "http://www.semanticweb.org/welcome#handshaking_1":
-                        turn = 1;
-                        break;
-                    case "http://www.semanticweb.org/welcome#request_info_1_1":
-                        turn = 3;
-                        break;
-                    case "http://www.semanticweb.org/welcome#request_info_1_2":
-                        turn = 5;
-                        break;
-                    case "http://www.semanticweb.org/welcome#catalan_language":
-                        turn = 7;
-                        break;
-                    default:
-                        turn = 1;
-                        break;
-                }
-                
-            } catch (JsonLdError | JsonProcessingException ex) {
-                logger.log(Level.SEVERE, null, ex);
-                throw new WelcomeException(ex);
-            }
-        }
-
-        DMOutput output = SampleResponses.generateResponse(turn);
+        DialogManager dm = new DialogManager();
+        DMOutput output = dm.realizeNextTurn(input);
         
 		return output;
 	}
