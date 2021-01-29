@@ -9,7 +9,7 @@
     
     <artifactId>dms-client</artifactId>
 
-	<name>Welcome DMS client</name>
+	<name>Welcome DMS Client</name>
 
 	<dependencies>
 		<dependency>
