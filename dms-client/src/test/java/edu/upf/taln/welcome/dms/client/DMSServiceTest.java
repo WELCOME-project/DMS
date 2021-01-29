@@ -10,12 +10,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import edu.upf.taln.welcome.dms.commons.output.DMOutput;
+import org.junit.Ignore;
 
 
 /**
  *
  * @author rcarlini
  */
+@Ignore
 public class DMSServiceTest {
 
     /**
