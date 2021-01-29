@@ -17,12 +17,6 @@
             <artifactId>dms-commons</artifactId>
             <version>${project.version}</version>
 		</dependency>
-        
-		<dependency>
-            <groupId>edu.upf.taln.welcome</groupId>
-            <artifactId>slas-commons</artifactId>
-            <version>${project.version}</version>
-		</dependency>
 		
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>

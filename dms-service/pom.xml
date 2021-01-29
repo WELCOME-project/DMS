@@ -10,8 +10,7 @@
     <artifactId>dms-service</artifactId>
     <packaging>war</packaging>
     
-
-	    <name>Welcome DMS Service</name>
+	<name>Welcome DMS Service</name>
 
     <properties>
         <swagger.download.skipcache>false</swagger.download.skipcache>
@@ -21,12 +20,6 @@
         <dependency>
             <groupId>edu.upf.taln.welcome</groupId>
             <artifactId>dms-commons</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>edu.upf.taln.welcome</groupId>
-            <artifactId>slas-commons</artifactId>
             <version>${project.version}</version>
         </dependency>
         
@@ -139,7 +132,6 @@
     </dependencies>
 
     <build>
-
 
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>

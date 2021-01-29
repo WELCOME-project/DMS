@@ -6,6 +6,7 @@ import java.io.StringReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.List;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -24,7 +25,6 @@ import com.apicatalog.rdf.RdfSubject;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import edu.upf.taln.welcome.dms.commons.output.DMOutput;
-import java.util.List;
 
 
 /**
