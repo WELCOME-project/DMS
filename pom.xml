@@ -10,8 +10,9 @@
     <name>Welcome DMS Parent</name>
     
     <modules>
-        <module>dms-service</module>
         <module>dms-commons</module>
+        <module>dms-service</module>
+        <module>dms-client</module>
     </modules>
 
     <properties>
