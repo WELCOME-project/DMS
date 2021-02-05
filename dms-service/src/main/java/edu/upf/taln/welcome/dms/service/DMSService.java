@@ -30,6 +30,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.ArrayList;
@@ -164,7 +165,7 @@ public class DMSService {
 	public DMSService() throws WelcomeException {
 		manager = new DialogueManager(new DeterministicPolicy());
 		try {
-			Reader contextReader = new FileReader("src/main/resources/welcome-context.jsonld");
+			Reader contextReader = new InputStreamReader(DMSService.class.getResourceAsStream("/welcome-context.jsonld"));
 			jsonldContextDoc = DocumentParser.parse(com.apicatalog.jsonld.http.media.MediaType.JSON_LD, contextReader);
 		} catch (Exception | JsonLdError ex) {
 			logger.log(Level.SEVERE, "Failed to initialize service", ex);
