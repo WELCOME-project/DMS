@@ -22,7 +22,13 @@
             <artifactId>dms-commons</artifactId>
             <version>${project.version}</version>
         </dependency>
-        
+
+        <dependency>
+            <groupId>edu.upf.taln.welcome</groupId>
+            <artifactId>dms-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>edu.upf.taln.welcome</groupId>
             <artifactId>dms-core</artifactId>
@@ -122,7 +128,6 @@
             <version>2.6</version>
             <scope>test</scope>
         </dependency>
-        
     </dependencies>
 
     <build>

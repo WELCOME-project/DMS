@@ -1,51 +1,48 @@
 package edu.upf.taln.welcome.dms.commons.output;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import java.util.Map;
-import javax.validation.constraints.NotNull;
+// 42 Clustered Switchboard SWBD-DAMSL Labels
+// see https://web.stanford.edu/~jurafsky/ws97/manual.august1.html
+public enum SpeechAct {
+    Statement_non_opinion,
+    Acknowledge_Backchannel,
+    Statement_opinion,
+    Agree_or_Accept,
+    Abandoned_or_Turn_Exit,
+    Appreciation,
+    Yes_No_Question,
+    Non_verbal,
+    Yes_answers,
+    Conventional_closing,
+    Uninterpretable,
+    Wh_Question,No_answers,
+    Response_Acknowledgement,
+    Hedge,
+    Declarative_Yes_No_Question,
+    Other,
+    Backchannel_in_question_form,
+    Quotation,
+    Summarize_or_reformulate,
+    Affirmative_non_yes_answers,
+    Action_directive,
+    Collaborative_Completion,
+    Repeat_phrase,
+    Open_Question,
+    Rhetorical_Questions,
+    Hold_before_answer_or_agreement,
+    Reject,
+    Negative_non_no_answers,
+    Signal_non_understanding,
+    Other_answers,
+    Conventional_opening,
+    Or_Clause,
+    Dispreferred_answers,
+    Third_party_talk,
+    Offers_Options_Commits,
+    Self_talk,
+    Downplayer,
+    Maybe_or_Accept_part,
+    Tag_Question,
+    Declarative_Wh_Question,
+    Apology,
+    Thanking}
 
-/**
- *
- * @author rcarlini
- */
-@JsonPropertyOrder({ "id", "type", "dialogueTurn", "template", "data" })
-public class SpeechAct {
-    @NotNull
-    private String id;
-    @NotNull
-    private String type;
-    private String template;
-    private Map<String, TemplateData> data;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getTemplate() {
-        return template;
-    }
-
-    public void setTemplate(String template) {
-        this.template = template;
-    }
-
-    public Map<String, TemplateData> getData() {
-        return data;
-    }
-
-    public void setData(Map<String, TemplateData> data) {
-        this.data = data;
-    }
-}

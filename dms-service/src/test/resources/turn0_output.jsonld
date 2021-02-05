@@ -1,0 +1,42 @@
+{
+  "welcome:speechAct" : {
+    "@id" : "welcome:Action_directive"
+  },
+  "welcome:slots" : [ {
+    "@id" : "welcome:confirmCommunication",
+    "welcome:hasTemplate" : {
+      "@id" : "welcome:TemplateConfirmCommunication"
+    },
+    "welcome:hasInputRDFContents" : null,
+    "welcome:hasStatus" : [ {
+      "@id" : "welcome:Pending"
+    } ],
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "welcome:confirmLanguage",
+    "welcome:hasTemplate" : {
+      "@id" : "welcome:TemplateConfirmLanguage"
+    },
+    "welcome:hasInputRDFContents" : null,
+    "welcome:hasStatus" : [ {
+      "@id" : "welcome:Pending"
+    } ],
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "welcome:obtainRequest",
+    "welcome:hasTemplate" : {
+      "@id" : "welcome:TemplateObtainRequest"
+    },
+    "welcome:hasInputRDFContents" : null,
+    "welcome:hasStatus" : [ {
+      "@id" : "welcome:Pending"
+    } ],
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

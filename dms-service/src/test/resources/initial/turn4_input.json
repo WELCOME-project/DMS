@@ -1,7 +1,0 @@
-[{
-    "@id": "http://www.semanticweb.org/welcome#dialogue_turn_1_1_4",
-    "@type": "http://www.semanticweb.org/welcome#DialogueUserTurn",
-    "http://www.semanticweb.org/welcome#hasDIP": [{
-        "@id":"http://www.semanticweb.org/welcome#empty"
-    }]
-}]
