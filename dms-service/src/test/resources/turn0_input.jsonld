@@ -29,7 +29,7 @@
     },
     "http://www.semanticweb.org/welcome#hasStatus": [
       {
-        "@id": "http://www.semanticweb.org/welcome#Pending"
+        "@id": "http://www.semanticweb.org/welcome#Completed"
       }
     ],
     "http://www.semanticweb.org/welcome#isOptional": true
@@ -39,7 +39,7 @@
     "@type": [
       "http://www.semanticweb.org/welcome#SystemDemand"
     ],
-    "http://www.semanticweb.org/welcome#confidenceScore": 0.0,
+    "http://www.semanticweb.org/welcome#confidenceScore": 1.0,
     "http://www.semanticweb.org/welcome#hasInputRDFContents": null,
     "http://www.semanticweb.org/welcome#hasNumberAttemps": 0,
     "http://www.semanticweb.org/welcome#hasTemplate": {
@@ -47,7 +47,7 @@
     },
     "http://www.semanticweb.org/welcome#hasStatus": [
       {
-        "@id": "http://www.semanticweb.org/welcome#Pending"
+        "@id": "http://www.semanticweb.org/welcome#Completed"
       }
     ],
     "http://www.semanticweb.org/welcome#isOptional": true

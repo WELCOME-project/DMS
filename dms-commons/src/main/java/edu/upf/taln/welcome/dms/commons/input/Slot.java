@@ -79,7 +79,48 @@ public class Slot {
         }
     }
 
+    private static class IRIDeserializer extends StdDeserializer<String> {
+
+        public IRIDeserializer() {
+            this(null);
+        }
+        protected IRIDeserializer(Class<?> vc) {
+            super(vc);
+        }
+
+        @Override
+        public String deserialize(JsonParser parser, DeserializationContext context) throws IOException {
+            JsonNode node = parser.getCodec().readTree(parser);
+            String t = node.asText();
+
+            return t.substring(t.indexOf(':') + 1);
+        }
+    }
+
+    private static class IRISerializer extends StdSerializer<String> {
+
+        public IRISerializer() {
+            this(null);
+        }
+
+        public IRISerializer(Class<String> t) {
+            super(t);
+        }
+
+        @Override
+        public void serialize(String iri, JsonGenerator jsonGenerator, SerializerProvider serializer) throws IOException {
+            jsonGenerator.writeString("welcome:" + iri);
+        }
+    }
+
     @JsonProperty("@id")
+    @JsonDeserialize(using = IRIDeserializer.class)
+    @JsonSerialize(using = IRISerializer.class)
+    public String id;
+
+    @JsonProperty("@type")
+    @JsonDeserialize(using = IRIDeserializer.class)
+    @JsonSerialize(using = IRISerializer.class)
     public String type;
 
     @JsonProperty("welcome:hasTemplate")

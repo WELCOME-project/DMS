@@ -232,7 +232,7 @@ public class DMSService {
 			DMOutput output = new DMOutput();
 			output.moves.addAll(moves);
 
-			return mapper.valueToTree(output);
+			return mapper.valueToTree(output.moves);
 		} catch (JsonLdError | IOException ex) {
 			logger.log(Level.SEVERE, "Failed to determine next dialogue move", ex);
 			throw new WelcomeException(ex);

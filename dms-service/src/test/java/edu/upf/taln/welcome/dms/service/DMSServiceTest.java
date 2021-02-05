@@ -39,10 +39,8 @@ public class DMSServiceTest {
         JsonNode input = mapper.readValue(inputFile, JsonNode.class);
 
         DMSService instance = new DMSService();
-        
         JsonNode output = instance.realize_next_turn(input);
         String result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(output);
-        System.out.println(result);
 
         String expected = FileUtils.readFileToString(expectedFile, "utf-8");
         assertEquals(expected, result);
@@ -90,7 +88,7 @@ public class DMSServiceTest {
 
 		DialogueMove move = new DialogueMove();
 		move.speechAct = SpeechAct.Action_directive;
-		move.slots = input.slots;
+		move.slot = input.slots.get(0);
 		DMOutput output = new DMOutput();
 		output.moves.add(move);
 

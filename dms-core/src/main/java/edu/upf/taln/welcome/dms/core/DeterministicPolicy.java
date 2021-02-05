@@ -19,8 +19,8 @@ public class DeterministicPolicy implements Policy {
         if (firstPending.isPresent()) {
             Slot slot = firstPending.get();
             DialogueMove move = new DialogueMove();
-            move.speechAct = speechActDictionary.get(slot.type);
-            move.slots.add(slot);
+            move.speechAct = speechActDictionary.get(slot.id);
+            move.slot = slot;
 
             return List.of(move);
         }
