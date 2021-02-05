@@ -216,13 +216,14 @@ public class DMSService {
 					.get();
 			ObjectMapper mapper = new ObjectMapper();
 			Frame dip = mapper.readValue(framed.toString(), Frame.class);
-
+			logger.log(Level.INFO, "dip: "+dip.toString()+"\t"+dip.type);
 			List<DialogueMove> moves = manager.map(dip);
 			DMOutput output = new DMOutput();
+			logger.log(Level.INFO, "output.moves: "+output.moves.toString());
 			output.moves.addAll(moves);
 
 			return mapper.valueToTree(output.moves);
-		} catch (JsonLdError | IOException ex) {
+		} catch (JsonLdError | IOException | NullPointerException ex) {
 			logger.log(Level.SEVERE, "Failed to determine next dialogue move", ex);
 			throw new WelcomeException(ex);
 		}
