@@ -1,0 +1,73 @@
+[
+  {
+    "@id": "http://www.semanticweb.org/welcome#OpeningDIP",
+    "@type": [
+      "http://www.semanticweb.org/welcome#DIP"
+    ],
+    "http://www.semanticweb.org/welcome#hasSlot": [
+      {
+        "@id": "http://www.semanticweb.org/welcome#confirmCommunication"
+      },
+      {
+        "@id": "http://www.semanticweb.org/welcome#confirmLanguage"
+      },
+      {
+        "@id": "http://www.semanticweb.org/welcome#obtainRequest"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/welcome#confirmCommunication",
+    "@type": [
+      "http://www.semanticweb.org/welcome#SystemDemand"
+    ],
+    "http://www.semanticweb.org/welcome#confidenceScore": 0.0,
+    "http://www.semanticweb.org/welcome#hasInputRDFContents": null,
+    "http://www.semanticweb.org/welcome#hasNumberAttemps": 0,
+    "http://www.semanticweb.org/welcome#hasTemplate": {
+      "@id": "http://www.semanticweb.org/welcome#TemplateConfirmCommunication"
+    },
+    "http://www.semanticweb.org/welcome#hasStatus": [
+      {
+        "@id": "http://www.semanticweb.org/welcome#Pending"
+      }
+    ],
+    "http://www.semanticweb.org/welcome#isOptional": true
+  },
+  {
+    "@id": "http://www.semanticweb.org/welcome#confirmLanguage",
+    "@type": [
+      "http://www.semanticweb.org/welcome#SystemDemand"
+    ],
+    "http://www.semanticweb.org/welcome#confidenceScore": 0.0,
+    "http://www.semanticweb.org/welcome#hasInputRDFContents": null,
+    "http://www.semanticweb.org/welcome#hasNumberAttemps": 0,
+    "http://www.semanticweb.org/welcome#hasTemplate": {
+      "@id": "http://www.semanticweb.org/welcome#TemplateConfirmLanguage"
+    },
+    "http://www.semanticweb.org/welcome#hasStatus": [
+      {
+        "@id": "http://www.semanticweb.org/welcome#Pending"
+      }
+    ],
+    "http://www.semanticweb.org/welcome#isOptional": true
+  },
+  {
+    "@id": "http://www.semanticweb.org/welcome#obtainRequest",
+    "@type": [
+      "http://www.semanticweb.org/welcome#SystemDemand"
+    ],
+    "http://www.semanticweb.org/welcome#confidenceScore": 0.0,
+    "http://www.semanticweb.org/welcome#hasInputRDFContents": null,
+    "http://www.semanticweb.org/welcome#hasNumberAttemps": 0,
+    "http://www.semanticweb.org/welcome#hasTemplate": {
+      "@id": "http://www.semanticweb.org/welcome#TemplateObtainRequest"
+    },
+    "http://www.semanticweb.org/welcome#hasStatus": [
+      {
+        "@id": "http://www.semanticweb.org/welcome#Pending"
+      }
+    ],
+    "http://www.semanticweb.org/welcome#isOptional": false
+  }
+]

@@ -13,6 +13,7 @@
         <module>dms-commons</module>
         <module>dms-service</module>
         <module>dms-client</module>
+        <module>dms-core</module>
     </modules>
 
     <properties>
