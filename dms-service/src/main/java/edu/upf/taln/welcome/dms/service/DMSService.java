@@ -6,8 +6,6 @@ import com.apicatalog.jsonld.document.Document;
 import com.apicatalog.jsonld.document.DocumentParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
-import edu.upf.taln.welcome.dms.core.DialogueManager;
 import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.DMInput;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
@@ -15,6 +13,8 @@ import edu.upf.taln.welcome.dms.commons.input.LanguageConfiguration;
 import edu.upf.taln.welcome.dms.commons.input.ServiceDescription;
 import edu.upf.taln.welcome.dms.commons.output.DMOutput;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
+import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
+import edu.upf.taln.welcome.dms.core.DialogueManager;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -28,7 +28,6 @@ import javax.servlet.ServletConfig;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -49,111 +48,100 @@ import java.util.logging.Logger;
 @Produces(MediaType.APPLICATION_JSON)
 public class DMSService {
 
-	private static final String SAMPLE_INPUT = "{\n" +
-			"  \"welcome:speechAct\": {\n" +
-			"    \"@id\": \"welcome:Action_directive\"\n" +
+	private static final String SAMPLE_INPUT = "[\n" +
+			"  {\n" +
+			"    \"@id\": \"http://www.semanticweb.org/welcome#OpeningDIP\",\n" +
+			"    \"@type\": [\n" +
+			"      \"http://www.semanticweb.org/welcome#DIP\"\n" +
+			"    ],\n" +
+			"    \"http://www.semanticweb.org/welcome#hasSlot\": [\n" +
+			"      {\n" +
+			"        \"@id\": \"http://www.semanticweb.org/welcome#confirmCommunication\"\n" +
+			"      },\n" +
+			"      {\n" +
+			"        \"@id\": \"http://www.semanticweb.org/welcome#confirmLanguage\"\n" +
+			"      },\n" +
+			"      {\n" +
+			"        \"@id\": \"http://www.semanticweb.org/welcome#obtainRequest\"\n" +
+			"      }\n" +
+			"    ]\n" +
 			"  },\n" +
-			"  \"welcome:slots\": [\n" +
-			"    {\n" +
-			"      \"@id\": \"welcome:confirmCommunication\",\n" +
-			"      \"welcome:hasTemplate\": {\n" +
-			"        \"@id\": \"welcome:TemplateConfirmCommunication\"\n" +
-			"      },\n" +
-			"      \"welcome:hasInputRDFContents\": null,\n" +
-			"      \"welcome:hasStatus\": [\n" +
-			"        {\n" +
-			"          \"@id\": \"welcome:Pending\"\n" +
-			"        }\n" +
-			"      ],\n" +
-			"      \"welcome:hasNumberAttempts\": 0,\n" +
-			"      \"welcome:confidenceScore\": 0.0,\n" +
-			"      \"welcome:isOptional\": true\n" +
+			"  {\n" +
+			"    \"@id\": \"http://www.semanticweb.org/welcome#confirmCommunication\",\n" +
+			"    \"@type\": [\n" +
+			"      \"http://www.semanticweb.org/welcome#SystemDemand\"\n" +
+			"    ],\n" +
+			"    \"http://www.semanticweb.org/welcome#confidenceScore\": 0.0,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasInputRDFContents\": null,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasNumberAttemps\": 0,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasTemplate\": {\n" +
+			"      \"@id\": \"http://www.semanticweb.org/welcome#TemplateConfirmCommunication\"\n" +
 			"    },\n" +
-			"    {\n" +
-			"      \"@id\": \"welcome:confirmLanguage\",\n" +
-			"      \"welcome:hasTemplate\": {\n" +
-			"        \"@id\": \"welcome:TemplateConfirmLanguage\"\n" +
-			"      },\n" +
-			"      \"welcome:hasInputRDFContents\": null,\n" +
-			"      \"welcome:hasStatus\": [\n" +
-			"        {\n" +
-			"          \"@id\": \"welcome:Pending\"\n" +
-			"        }\n" +
-			"      ],\n" +
-			"      \"welcome:hasNumberAttempts\": 0,\n" +
-			"      \"welcome:confidenceScore\": 0.0,\n" +
-			"      \"welcome:isOptional\": true\n" +
+			"    \"http://www.semanticweb.org/welcome#hasStatus\": [\n" +
+			"      {\n" +
+			"        \"@id\": \"http://www.semanticweb.org/welcome#Completed\"\n" +
+			"      }\n" +
+			"    ],\n" +
+			"    \"http://www.semanticweb.org/welcome#isOptional\": true\n" +
+			"  },\n" +
+			"  {\n" +
+			"    \"@id\": \"http://www.semanticweb.org/welcome#confirmLanguage\",\n" +
+			"    \"@type\": [\n" +
+			"      \"http://www.semanticweb.org/welcome#SystemDemand\"\n" +
+			"    ],\n" +
+			"    \"http://www.semanticweb.org/welcome#confidenceScore\": 1.0,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasInputRDFContents\": null,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasNumberAttemps\": 0,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasTemplate\": {\n" +
+			"      \"@id\": \"http://www.semanticweb.org/welcome#TemplateConfirmLanguage\"\n" +
 			"    },\n" +
-			"    {\n" +
-			"      \"@id\": \"welcome:obtainRequest\",\n" +
-			"      \"welcome:hasTemplate\": {\n" +
-			"        \"@id\": \"welcome:TemplateObtainRequest\"\n" +
-			"      },\n" +
-			"      \"welcome:hasInputRDFContents\": null,\n" +
-			"      \"welcome:hasStatus\": [\n" +
-			"        {\n" +
-			"          \"@id\": \"welcome:Pending\"\n" +
-			"        }\n" +
-			"      ],\n" +
-			"      \"welcome:hasNumberAttempts\": 0,\n" +
-			"      \"welcome:confidenceScore\": 0.0,\n" +
-			"      \"welcome:isOptional\": false\n" +
-			"    }\n" +
-			"  ]\n" +
-			"}";
+			"    \"http://www.semanticweb.org/welcome#hasStatus\": [\n" +
+			"      {\n" +
+			"        \"@id\": \"http://www.semanticweb.org/welcome#Completed\"\n" +
+			"      }\n" +
+			"    ],\n" +
+			"    \"http://www.semanticweb.org/welcome#isOptional\": true\n" +
+			"  },\n" +
+			"  {\n" +
+			"    \"@id\": \"http://www.semanticweb.org/welcome#obtainRequest\",\n" +
+			"    \"@type\": [\n" +
+			"      \"http://www.semanticweb.org/welcome#SystemDemand\"\n" +
+			"    ],\n" +
+			"    \"http://www.semanticweb.org/welcome#confidenceScore\": 0.0,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasInputRDFContents\": null,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasNumberAttemps\": 0,\n" +
+			"    \"http://www.semanticweb.org/welcome#hasTemplate\": {\n" +
+			"      \"@id\": \"http://www.semanticweb.org/welcome#TemplateObtainRequest\"\n" +
+			"    },\n" +
+			"    \"http://www.semanticweb.org/welcome#hasStatus\": [\n" +
+			"      {\n" +
+			"        \"@id\": \"http://www.semanticweb.org/welcome#Pending\"\n" +
+			"      }\n" +
+			"    ],\n" +
+			"    \"http://www.semanticweb.org/welcome#isOptional\": false\n" +
+			"  }\n" +
+			"]";
 
-	private static final String SAMPLE_OUTPUT = "{\n" +
-			"  \"welcome:speechAct\": {\n" +
-			"    \"@id\": \"welcome:Action_directive\"\n" +
+	private static final String SAMPLE_OUTPUT = "[ {\n" +
+			"  \"welcome:speechAct\" : {\n" +
+			"    \"@id\" : \"welcome:Open_Question\",\n" +
+			"    \"@type\" : \"welcome:SpeechAct\"\n" +
 			"  },\n" +
-			"  \"welcome:slots\": [\n" +
-			"    {\n" +
-			"      \"@id\": \"welcome:confirmCommunication\",\n" +
-			"      \"welcome:hasTemplate\": {\n" +
-			"        \"@id\": \"welcome:TemplateConfirmCommunication\"\n" +
-			"      },\n" +
-			"      \"welcome:hasInputRDFContents\": null,\n" +
-			"      \"welcome:hasStatus\": [\n" +
-			"        {\n" +
-			"          \"@id\": \"welcome:Pending\"\n" +
-			"        }\n" +
-			"      ],\n" +
-			"      \"welcome:hasNumberAttempts\": 0,\n" +
-			"      \"welcome:confidenceScore\": 0.0,\n" +
-			"      \"welcome:isOptional\": true\n" +
+			"  \"welcome:slot\" : {\n" +
+			"    \"@id\" : \"welcome:obtainRequest\",\n" +
+			"    \"@type\" : \"welcome:SystemDemand\",\n" +
+			"    \"welcome:hasTemplate\" : {\n" +
+			"      \"@id\" : \"welcome:TemplateObtainRequest\"\n" +
 			"    },\n" +
-			"    {\n" +
-			"      \"@id\": \"welcome:confirmLanguage\",\n" +
-			"      \"welcome:hasTemplate\": {\n" +
-			"        \"@id\": \"welcome:TemplateConfirmLanguage\"\n" +
-			"      },\n" +
-			"      \"welcome:hasInputRDFContents\": null,\n" +
-			"      \"welcome:hasStatus\": [\n" +
-			"        {\n" +
-			"          \"@id\": \"welcome:Pending\"\n" +
-			"        }\n" +
-			"      ],\n" +
-			"      \"welcome:hasNumberAttempts\": 0,\n" +
-			"      \"welcome:confidenceScore\": 0.0,\n" +
-			"      \"welcome:isOptional\": true\n" +
-			"    },\n" +
-			"    {\n" +
-			"      \"@id\": \"welcome:obtainRequest\",\n" +
-			"      \"welcome:hasTemplate\": {\n" +
-			"        \"@id\": \"welcome:TemplateObtainRequest\"\n" +
-			"      },\n" +
-			"      \"welcome:hasInputRDFContents\": null,\n" +
-			"      \"welcome:hasStatus\": [\n" +
-			"        {\n" +
-			"          \"@id\": \"welcome:Pending\"\n" +
-			"        }\n" +
-			"      ],\n" +
-			"      \"welcome:hasNumberAttempts\": 0,\n" +
-			"      \"welcome:confidenceScore\": 0.0,\n" +
-			"      \"welcome:isOptional\": false\n" +
-			"    }\n" +
-			"  ]\n" +
-			"}";
+			"    \"welcome:hasInputRDFContents\" : null,\n" +
+			"    \"welcome:hasStatus\" : [ {\n" +
+			"      \"@id\" : \"welcome:Pending\"\n" +
+			"    } ],\n" +
+			"    \"welcome:hasNumberAttempts\" : 0,\n" +
+			"    \"welcome:confidenceScore\" : 0.0,\n" +
+			"    \"welcome:isOptional\" : false\n" +
+			"  }\n" +
+			"} ]";
 
 	private final DialogueManager manager;
 	private final Document jsonldContextDoc;
