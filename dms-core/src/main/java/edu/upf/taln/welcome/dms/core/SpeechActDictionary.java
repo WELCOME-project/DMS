@@ -5,6 +5,9 @@ import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Maps DIP slots to speech acts
+ */
 public class SpeechActDictionary {
 
     private final Map<String, SpeechAct> dictionary = new HashMap<>();

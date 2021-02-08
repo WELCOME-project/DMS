@@ -39,10 +39,7 @@ import java.util.logging.Logger;
 
 
 /**
- * Analyze text and return results in JSON format
- *
- * @author jens.grivolla
- *
+ * Dialogue manager service.
  */
 @Path("/dms")
 @Produces(MediaType.APPLICATION_JSON)
@@ -207,6 +204,10 @@ public class DMSService {
 							))
 			})
 
+	/*
+	 * Unmarshalls JSON-LD input to a POJO-based representations of a DIP frame, and passes it to the dialogue manager.
+	 * The resulting dialogue moves are serialized back into JSON-LD and returned.
+	 */
 	public JsonNode realize_next_turn(@Parameter(description = "Dialogue input packages", required = true) JsonNode input) throws WelcomeException {
 		try {
 			StringReader inputReader = new StringReader(input.toString());
