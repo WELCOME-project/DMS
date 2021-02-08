@@ -4,13 +4,14 @@
 
     <groupId>edu.upf.taln.welcome</groupId>
     <artifactId>dms-parent</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <packaging>pom</packaging>
 
     <name>Welcome DMS Parent</name>
     
     <modules>
         <module>dms-commons</module>
+        <module>dms-core</module>
         <module>dms-service</module>
         <module>dms-client</module>
     </modules>

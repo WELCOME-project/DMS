@@ -1,7 +1,5 @@
 package edu.upf.taln.welcome.dms.commons.input;
 
-import java.util.List;
-
 public class LanguageConfiguration {
 
 	private String language;

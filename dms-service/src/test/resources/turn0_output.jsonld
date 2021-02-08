@@ -1,0 +1,20 @@
+[ {
+  "welcome:speechAct" : {
+    "@id" : "welcome:Open_Question",
+    "@type" : "welcome:SpeechAct"
+  },
+  "welcome:slot" : {
+    "@id" : "welcome:obtainRequest",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplate" : {
+      "@id" : "welcome:TemplateObtainRequest"
+    },
+    "welcome:hasInputRDFContents" : null,
+    "welcome:hasStatus" : [ {
+      "@id" : "welcome:Pending"
+    } ],
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }
+} ]

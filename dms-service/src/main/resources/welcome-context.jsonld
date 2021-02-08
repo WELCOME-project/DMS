@@ -1,0 +1,10 @@
+{
+	"@context": {
+		"welcome": "http://www.semanticweb.org/welcome#"
+	},
+	"@type": "http://www.semanticweb.org/welcome#DIP",
+	"welcome#hasSlot": {
+		"@type": "welcome#SystemDemand",
+		"@type": "welcome#SystemInfo"
+	}
+}
