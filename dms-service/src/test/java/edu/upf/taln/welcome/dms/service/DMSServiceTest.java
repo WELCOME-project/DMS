@@ -10,9 +10,9 @@ import com.apicatalog.rdf.RdfTriple;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
-import edu.upf.taln.welcome.dms.commons.output.DMOutput;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
+import edu.upf.taln.welcome.dms.commons.output.SpeechActLabel;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
@@ -49,8 +49,8 @@ public class DMSServiceTest {
     @Test
     public void testSampleInitialExtrapolateTurn() throws Exception {
         
-        File inputFile0 = new File("src/test/resources/turn0_input.jsonld");
-        File expectedFile0= new File("src/test/resources/turn0_output.jsonld");
+        File inputFile0 = new File("src/test/resources/OpeningDIP_input.jsonld");
+        File expectedFile0= new File("src/test/resources/OpeningDIP_output.jsonld");
         testSample(inputFile0, expectedFile0);
 
 //        File inputFile1 = new File("src/test/resources/initial/turn1_input.json");
@@ -65,40 +65,5 @@ public class DMSServiceTest {
 //        File inputFile3 = new File("src/test/resources/initial/turn3_input.json");
 //        File expectedFile3 = new File("src/test/resources/initial/turn3_output.json");
 //        testSample(inputFile3, expectedFile3);
-    }
-
-
-    @Test
-    public void testJsonLD() throws JsonLdError, IOException {
-
-		Reader inputReader = new FileReader("src/test/resources/turn0_input.jsonld");
-		Document inputDoc = DocumentParser.parse(com.apicatalog.jsonld.http.media.MediaType.JSON_LD, inputReader);
-		Reader contextReader = new FileReader("src/main/resources/welcome-context.jsonld");
-		Document contextDoc = DocumentParser.parse(com.apicatalog.jsonld.http.media.MediaType.JSON_LD, contextReader);
-
-//		JsonObject compacted = JsonLd.compact(inputDoc, contextDoc)
-//				.ordered()
-//				.get();
-		JsonObject framed = JsonLd.frame(inputDoc, contextDoc)
-				.ordered()
-				.get();
-
-		ObjectMapper mapper = new ObjectMapper();
-		Frame input = mapper.readValue(framed.toString(), Frame.class);
-
-		DialogueMove move = new DialogueMove();
-		move.speechAct = SpeechAct.Action_directive;
-		move.slot = input.slots.get(0);
-		DMOutput output = new DMOutput();
-		output.moves.add(move);
-
-		StringWriter writer = new StringWriter();
-		mapper.writeValue(writer, move);
-		System.out.println(writer.toString());
-
-		RdfDataset rdf = JsonLd.toRdf(Paths.get("src/test/resources/turn0_input.jsonld").toUri()).get();
-		RdfGraph graph = rdf.getDefaultGraph();
-		List<RdfTriple> rdfTriples = graph.toList();
-		System.out.println(rdfTriples);
     }
 }

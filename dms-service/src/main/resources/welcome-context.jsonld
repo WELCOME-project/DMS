@@ -1,8 +1,8 @@
 {
 	"@context": {
-		"welcome": "http://www.semanticweb.org/welcome#"
+		"welcome": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#"
 	},
-	"@type": "http://www.semanticweb.org/welcome#DIP",
+	"@type": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
 	"welcome#hasSlot": {
 		"@type": "welcome#SystemDemand",
 		"@type": "welcome#SystemInfo"
