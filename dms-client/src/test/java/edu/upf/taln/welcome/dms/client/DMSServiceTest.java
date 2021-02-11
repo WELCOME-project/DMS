@@ -9,7 +9,7 @@ import org.apache.commons.io.FileUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 
-import edu.upf.taln.welcome.dms.commons.output.DMOutput;
+import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import org.junit.Ignore;
 
 
@@ -33,7 +33,7 @@ public class DMSServiceTest {
 
         DMSClient instance = new DMSClient();
         
-        DMOutput output = instance.realize_next_turn(input);
+        DialogueMove output = instance.realize_next_turn(input);
         String result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(output);
         System.out.println(result);
 

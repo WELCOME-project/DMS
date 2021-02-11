@@ -4,7 +4,7 @@ OPTIONS=t:l:
 LONGOPTS=tag:,langs:
 
 # -regarding ! and PIPESTATUS see above
-# -temporarily store output to be able to check for errors
+# -temporarily store edu.upf.taln.welcome.nlg.commons.output to be able to check for errors
 # -activate quoting/enhanced mode (e.g. by writing out “--options”)
 # -pass arguments only via   -- "$@"   to separate them correctly
 ! PARSED=$(getopt --options=$OPTIONS --longoptions=$LONGOPTS --name "$0" -- "$@")
@@ -13,7 +13,7 @@ if [[ ${PIPESTATUS[0]} -ne 0 ]]; then
     #  then getopt has complained about wrong arguments to stdout
     exit 2
 fi
-# read getopt’s output this way to handle the quoting right:
+# read getopt’s edu.upf.taln.welcome.nlg.commons.output this way to handle the quoting right:
 eval set -- "$PARSED"
 
 tag=$(date -I)

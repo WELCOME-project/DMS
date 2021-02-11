@@ -5,6 +5,7 @@ import edu.upf.taln.welcome.dms.commons.input.Slot;
 import edu.upf.taln.welcome.dms.commons.input.Slot.Status;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
+import edu.upf.taln.welcome.dms.commons.output.SpeechActLabel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,25 +24,22 @@ public class DeterministicPolicy implements Policy {
      * @return list of moves
      */
     @Override
-    public List<DialogueMove> map(Frame frame) {
-        ArrayList<DialogueMove> moves = new ArrayList<>();
-        boolean pickMore = checkUnforeseenSituations(frame, moves);
+    public DialogueMove map(Frame frame) {
+        ArrayList<SpeechAct> acts = new ArrayList<>();
+        boolean pickMore = checkUnforeseenSituations(frame, acts);
         if (pickMore) {
             Optional<Slot> firstPending = frame.slots.stream()
                     .filter(slot -> slot.status.contains(Status.Pending))
                     .findFirst();
 
             if (firstPending.isPresent()) {
-                DialogueMove move = new DialogueMove();
                 Slot slot = firstPending.get();
-                move.speechAct = speechActDictionary.get(slot.id);
-                move.slot = slot;
-
-                moves.add(move);
+                SpeechAct act = new SpeechAct(speechActDictionary.get(slot.id), slot);
+                acts.add(act);
             }
         }
 
-        return moves;
+        return new DialogueMove(acts);
     }
 
     /**
@@ -51,16 +49,16 @@ public class DeterministicPolicy implements Policy {
      * @param moves list of moves updated by this method
      * @return true if policy can add more moves
      */
-    private boolean checkUnforeseenSituations(Frame frame, List<DialogueMove> moves)
+    private boolean checkUnforeseenSituations(Frame frame, List<SpeechAct> moves)
     {
         Optional<Slot> firstFailedAnalysis = frame.slots.stream()
                 .filter(slot -> slot.status.contains(Status.FailedAnalysis))
                 .findFirst();
         if (firstFailedAnalysis.isPresent())
         {
-            DialogueMove not_understanding = new DialogueMove();
+            SpeechAct not_understanding = new SpeechAct();
             Slot slot = firstFailedAnalysis.get();
-            not_understanding.speechAct = SpeechAct.Signal_non_understanding;
+            not_understanding.label = SpeechActLabel.Signal_non_understanding;
             not_understanding.slot = slot;
             moves.add(not_understanding);
 
@@ -72,13 +70,13 @@ public class DeterministicPolicy implements Policy {
                 .findFirst();
         if (firstUnclearAnalysis.isPresent())
         {
-            DialogueMove not_understanding = new DialogueMove();
-            not_understanding.speechAct = SpeechAct.Signal_non_understanding;
+            SpeechAct not_understanding = new SpeechAct();
+            not_understanding.label = SpeechActLabel.Signal_non_understanding;
             moves.add(not_understanding);
 
-            DialogueMove quote = new DialogueMove();
+            SpeechAct quote = new SpeechAct();
             Slot slot = firstUnclearAnalysis.get();
-            quote.speechAct = SpeechAct.Quotation;
+            quote.label = SpeechActLabel.Quotation;
             quote.slot = slot;
             moves.add(quote);
 
@@ -90,13 +88,13 @@ public class DeterministicPolicy implements Policy {
                 .findFirst();
         if (firstClarifyRequest.isPresent())
         {
-            DialogueMove accept = new DialogueMove();
-            accept.speechAct = SpeechAct.Agree_or_Accept;
+            SpeechAct accept = new SpeechAct();
+            accept.label = SpeechActLabel.Agree_or_Accept;
             moves.add(accept);
 
-            DialogueMove repeat = new DialogueMove();
+            SpeechAct repeat = new SpeechAct();
             Slot slot = firstClarifyRequest.get();
-            repeat.speechAct = speechActDictionary.get(slot.id);
+            repeat.label = speechActDictionary.get(slot.id);
             repeat.slot = slot;
             moves.add(repeat);
 
@@ -109,8 +107,8 @@ public class DeterministicPolicy implements Policy {
         if (firstElaborateRequest.isPresent())
         {
             Slot slot = firstElaborateRequest.get();
-            DialogueMove apologize = new DialogueMove();
-            apologize.speechAct = SpeechAct.Apology;
+            SpeechAct apologize = new SpeechAct();
+            apologize.label = SpeechActLabel.Apology;
             apologize.slot = slot;
             moves.add(apologize);
 

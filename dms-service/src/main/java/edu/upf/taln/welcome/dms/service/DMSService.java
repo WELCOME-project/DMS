@@ -11,8 +11,8 @@ import edu.upf.taln.welcome.dms.commons.input.DMInput;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.input.LanguageConfiguration;
 import edu.upf.taln.welcome.dms.commons.input.ServiceDescription;
-import edu.upf.taln.welcome.dms.commons.output.DMOutput;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
+import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
 import edu.upf.taln.welcome.dms.core.DialogueManager;
 import io.swagger.v3.oas.annotations.Operation;
@@ -45,100 +45,117 @@ import java.util.logging.Logger;
 @Produces(MediaType.APPLICATION_JSON)
 public class DMSService {
 
-	private static final String SAMPLE_INPUT = "[\n" +
-			"  {\n" +
-			"    \"@id\": \"http://www.semanticweb.org/welcome#OpeningDIP\",\n" +
-			"    \"@type\": [\n" +
-			"      \"http://www.semanticweb.org/welcome#DIP\"\n" +
-			"    ],\n" +
-			"    \"http://www.semanticweb.org/welcome#hasSlot\": [\n" +
-			"      {\n" +
-			"        \"@id\": \"http://www.semanticweb.org/welcome#confirmCommunication\"\n" +
-			"      },\n" +
-			"      {\n" +
-			"        \"@id\": \"http://www.semanticweb.org/welcome#confirmLanguage\"\n" +
-			"      },\n" +
-			"      {\n" +
-			"        \"@id\": \"http://www.semanticweb.org/welcome#obtainRequest\"\n" +
-			"      }\n" +
-			"    ]\n" +
-			"  },\n" +
-			"  {\n" +
-			"    \"@id\": \"http://www.semanticweb.org/welcome#confirmCommunication\",\n" +
-			"    \"@type\": [\n" +
-			"      \"http://www.semanticweb.org/welcome#SystemDemand\"\n" +
-			"    ],\n" +
-			"    \"http://www.semanticweb.org/welcome#confidenceScore\": 0.0,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasInputRDFContents\": null,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasNumberAttemps\": 0,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasTemplate\": {\n" +
-			"      \"@id\": \"http://www.semanticweb.org/welcome#TemplateConfirmCommunication\"\n" +
-			"    },\n" +
-			"    \"http://www.semanticweb.org/welcome#hasStatus\": [\n" +
-			"      {\n" +
-			"        \"@id\": \"http://www.semanticweb.org/welcome#Completed\"\n" +
-			"      }\n" +
-			"    ],\n" +
-			"    \"http://www.semanticweb.org/welcome#isOptional\": true\n" +
-			"  },\n" +
-			"  {\n" +
-			"    \"@id\": \"http://www.semanticweb.org/welcome#confirmLanguage\",\n" +
-			"    \"@type\": [\n" +
-			"      \"http://www.semanticweb.org/welcome#SystemDemand\"\n" +
-			"    ],\n" +
-			"    \"http://www.semanticweb.org/welcome#confidenceScore\": 1.0,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasInputRDFContents\": null,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasNumberAttemps\": 0,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasTemplate\": {\n" +
-			"      \"@id\": \"http://www.semanticweb.org/welcome#TemplateConfirmLanguage\"\n" +
-			"    },\n" +
-			"    \"http://www.semanticweb.org/welcome#hasStatus\": [\n" +
-			"      {\n" +
-			"        \"@id\": \"http://www.semanticweb.org/welcome#Completed\"\n" +
-			"      }\n" +
-			"    ],\n" +
-			"    \"http://www.semanticweb.org/welcome#isOptional\": true\n" +
-			"  },\n" +
-			"  {\n" +
-			"    \"@id\": \"http://www.semanticweb.org/welcome#obtainRequest\",\n" +
-			"    \"@type\": [\n" +
-			"      \"http://www.semanticweb.org/welcome#SystemDemand\"\n" +
-			"    ],\n" +
-			"    \"http://www.semanticweb.org/welcome#confidenceScore\": 0.0,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasInputRDFContents\": null,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasNumberAttemps\": 0,\n" +
-			"    \"http://www.semanticweb.org/welcome#hasTemplate\": {\n" +
-			"      \"@id\": \"http://www.semanticweb.org/welcome#TemplateObtainRequest\"\n" +
-			"    },\n" +
-			"    \"http://www.semanticweb.org/welcome#hasStatus\": [\n" +
-			"      {\n" +
-			"        \"@id\": \"http://www.semanticweb.org/welcome#Pending\"\n" +
-			"      }\n" +
-			"    ],\n" +
-			"    \"http://www.semanticweb.org/welcome#isOptional\": false\n" +
-			"  }\n" +
-			"]";
-
-	private static final String SAMPLE_OUTPUT = "[ {\n" +
-			"  \"welcome:speechAct\" : {\n" +
-			"    \"@id\" : \"welcome:Open_Question\",\n" +
-			"    \"@type\" : \"welcome:SpeechAct\"\n" +
-			"  },\n" +
-			"  \"welcome:slot\" : {\n" +
-			"    \"@id\" : \"welcome:obtainRequest\",\n" +
-			"    \"@type\" : \"welcome:SystemDemand\",\n" +
-			"    \"welcome:hasTemplate\" : {\n" +
-			"      \"@id\" : \"welcome:TemplateObtainRequest\"\n" +
-			"    },\n" +
-			"    \"welcome:hasInputRDFContents\" : null,\n" +
-			"    \"welcome:hasStatus\" : [ {\n" +
-			"      \"@id\" : \"welcome:Pending\"\n" +
-			"    } ],\n" +
-			"    \"welcome:hasNumberAttempts\" : 0,\n" +
-			"    \"welcome:confidenceScore\" : 0.0,\n" +
-			"    \"welcome:isOptional\" : false\n" +
-			"  }\n" +
+	private static final String SAMPLE_INPUT = "[ {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OpeningDIP\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId\" : [ {\n" +
+			"    \"@value\" : \"0d7b802e-ba0d-470c-bb51-d4ec3653e371\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDIPStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Incomplete\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confirmCommunication\"\n" +
+			"  }, {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confirmLanguage\"\n" +
+			"  }, {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#obtainRequest\"\n" +
+			"  } ]\n" +
+			"}, {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confirmCommunication\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional\" : [ {\n" +
+			"    \"@value\" : \"yes\"\n" +
+			"  } ]\n" +
+			"}, {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confirmLanguage\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#decimal\",\n" +
+			"    \"@value\" : \"0.22\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EN\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional\" : [ {\n" +
+			"    \"@value\" : \"yes\"\n" +
+			"  } ]\n" +
+			"}, {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#obtainRequest\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional\" : [ {\n" +
+			"    \"@value\" : \"no\"\n" +
+			"  } ]\n" +
 			"} ]";
+
+	private static final String SAMPLE_OUTPUT = "{\n" +
+			"  \"speechActs\" : [ {\n" +
+			"    \"@id\" : \"welcome:Open_Question_0\",\n" +
+			"    \"@type\" : \"welcome:SpeechAct\",\n" +
+			"    \"welcome:hasLabel\" : {\n" +
+			"      \"@id\" : \"welcome:Open_Question\",\n" +
+			"      \"@type\" : \"welcome:SpeechActLabel\"\n" +
+			"    },\n" +
+			"    \"welcome:hasSlot\" : {\n" +
+			"      \"@id\" : \"welcome:obtainRequest\",\n" +
+			"      \"@type\" : \"welcome:SystemDemand\",\n" +
+			"      \"welcome:hasTemplate\" : null,\n" +
+			"      \"welcome:hasInputRDFContents\" : \"{\\\"@id\\\":\\\"welcome:Unknown\\\"}\",\n" +
+			"      \"welcome:hasStatus\" : [ {\n" +
+			"        \"@id\" : \"welcome:Pending\"\n" +
+			"      } ],\n" +
+			"      \"welcome:hasNumberAttemps\" : 0,\n" +
+			"      \"welcome:confidenceScore\" : 0.0,\n" +
+			"      \"welcome:isOptional\" : false\n" +
+			"    }\n" +
+			"  } ],\n" +
+			"  \"@id\" : \"welcome:move_0\",\n" +
+			"  \"@type\" : \"welcome:DialogueMove\"\n" +
+			"}";
 
 	private final DialogueManager manager;
 	private final Document jsonldContextDoc;
@@ -179,10 +196,9 @@ public class DMSService {
 		return description;
 	}
 
-
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Operation(summary = "Determines the system's next dialogue moves given an input dialogue input package.",
+	@Operation(summary = "Determines the system's next dialogue moves given an edu.upf.taln.welcome.nlg.commons.input dialogue edu.upf.taln.welcome.nlg.commons.input package.",
 			description = "Returns the data needed to generate the next utterance.",
 			requestBody = @RequestBody(
 					content = @Content(mediaType = MediaType.APPLICATION_JSON,
@@ -194,9 +210,9 @@ public class DMSService {
 					)
 			),
 			responses = {
-					@ApiResponse(description = "Dialogue moves are represented as a pair of a speech act and one or more slots taken from the input.",
+					@ApiResponse(description = "Dialogue moves are represented as a pair of a speech act and one or more slots taken from the edu.upf.taln.welcome.nlg.commons.input.",
 							content = @Content(mediaType = MediaType.APPLICATION_JSON,
-									schema = @Schema(implementation = DMOutput.class),
+									schema = @Schema(implementation = DialogueMove.class),
 									examples = {
 											@ExampleObject(name = "Example",
 													value = SAMPLE_OUTPUT)
@@ -205,25 +221,24 @@ public class DMSService {
 			})
 
 	/*
-	 * Unmarshalls JSON-LD input to a POJO-based representations of a DIP frame, and passes it to the dialogue manager.
+	 * Unmarshalls JSON-LD edu.upf.taln.welcome.nlg.commons.input to a POJO representations of a DIP frame, and passes it to the dialogue manager.
 	 * The resulting dialogue moves are serialized back into JSON-LD and returned.
 	 */
-	public JsonNode realize_next_turn(@Parameter(description = "Dialogue input packages", required = true) JsonNode input) throws WelcomeException {
+	public JsonNode realize_next_turn(@Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
 		try {
 			StringReader inputReader = new StringReader(input.toString());
 			Document inputDoc = DocumentParser.parse(com.apicatalog.jsonld.http.media.MediaType.JSON_LD, inputReader);
+
 			JsonObject framed = JsonLd.frame(inputDoc, jsonldContextDoc)
 					.ordered()
 					.get();
 			ObjectMapper mapper = new ObjectMapper();
 			Frame dip = mapper.readValue(framed.toString(), Frame.class);
-			logger.log(Level.INFO, "dip: "+dip.toString()+"\t"+dip.type);
-			List<DialogueMove> moves = manager.map(dip);
-			DMOutput output = new DMOutput();
-			logger.log(Level.INFO, "output.moves: "+output.moves.toString());
-			output.moves.addAll(moves);
+			logger.log(Level.INFO, "dip: " + dip.toString() + "\t" + dip.type);
+			DialogueMove move = manager.map(dip);
+			logger.log(Level.INFO, "edu.upf.taln.welcome.nlg.commons.output.moves " + move.toString());
 
-			return mapper.valueToTree(output.moves);
+			return mapper.valueToTree(move);
 		} catch (JsonLdError | IOException | NullPointerException ex) {
 			logger.log(Level.SEVERE, "Failed to determine next dialogue move", ex);
 			throw new WelcomeException(ex);

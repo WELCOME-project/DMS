@@ -1,6 +1,6 @@
 package edu.upf.taln.welcome.dms.core.utils;
 
-import edu.upf.taln.welcome.dms.commons.output.DMOutput;
+import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 
 /**
  *
@@ -8,7 +8,7 @@ import edu.upf.taln.welcome.dms.commons.output.DMOutput;
  */
 public class SampleResponses {
     
-    public static DMOutput generateResponse(int turn) {
+    public static DialogueMove generateResponse(int turn) {
         return null;
 //        List<SpeechAct> speechActs = new ArrayList<>();
 //        switch (turn) {
@@ -237,9 +237,9 @@ public class SampleResponses {
 //        DMOutputData data = new DMOutputData();
 //        data.setSpeechActs(speechActs);
 //
-//        DMOutput output = new DMOutput();
-//        output.setData(data);
+//        DMOutput edu.upf.taln.welcome.nlg.commons.output = new DMOutput();
+//        edu.upf.taln.welcome.nlg.commons.output.setData(data);
 //
-//        return output;
+//        return edu.upf.taln.welcome.nlg.commons.output;
     }
 }
