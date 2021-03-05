@@ -11,8 +11,6 @@ import edu.upf.taln.welcome.dms.commons.input.Slot;
 import edu.upf.taln.welcome.dms.commons.output.SpeechActLabel;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class SerializationUtils {
     public static class IntegerLiteralDeserializer extends StdDeserializer<Integer> {
@@ -87,7 +85,7 @@ public class SerializationUtils {
         }
     }
 
-    public static class StatusDeserializer extends StdDeserializer<List<Slot.Status>> {
+    public static class StatusDeserializer extends StdDeserializer<Slot.Status> {
 
         public StatusDeserializer() {
             this(null);
@@ -97,39 +95,32 @@ public class SerializationUtils {
         }
 
         @Override
-        public List<Slot.Status> deserialize(JsonParser parser, DeserializationContext context) throws IOException {
+        public Slot.Status deserialize(JsonParser parser, DeserializationContext context) throws IOException {
             JsonNode node = parser.getCodec().readTree(parser);
 
-            return node.findValues("@id").stream()
-                    .map(JsonNode::asText)
-                    .map(t -> t.substring(t.indexOf(':') + 1))
-                    .map(Slot.Status::valueOf)
-                    .collect(Collectors.toList());
+            String id = node.findValue("@id").asText();
+            return Slot.Status.valueOf(id.substring(id.indexOf(':') + 1));
         }
     }
 
-    public static class StatusSerializer extends StdSerializer<List<Slot.Status>> {
+    public static class StatusSerializer extends StdSerializer<Slot.Status> {
 
         public StatusSerializer() {
             this(null);
         }
 
-        public StatusSerializer(Class<List<Slot.Status>> t) {
+        public StatusSerializer(Class<Slot.Status> t) {
             super(t);
         }
 
         @Override
-        public void serialize(List<Slot.Status> status, JsonGenerator jsonGenerator, SerializerProvider serializer) throws IOException {
-            jsonGenerator.writeStartArray();
-            for (Slot.Status s : status)
-            {
-                jsonGenerator.writeStartObject();
-                jsonGenerator.writeStringField("@id", "welcome:" + s.toString());
-                jsonGenerator.writeEndObject();
-            }
-            jsonGenerator.writeEndArray();
+        public void serialize(Slot.Status status, JsonGenerator jsonGenerator, SerializerProvider serializer) throws IOException {
+            jsonGenerator.writeStartObject();
+            jsonGenerator.writeStringField("@id", "welcome:" + status.toString());
+            jsonGenerator.writeEndObject();
         }
     }
+
     public static class IRIDeserializer extends StdDeserializer<String> {
 
         @SuppressWarnings("unused")
@@ -143,9 +134,8 @@ public class SerializationUtils {
         @Override
         public String deserialize(JsonParser parser, DeserializationContext context) throws IOException {
             JsonNode node = parser.getCodec().readTree(parser);
-            String t = node.asText();
-
-            return t.substring(t.indexOf(':') + 1);
+            String iri = node.asText();
+            return iri.substring(iri.indexOf(':') + 1);
         }
     }
 

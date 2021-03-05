@@ -1,9 +1,4 @@
 [ {
-  "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FoundServiceName",
-  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#serviceName" : [ {
-    "@value" : "First Reception Service in Catalonia"
-  } ]
-}, {
   "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ProposeService",
   "@type" : [ "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP" ],
   "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId" : [ {
@@ -23,7 +18,7 @@
     "@value" : "0"
   } ],
   "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
-    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FoundServiceName"
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
   } ],
   "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",

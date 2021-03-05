@@ -1,13 +1,13 @@
 {
   "speechActs" : [ {
-    "@id" : "welcome:Open_Question_0",
+    "@id" : "welcome:Wh_Question_1",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : {
-      "@id" : "welcome:Open_Question",
+      "@id" : "welcome:Wh_Question",
       "@type" : "welcome:SpeechActLabel"
     },
     "welcome:hasSlot" : {
-      "@id" : "welcome:obtainRequest",
+      "@id" : "welcome:obtainStatus",
       "@type" : [ "welcome:SystemDemand" ],
       "welcome:hasTemplate" : null,
       "welcome:hasInputRDFContents" : [ "{\"@id\":\"welcome:Unknown\"}" ],
@@ -19,6 +19,6 @@
       "welcome:isOptional" : false
     }
   } ],
-  "@id" : "welcome:move_0",
+  "@id" : "welcome:move_1",
   "@type" : "welcome:DialogueMove"
 }

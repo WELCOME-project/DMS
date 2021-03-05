@@ -18,9 +18,9 @@ public class Frame
     public String id;
 
     @JsonProperty("@type")
-    @JsonDeserialize(using = SerializationUtils.IRIDeserializer.class)
-    @JsonSerialize(using = SerializationUtils.IRISerializer.class)
-    public String type;
+    @JsonDeserialize(contentUsing = SerializationUtils.IRIDeserializer.class)
+    @JsonSerialize(contentUsing = SerializationUtils.IRISerializer.class)
+    public List<String> type;
 
     @JsonProperty("welcome:hasSlot")
     public List<Slot> slots = new ArrayList<>();

@@ -17,21 +17,21 @@ public class Slot {
     public String id;
 
     @JsonProperty("@type")
-    @JsonDeserialize(using = SerializationUtils.IRIDeserializer.class)
-    @JsonSerialize(using = SerializationUtils.IRISerializer.class)
-    public String type;
+    @JsonDeserialize(contentUsing = SerializationUtils.IRIDeserializer.class)
+    @JsonSerialize(contentUsing = SerializationUtils.IRISerializer.class)
+    public List<String> type;
 
     @JsonProperty("welcome:hasTemplate")
-    public Template template;
+    public List<Template> template;
 
     @JsonProperty("welcome:hasInputRDFContents")
-    @JsonDeserialize(using = SerializationUtils.RDFDeserializer.class)
-    public String rdf;
+    @JsonDeserialize(contentUsing = SerializationUtils.RDFDeserializer.class)
+    public List<String> rdf;
 
     public enum Status {Pending, Completed, FailedAnalysis, UnclearAnalysis, TCNClarifyRequest, TCNElaborateRequest, TopicSwitch}
     @JsonProperty("welcome:hasStatus")
-    @JsonDeserialize(using = SerializationUtils.StatusDeserializer.class)
-    @JsonSerialize(using = SerializationUtils.StatusSerializer.class)
+    @JsonDeserialize(contentUsing = SerializationUtils.StatusDeserializer.class)
+    @JsonSerialize(contentUsing = SerializationUtils.StatusSerializer.class)
     public List<Status> status = new ArrayList<>();
 
     @JsonProperty("welcome:hasNumberAttemps")
