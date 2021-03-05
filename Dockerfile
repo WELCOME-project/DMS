@@ -1,5 +1,5 @@
 FROM tomcat:9.0-jdk11
 
-COPY ./dms-service/target/dms-service-0.2.2-SNAPSHOT.war /usr/local/tomcat/webapps/dms-service.war
+COPY ./dms-service/target/dms-service-0.2.3-SNAPSHOT.war /usr/local/tomcat/webapps/dms-service.war
 
 EXPOSE 8080
