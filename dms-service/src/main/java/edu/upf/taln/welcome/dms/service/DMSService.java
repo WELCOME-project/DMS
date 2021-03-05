@@ -13,7 +13,6 @@ import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.input.LanguageConfiguration;
 import edu.upf.taln.welcome.dms.commons.input.ServiceDescription;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
-import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
 import edu.upf.taln.welcome.dms.core.DialogueManager;
 import io.swagger.v3.oas.annotations.Operation;
@@ -46,7 +45,7 @@ import java.util.logging.Logger;
 @Produces(MediaType.APPLICATION_JSON)
 public class DMSService {
 
-	private static final String SAMPLE_INPUT = "[ {\n" +
+	private static final String OPENING_DIP_INPUT = "[ {\n" +
 			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#OpeningDIP\",\n" +
 			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP\" ],\n" +
 			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId\" : [ {\n" +
@@ -133,7 +132,7 @@ public class DMSService {
 			"  } ]\n" +
 			"} ]";
 
-	private static final String SAMPLE_OUTPUT = "{\n" +
+	private static final String OPENING_DIP_OUTPUT = "{\n" +
 			"  \"speechActs\" : [ {\n" +
 			"    \"@id\" : \"welcome:Open_Question_0\",\n" +
 			"    \"@type\" : \"welcome:SpeechAct\",\n" +
@@ -155,6 +154,155 @@ public class DMSService {
 			"    }\n" +
 			"  } ],\n" +
 			"  \"@id\" : \"welcome:move_0\",\n" +
+			"  \"@type\" : \"welcome:DialogueMove\"\n" +
+			"}";
+
+	private static final String OBTAIN_STATUS_DIP_INPUT = "[ {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ObtainRegistrationStatus\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId\" : [ {\n" +
+			"    \"@value\" : \"2bdb0fc7-533b-4791-ba25-b0fa5a67a56c\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDIPStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Incomplete\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#obtainName\"\n" +
+			"  }, {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#obtainStatus\"\n" +
+			"  } ]\n" +
+			"}, {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#obtainName\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional\" : [ {\n" +
+			"    \"@value\" : \"yes\"\n" +
+			"  } ]\n" +
+			"}, {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#obtainStatus\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional\" : [ {\n" +
+			"    \"@value\" : \"no\"\n" +
+			"  } ]\n" +
+			"} ]";
+
+	private static final String OBTAIN_STATUS_DIP_OUTPUT = "{\n" +
+			"  \"speechActs\" : [ {\n" +
+			"    \"@id\" : \"welcome:Wh_Question_1\",\n" +
+			"    \"@type\" : \"welcome:SpeechAct\",\n" +
+			"    \"welcome:hasLabel\" : {\n" +
+			"      \"@id\" : \"welcome:Wh_Question\",\n" +
+			"      \"@type\" : \"welcome:SpeechActLabel\"\n" +
+			"    },\n" +
+			"    \"welcome:hasSlot\" : {\n" +
+			"      \"@id\" : \"welcome:obtainStatus\",\n" +
+			"      \"@type\" : [ \"welcome:SystemDemand\" ],\n" +
+			"      \"welcome:hasTemplate\" : null,\n" +
+			"      \"welcome:hasInputRDFContents\" : [ \"{\\\"@id\\\":\\\"welcome:Unknown\\\"}\" ],\n" +
+			"      \"welcome:hasStatus\" : [ {\n" +
+			"        \"@id\" : \"welcome:Pending\"\n" +
+			"      } ],\n" +
+			"      \"welcome:hasNumberAttemps\" : 0,\n" +
+			"      \"welcome:confidenceScore\" : 0.0,\n" +
+			"      \"welcome:isOptional\" : false\n" +
+			"    }\n" +
+			"  } ],\n" +
+			"  \"@id\" : \"welcome:move_1\",\n" +
+			"  \"@type\" : \"welcome:DialogueMove\"\n" +
+			"}";
+
+	private static final String PROPOSE_SERVICE_DIP_INPUT = "[ {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ProposeService\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId\" : [ {\n" +
+			"    \"@value\" : \"52f46f10-96ae-4aee-a2e5-dc6dbea9b524\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDIPStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Incomplete\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#obtainInterest\"\n" +
+			"  } ]\n" +
+			"}, {\n" +
+			"  \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#obtainInterest\",\n" +
+			"  \"@type\" : [ \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo\" ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts\" : [ {\n" +
+			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#integer\",\n" +
+			"    \"@value\" : \"0\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus\" : [ {\n" +
+			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending\"\n" +
+			"  } ],\n" +
+			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional\" : [ {\n" +
+			"    \"@value\" : \"no\"\n" +
+			"  } ]\n" +
+			"} ]";
+
+	private static final String PROPOSE_SERVICE_DIP_OUTPUT = "{\n" +
+			"  \"speechActs\" : [ {\n" +
+			"    \"@id\" : \"welcome:Yes_No_Question_2\",\n" +
+			"    \"@type\" : \"welcome:SpeechAct\",\n" +
+			"    \"welcome:hasLabel\" : {\n" +
+			"      \"@id\" : \"welcome:Yes_No_Question\",\n" +
+			"      \"@type\" : \"welcome:SpeechActLabel\"\n" +
+			"    },\n" +
+			"    \"welcome:hasSlot\" : {\n" +
+			"      \"@id\" : \"welcome:obtainInterest\",\n" +
+			"      \"@type\" : [ \"welcome:SystemInfo\" ],\n" +
+			"      \"welcome:hasTemplate\" : null,\n" +
+			"      \"welcome:hasInputRDFContents\" : [ \"{\\\"@id\\\":\\\"welcome:Unknown\\\"}\" ],\n" +
+			"      \"welcome:hasStatus\" : [ {\n" +
+			"        \"@id\" : \"welcome:Pending\"\n" +
+			"      } ],\n" +
+			"      \"welcome:hasNumberAttemps\" : 0,\n" +
+			"      \"welcome:confidenceScore\" : 0.0,\n" +
+			"      \"welcome:isOptional\" : false\n" +
+			"    }\n" +
+			"  } ],\n" +
+			"  \"@id\" : \"welcome:move_2\",\n" +
 			"  \"@type\" : \"welcome:DialogueMove\"\n" +
 			"}";
 
@@ -205,8 +353,9 @@ public class DMSService {
 					content = @Content(mediaType = MediaType.APPLICATION_JSON,
 							schema = @Schema(implementation = DMInput.class),
 							examples = {
-									@ExampleObject(name = "Example",
-											value = SAMPLE_INPUT)
+									@ExampleObject(name = "Example using Opening DIP", value = OPENING_DIP_INPUT),
+									@ExampleObject(name = "Example using Obtain Registration Status DIP", value = OBTAIN_STATUS_DIP_INPUT),
+									@ExampleObject(name = "Example using Propose First Reception Service DIP", value = PROPOSE_SERVICE_DIP_INPUT)
 							}
 					)
 			),
@@ -215,8 +364,9 @@ public class DMSService {
 							content = @Content(mediaType = MediaType.APPLICATION_JSON,
 									schema = @Schema(implementation = DialogueMove.class),
 									examples = {
-											@ExampleObject(name = "Example",
-													value = SAMPLE_OUTPUT)
+											@ExampleObject(name = "Example using Opening DIP", value = OPENING_DIP_OUTPUT),
+											@ExampleObject(name = "Example using Obtain Registration Status DIP", value = OBTAIN_STATUS_DIP_OUTPUT),
+											@ExampleObject(name = "Example using Propose First Reception Service DIP", value = PROPOSE_SERVICE_DIP_OUTPUT)
 									}
 							))
 			})
