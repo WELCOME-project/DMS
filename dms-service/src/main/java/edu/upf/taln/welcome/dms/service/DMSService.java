@@ -25,6 +25,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 import javax.json.JsonObject;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -398,4 +399,38 @@ public class DMSService {
 			throw new WelcomeException(ex);
 		}
 	}
+	
+	@GET
+	@Path("/status")
+	@Operation(summary = "Retrieve the services status.",
+		description = "Returns a status description of the service.",
+		responses = {
+		        @ApiResponse(description = "The services status.",
+		        			content = @Content(schema = @Schema(implementation = StatusOutput.class)
+		        ))
+	})
+	public StatusOutput getStatus() throws WelcomeException {
+		ServletContext application = config.getServletContext();
+		String build;
+		try {
+			build = new String(application.getResourceAsStream("META-INF/MANIFEST.MF").readAllBytes());
+		} catch (IOException e) {
+			throw new WelcomeException();
+		}
+		return new StatusOutput(build);
+	}
+	
+	@GET
+	@Path("/status/log")
+	@Operation(summary = "Retrieve the service log.",
+		description = "Returns a specific amount of log messages.",
+		responses = {
+		        @ApiResponse(description = "The log messages.",
+		        			content = @Content(schema = @Schema(implementation = StatusLogOutput.class)
+		        ))
+	})
+	public StatusLogOutput getLog(@QueryParam("limit") int limit) throws WelcomeException {
+		return new StatusLogOutput();
+	}
+
 }
