@@ -1,10 +1,8 @@
 package edu.upf.taln.welcome.dms.commons.output;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import edu.upf.taln.welcome.dms.commons.SerializationUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,17 +11,16 @@ import java.util.List;
  * A dialogue move represents the output of the DMS.
  * It consists of a list of speech acts.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DialogueMove {
+
     @JsonProperty("@id")
-    @JsonDeserialize(using = SerializationUtils.IRIDeserializer.class)
-    @JsonSerialize(using = SerializationUtils.IRISerializer.class)
     public String id;
 
     @JsonProperty("@type")
-    @JsonDeserialize(using = SerializationUtils.IRIDeserializer.class)
-    @JsonSerialize(using = SerializationUtils.IRISerializer.class)
     public String type;
 
+    @JsonProperty("welcome:hasSpeechActs")
     public List<SpeechAct> speechActs = new ArrayList<>();
 
     @JsonIgnore
@@ -33,8 +30,7 @@ public class DialogueMove {
     public DialogueMove(List<SpeechAct> speechActs)
     {
         this.id = "move_" + counter++;
-        this.type = "DialogueMove";
+        this.type = "welcome:DialogueMove";
         this.speechActs = speechActs;
     }
-
 }

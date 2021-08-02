@@ -1,0 +1,24 @@
+{
+  "@id" : "welcome:ClosingUponFailure",
+  "@type" : null,
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:informMessage",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformMessage",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:reifiedReason2",
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:subTemplate",
+      "rdf:predicate" : "welcome:isReason",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "STReasonNoFoundService"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

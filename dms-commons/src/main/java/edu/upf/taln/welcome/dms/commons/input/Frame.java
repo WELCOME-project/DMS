@@ -1,26 +1,23 @@
 package edu.upf.taln.welcome.dms.commons.input;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import edu.upf.taln.welcome.dms.commons.SerializationUtils;
-
-import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author rcarlini
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Frame
-{
+public class Frame {
+    
     @JsonProperty("@id")
-    @JsonDeserialize(using = SerializationUtils.IRIDeserializer.class)
-    @JsonSerialize(using = SerializationUtils.IRISerializer.class)
     public String id;
 
     @JsonProperty("@type")
-    @JsonDeserialize(contentUsing = SerializationUtils.IRIDeserializer.class)
-    @JsonSerialize(contentUsing = SerializationUtils.IRISerializer.class)
-    public List<String> type;
+    public String type;
 
     @JsonProperty("welcome:hasSlot")
     public List<Slot> slots = new ArrayList<>();

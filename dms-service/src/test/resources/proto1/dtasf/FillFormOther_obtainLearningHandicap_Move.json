@@ -1,0 +1,67 @@
+{
+  "@context" : {
+    "w3c" : "http://www.w3.org/2001/XMLSchema#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf:subject" : {
+      "@type" : "@id"
+    },
+    "rdf:predicate" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSlot" : {
+      "@type" : "@id"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "@id"
+    },
+    "welcome:hasStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:isCurrentDIP" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:hasDIPStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@container" : "@set"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@type" : "@id"
+    },
+    "welcome:confidenceScore" : {
+      "@type" : "w3c:float"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "w3c:int"
+    },
+    "welcome:isOptional" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:hasSpeechActs" : {
+      "@container" : "@list"
+    }
+  },
+  "@id" : "move_49",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Yes_No_Question_49",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Yes_No_Question",
+    "welcome:hasSlot" : {
+      "@id" : "frs:obtainLearningHandicap",
+      "@type" : null,
+      "welcome:hasTemplateId" : "TObtainLearningHandicap",
+      "welcome:hasOntologyType" : null,
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:Unknown"
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}

@@ -1,8 +1,9 @@
 package edu.upf.taln.welcome.dms.core;
 
+import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.input.Slot;
-import edu.upf.taln.welcome.dms.commons.input.Slot.Status;
+import edu.upf.taln.welcome.dms.commons.input.Status;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.output.SpeechActLabel;
@@ -24,17 +25,21 @@ public class DeterministicPolicy implements Policy {
      * @return list of moves
      */
     @Override
-    public DialogueMove map(Frame frame) {
+    public DialogueMove map(Frame frame) throws WelcomeException {
         ArrayList<SpeechAct> acts = new ArrayList<>();
         boolean pickMore = checkUnforeseenSituations(frame, acts);
         if (pickMore) {
             Optional<Slot> firstPending = frame.slots.stream()
-                    .filter(slot -> slot.status.contains(Status.Pending))
+                    .filter(slot -> slot.status == Status.Pending)
                     .findFirst();
 
             if (firstPending.isPresent()) {
                 Slot slot = firstPending.get();
-                SpeechAct act = new SpeechAct(speechActDictionary.get(slot.id), slot);
+                SpeechActLabel label = speechActDictionary.get(slot.id);
+                if (label == null) {
+                    throw new WelcomeException("Unsupported slot type " + slot.id + "!");
+                }
+                SpeechAct act = new SpeechAct(label, slot);
                 acts.add(act);
             }
         }
@@ -52,7 +57,7 @@ public class DeterministicPolicy implements Policy {
     private boolean checkUnforeseenSituations(Frame frame, List<SpeechAct> moves)
     {
         Optional<Slot> firstFailedAnalysis = frame.slots.stream()
-                .filter(slot -> slot.status.contains(Status.FailedAnalysis))
+                .filter(slot -> slot.status == Status.FailedAnalysis)
                 .findFirst();
         if (firstFailedAnalysis.isPresent())
         {
@@ -66,7 +71,7 @@ public class DeterministicPolicy implements Policy {
         }
 
         Optional<Slot> firstUnclearAnalysis = frame.slots.stream()
-                .filter(slot -> slot.status.contains(Status.UnclearAnalysis))
+                .filter(slot -> slot.status == Status.UnclearAnalysis)
                 .findFirst();
         if (firstUnclearAnalysis.isPresent())
         {
@@ -84,7 +89,7 @@ public class DeterministicPolicy implements Policy {
         }
 
         Optional<Slot> firstClarifyRequest = frame.slots.stream()
-                .filter(slot -> slot.status.contains(Status.TCNClarifyRequest))
+                .filter(slot -> slot.status == Status.TCNClarifyRequest)
                 .findFirst();
         if (firstClarifyRequest.isPresent())
         {
@@ -102,7 +107,7 @@ public class DeterministicPolicy implements Policy {
         }
 
         Optional<Slot> firstElaborateRequest = frame.slots.stream()
-                .filter(slot -> slot.status.contains(Status.TCNElaborateRequest))
+                .filter(slot -> slot.status == Status.TCNElaborateRequest)
                 .findFirst();
         if (firstElaborateRequest.isPresent())
         {

@@ -1,20 +1,18 @@
 package edu.upf.taln.welcome.dms.service;
 
-import com.apicatalog.jsonld.JsonLd;
-import com.apicatalog.jsonld.api.JsonLdError;
-import com.apicatalog.jsonld.api.JsonLdOptions;
-import com.apicatalog.jsonld.document.Document;
-import com.apicatalog.jsonld.document.DocumentParser;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
-import edu.upf.taln.welcome.dms.commons.input.DMInput;
-import edu.upf.taln.welcome.dms.commons.input.Frame;
-import edu.upf.taln.welcome.dms.commons.input.LanguageConfiguration;
-import edu.upf.taln.welcome.dms.commons.input.ServiceDescription;
-import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
-import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
-import edu.upf.taln.welcome.dms.core.DialogueManager;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.net.URL;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -23,20 +21,18 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
-import javax.json.JsonObject;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
+import edu.upf.taln.welcome.dms.commons.input.DMInput;
+import edu.upf.taln.welcome.dms.commons.input.Frame;
+import edu.upf.taln.welcome.dms.commons.input.LanguageConfiguration;
+import edu.upf.taln.welcome.dms.commons.input.ServiceDescription;
+import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
+import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
+import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
+import edu.upf.taln.welcome.dms.core.DialogueManager;
 
 
 /**
@@ -307,24 +303,30 @@ public class DMSService {
 			"  \"@type\" : \"welcome:DialogueMove\"\n" +
 			"}";
 
-	private final DialogueManager manager;
-	private final Document jsonldContextDoc;
 	private final Logger logger = Logger.getLogger(DMSService.class.getName());
 
+    private final DialogueManager manager;
+    private URL resultContextFile;
+    private URL contextFile;
+    
 	@Context
 	ServletConfig config;
 
 	public DMSService() throws WelcomeException {
-		manager = new DialogueManager(new DeterministicPolicy());
 		try {
-			Reader contextReader = new InputStreamReader(DMSService.class.getResourceAsStream("/welcome-context.jsonld"));
-			jsonldContextDoc = DocumentParser.parse(com.apicatalog.jsonld.http.media.MediaType.JSON_LD, contextReader);
-		} catch (Exception | JsonLdError ex) {
-			logger.log(Level.SEVERE, "Failed to initialize service", ex);
+    		manager = new DialogueManager(new DeterministicPolicy());
+            
+            contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed_alt.jsonld");
+            if (contextFile == null) {
+                throw new WelcomeException("JSONLD context file not found!");
+            }
+            
+            resultContextFile = JsonLDUtils.class.getResource("/welcome-nlg-compacted.jsonld");
+        
+		} catch (Exception ex) {
+			logger.log(Level.SEVERE, "Unexpected error! Failed to initialize service", ex);
 			throw new WelcomeException(ex);
-		}
-
-
+        }
 	}
 
 	@GET
@@ -376,28 +378,34 @@ public class DMSService {
 	 * Unmarshalls JSON-LD edu.upf.taln.welcome.nlg.commons.input to a POJO representations of a DIP frame, and passes it to the dialogue manager.
 	 * The resulting dialogue moves are serialized back into JSON-LD and returned.
 	 */
-	public JsonNode realize_next_turn(@Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
+	public JsonNode realizeNextTurn(@Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
 		try {
-			StringReader inputReader = new StringReader(input.toString());
-			Document inputDoc = DocumentParser.parse(com.apicatalog.jsonld.http.media.MediaType.JSON_LD, inputReader);
-
-			JsonLdOptions options = new JsonLdOptions();
-			options.setCompactArrays(false);
-			JsonObject framed = JsonLd.frame(inputDoc, jsonldContextDoc)
-					.ordered()
-					.options(options)
-					.get();
-			ObjectMapper mapper = new ObjectMapper();
-			Frame dip = mapper.readValue(framed.get("@graph").asJsonArray().get(0).toString(), Frame.class);
-			logger.log(Level.INFO, "dip: " + dip.toString() + "\t" + dip.type);
-			DialogueMove move = manager.map(dip);
-			logger.log(Level.INFO, "edu.upf.taln.welcome.nlg.commons.output.moves " + move.toString());
-
-			return mapper.valueToTree(move);
-		} catch (JsonLdError | IOException | NullPointerException ex) {
+            
+			Frame dip = JsonLDUtils.readFrame(input, contextFile);
+			logger.log(Level.INFO, "dip: {0}\t{1}", new Object[]{dip.toString(), dip.type});
+            
+			return realizeNextTurn(dip);
+            
+		} catch (WelcomeException ex) {
 			logger.log(Level.SEVERE, "Failed to determine next dialogue move", ex);
+			throw ex;
+            
+		} catch (Exception ex) {
+			logger.log(Level.SEVERE, "Unexpected error! Failed to determine next dialogue move", ex);
 			throw new WelcomeException(ex);
 		}
+	}
+	
+	protected JsonNode realizeNextTurn(Frame dip) throws WelcomeException {
+		DialogueMove move = manager.map(dip);
+		logger.log(Level.INFO, "edu.upf.taln.welcome.nlg.commons.output.moves {0}", move.toString());
+
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode result = mapper.valueToTree(move);
+        
+        JsonNode mergedResult = JsonLDUtils.mergeResultContext(result, resultContextFile);
+        
+		return mergedResult;
 	}
 	
 	@GET

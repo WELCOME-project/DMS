@@ -1,0 +1,24 @@
+{
+  "@id" : "frs:ProposeService",
+  "@type" : null,
+  "welcome:hasSlot" : [ {
+    "@id" : "frs:obtainInterest",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainInterestInform",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:reifiedInterest",
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:ServiceName",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "First Reception Service in Catalonia"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

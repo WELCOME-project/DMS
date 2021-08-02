@@ -1,0 +1,45 @@
+{
+  "@id" : "welcome:Opening",
+  "@type" : null,
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:confirmCommunication",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TConfirmCommunication",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 1.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:confirmLanguage",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TConfirmLanguage",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Language",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "English"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 1.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:obtainRequest",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainMatterConcern",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 1.0,
+    "welcome:isOptional" : false
+  } ]
+}

@@ -1,0 +1,74 @@
+{
+  "@context" : {
+    "w3c" : "http://www.w3.org/2001/XMLSchema#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf:subject" : {
+      "@type" : "@id"
+    },
+    "rdf:predicate" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSlot" : {
+      "@type" : "@id"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "@id"
+    },
+    "welcome:hasStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:isCurrentDIP" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:hasDIPStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@container" : "@set"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@type" : "@id"
+    },
+    "welcome:confidenceScore" : {
+      "@type" : "w3c:float"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "w3c:int"
+    },
+    "welcome:isOptional" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:hasSpeechActs" : {
+      "@container" : "@list"
+    }
+  },
+  "@id" : "move_48",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Wh_Question_48",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Wh_Question",
+    "welcome:hasSlot" : {
+      "@id" : "frs:obtainRegistrationYear",
+      "@type" : null,
+      "welcome:hasTemplateId" : "TObtainRegistrationYear",
+      "welcome:hasOntologyType" : null,
+      "welcome:hasInputRDFContents" : [ {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Catalonia",
+        "rdf:predicate" : "welcome:regionName",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Catalonia"
+        }
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}

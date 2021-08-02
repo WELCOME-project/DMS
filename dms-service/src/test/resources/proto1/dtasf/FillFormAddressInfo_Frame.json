@@ -1,0 +1,126 @@
+{
+  "@id" : "frs:FillFormAddressInfo",
+  "@type" : null,
+  "welcome:hasSlot" : [ {
+    "@id" : "frs:obtainEntrance",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainEntrance",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainBuildingType",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainBuildingType",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainFloorNumber",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainFloorNumber",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainDoorNumber",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainDoorNumber",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainPostCode",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainPostCode",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainProvince",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainProvince",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainMunicipality",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainMunicipality",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainStreetType",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainStreetType",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainStreetName",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainStreetName",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainStreetNumber",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainStreetNumber",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainBuildingName",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainBuildingName",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  } ]
+}

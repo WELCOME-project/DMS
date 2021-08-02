@@ -1,0 +1,425 @@
+{
+  "@id" : "frs:InformFirstReceptionService",
+  "@type" : null,
+  "welcome:hasSlot" : [ {
+    "@id" : "frs:informOverview",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformOverview",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:informLanguageModule",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformLanguageModule",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "A"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:course_spanishLanguage",
+      "rdf:predicate" : "welcome:hasNumberHours",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : "w3c:integer",
+        "@value" : "90"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:course_spanishLanguage",
+      "rdf:predicate" : "welcome:hasCourseName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Spanish"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language",
+      "rdf:predicate" : "welcome:moduleName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Languages"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informLanguageModuleAddress",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformModuleAddress",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "A"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:poi_1",
+      "rdf:predicate" : "daml:name",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Col-legi Sagrat Cor"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informLanguageModuleHours",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformModuleHours",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "A"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language_hours",
+      "rdf:predicate" : "https://schema.org/dayOfWeek",
+      "rdf:object" : {
+        "@id" : "https://schema.org/Monday",
+        "@type" : null,
+        "@value" : null
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language_hours",
+      "rdf:predicate" : "https://schema.org/dayOfWeek",
+      "rdf:object" : {
+        "@id" : "https://schema.org/Friday",
+        "@type" : null,
+        "@value" : null
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informLabourModule",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformModule",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:course_labourCourse",
+      "rdf:predicate" : "welcome:hasCourseName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Labour Market and Employment"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_labour",
+      "rdf:predicate" : "welcome:moduleName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Labour market knowledge"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_labour",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "B"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:course_labourCourse",
+      "rdf:predicate" : "welcome:hasNumberHours",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : "w3c:integer",
+        "@value" : "15"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informLabourModuleAddress",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformModuleAddress",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:poi_2",
+      "rdf:predicate" : "daml:name",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "City Council Building"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_labour",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "B"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informLabourModuleHours",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformModuleHours",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_labour",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "B"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_labour_hours",
+      "rdf:predicate" : "https://schema.org/opens",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "19:00"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_labour_hours",
+      "rdf:predicate" : "https://schema.org/closes",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "21:00"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_labour_hours",
+      "rdf:predicate" : "https://schema.org/dayOfWeek",
+      "rdf:object" : {
+        "@id" : "https://schema.org/Wednesday",
+        "@type" : null,
+        "@value" : null
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informSocietyModule",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformModule",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_society",
+      "rdf:predicate" : "welcome:moduleName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Catalan Society"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_society",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "C"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informSocietyModuleAddress",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformModuleAddress",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:poi_3",
+      "rdf:predicate" : "daml:name",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "City Council Building"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_society",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "C"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informSocietyModuleHours",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformModuleHours",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_society_hours",
+      "rdf:predicate" : "https://schema.org/dayOfWeek",
+      "rdf:object" : {
+        "@id" : "https://schema.org/Wednesday",
+        "@type" : null,
+        "@value" : null
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_society_hours",
+      "rdf:predicate" : "https://schema.org/closes",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "21:00"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_society_hours",
+      "rdf:predicate" : "https://schema.org/opens",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "19:00"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_society",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "C"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informDetailsTime",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformDetailsCompletionTime",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module",
+      "rdf:predicate" : "welcome:duration",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "2 years"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informDetailsCompletion",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformDetailsCompletion",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module",
+      "rdf:predicate" : "welcome:percentage",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "75%"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informDetailsLanguage",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformDetailsLanguage",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module",
+      "rdf:predicate" : "welcome:requiresLanguage",
+      "rdf:object" : {
+        "@id" : "welcome:Catalan",
+        "@type" : null,
+        "@value" : null
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module",
+      "rdf:predicate" : "welcome:requiresLanguage",
+      "rdf:object" : {
+        "@id" : "welcome:Spanish",
+        "@type" : null,
+        "@value" : null
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informDetailsValue",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TInformDetailsValue",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainInterestRegistration",
+    "@type" : null,
+    "welcome:hasTemplateId" : "TObtainInterestAction",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

@@ -1,0 +1,73 @@
+@prefix schema: <https://schema.org/> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix welcomeService: <http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#> .
+@prefix geovocab: <http://geovocab.org/spatial#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:SimulationIntroduction a :DIP;
+  :hasSlot :informAuthority, :informPersonName, :obtainMatterConcern;
+  :DIPId "1625646085962";
+  :hasDIPStatus :Unknown .
+
+:informAuthority a :SystemInfo;
+  :hasInputRDFContents _:node5128, _:node5129, _:node5130;
+  :hasOntologyType :Template;
+  :hasStatus :Pending;
+  :confidenceScore 0;
+  :hasNumberAttempts 0;
+  :isOptional "no" .
+
+:informPersonName a :SystemInfo;
+  :hasInputRDFContents _:node5131;
+  :hasOntologyType :Template;
+  :hasStatus :Pending;
+  :confidenceScore 0;
+  :hasNumberAttempts 0;
+  :isOptional "no" .
+
+:obtainMatterConcern a :SystemDemand;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :AppointmentConcern;
+  :hasStatus :Completed;
+  :confidenceScore 1;
+  :hasNumberAttempts 0;
+  :isOptional "no";
+  :hasTCNAnswer _:node5127 .
+
+_:node5127 a rdf:Statement;
+  rdf:subject _:node1fa0037okx1;
+  rdf:predicate :hasValue;
+  rdf:object "False" .
+
+_:node5128 a rdf:Statement;
+  rdf:subject :Hamm;
+  rdf:predicate :hasValue;
+  rdf:object "Hamm" .
+
+_:node5129 a rdf:Statement;
+  rdf:subject :SimulationAgent;
+  rdf:predicate :hasName;
+  rdf:object "Mr. Muller" .
+
+_:node5130 a rdf:Statement;
+  rdf:subject :jobcenter;
+  rdf:predicate :hasName;
+  rdf:object "Job Center" .
+
+_:node5131 a rdf:Statement;
+  rdf:subject :SimulationAgent;
+  rdf:predicate :hasName;
+  rdf:object "Mr. Muller" .

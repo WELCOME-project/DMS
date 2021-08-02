@@ -1,0 +1,27 @@
+{
+  "@id" : "welcome:NormalClosing",
+  "@type" : null,
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:informEnd",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : "TInformEnd",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:obtainConfirmation",
+    "@type" : "welcome:ConfirmationRequest",
+    "welcome:hasTemplateId" : "TObtainConfirmation",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

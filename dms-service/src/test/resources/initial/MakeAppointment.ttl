@@ -1,0 +1,90 @@
+@prefix schema: <https://schema.org/> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix welcomeService: <http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#> .
+@prefix geovocab: <http://geovocab.org/spatial#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:reactiveFlag a :SystemDemand;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :AppointmentConcern;
+  :hasStatus :Completed;
+  :confidenceScore 1;
+  :hasNumberAttempts 0;
+  :isOptional "no";
+  :hasTCNAnswer _:node5194 .
+
+:MakeAppointment a :DIP;
+  :hasSlot :reactiveFlag, :proposeTimeSlot, :confirmTimeSlot, :informMatterConcern,
+    :obtainMatterConcernStatus, :informNeedAppointment;
+  :DIPId "1625651491781";
+  :hasDIPStatus :Unknown .
+
+:proposeTimeSlot a :SystemInfo;
+  :hasInputRDFContents _:node5190;
+  :hasOntologyType :Template;
+  :hasStatus :Pending;
+  :confidenceScore 1;
+  :hasNumberAttempts 0;
+  :isOptional "no" .
+
+:confirmTimeSlot a :SystemDemand;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :Boolean;
+  :hasStatus :Completed;
+  :confidenceScore 1;
+  :hasNumberAttempts 1;
+  :isOptional "no";
+  :hasTCNAnswer _:node5192 .
+
+:informMatterConcern a :SystemInfo;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :Template;
+  :hasStatus :Pending;
+  :confidenceScore 0;
+  :hasNumberAttempts 0;
+  :isOptional "no" .
+
+:obtainMatterConcernStatus a :SystemDemand;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :MatterConcernStatus;
+  :hasStatus :Pending;
+  :confidenceScore 0;
+  :hasNumberAttempts 0;
+  :isOptional "no";
+  :hasTCNAnswer :Unknown .
+
+:informNeedAppointment a :SystemInfo;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :Template;
+  :hasStatus :Pending;
+  :confidenceScore 0;
+  :hasNumberAttempts 0;
+  :isOptional "no" .
+
+_:node5190 a rdf:Statement;
+  rdf:subject :sa_4;
+  rdf:predicate schema:startTime;
+  rdf:object "16:00" .
+
+_:node5192 a rdf:Statement;
+  rdf:subject _:node5193;
+  rdf:predicate :hasValue;
+  rdf:object "Yes" .
+
+_:node5194 a rdf:Statement;
+  rdf:subject _:node1fa047ptvx1;
+  rdf:predicate :hasValue;
+  rdf:object "False" .
