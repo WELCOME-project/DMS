@@ -58,20 +58,20 @@
       "welcome:hasInputRDFContents" : [ {
         "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:AgentNGO",
-        "rdf:predicate" : "welcome:contactPurpose",
-        "rdf:object" : {
-          "@id" : null,
-          "@type" : null,
-          "@value" : "schedule an appointment with a professional"
-        }
-      }, {
-        "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:AgentNGO",
         "rdf:predicate" : "welcome:agentName",
         "rdf:object" : {
           "@id" : null,
           "@type" : null,
           "@value" : "PRAKSIS NGO"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:AgentNGO",
+        "rdf:predicate" : "welcome:contactPurpose",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "schedule an appointment with a professional"
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",

@@ -67,24 +67,6 @@
       }, {
         "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:module_language_hours",
-        "rdf:predicate" : "schema:closes",
-        "rdf:object" : {
-          "@id" : null,
-          "@type" : null,
-          "@value" : "21:00"
-        }
-      }, {
-        "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:module_language_hours",
-        "rdf:predicate" : "schema:opens",
-        "rdf:object" : {
-          "@id" : null,
-          "@type" : null,
-          "@value" : "19:00"
-        }
-      }, {
-        "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:module_language_hours",
         "rdf:predicate" : "schema:dayOfWeek",
         "rdf:object" : {
           "@id" : "schema:Fridays",
@@ -99,6 +81,24 @@
           "@id" : "schema:Mondays",
           "@type" : null,
           "@value" : null
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:module_language_hours",
+        "rdf:predicate" : "schema:closes",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "21:00"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:module_language_hours",
+        "rdf:predicate" : "schema:opens",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "19:00"
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",

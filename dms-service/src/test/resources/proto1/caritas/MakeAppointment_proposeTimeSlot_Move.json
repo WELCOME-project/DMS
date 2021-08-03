@@ -58,20 +58,20 @@
       "welcome:hasInputRDFContents" : [ {
         "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:sa_1",
-        "rdf:predicate" : "schema:scheduledTime",
-        "rdf:object" : {
-          "@id" : null,
-          "@type" : null,
-          "@value" : "Mondays"
-        }
-      }, {
-        "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:sa_1",
         "rdf:predicate" : "schema:startTime",
         "rdf:object" : {
           "@id" : null,
           "@type" : null,
           "@value" : "10:00"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:sa_1",
+        "rdf:predicate" : "schema:scheduledTime",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Mondays"
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",

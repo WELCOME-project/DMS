@@ -1,6 +1,6 @@
 package edu.upf.taln.welcome.dms.commons.input;
 
-import java.util.Set;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,7 +24,7 @@ public class Slot {
     public String ontology;
 
     @JsonProperty("welcome:hasInputRDFContents")
-    public Set<RDFContent> rdf;
+    public List<RDFContent> rdf;
 
     //public enum Status {Pending, Completed, FailedAnalysis, UnclearAnalysis, TCNClarifyRequest, TCNElaborateRequest, TopicSwitch}
     @JsonProperty("welcome:hasStatus")

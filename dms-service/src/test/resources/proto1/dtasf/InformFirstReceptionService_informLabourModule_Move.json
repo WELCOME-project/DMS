@@ -76,20 +76,20 @@
       }, {
         "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:module_labour",
-        "rdf:predicate" : "welcome:moduleName",
-        "rdf:object" : {
-          "@id" : null,
-          "@type" : null,
-          "@value" : "Labour market knowledge"
-        }
-      }, {
-        "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:module_labour",
         "rdf:predicate" : "welcome:moduleLabel",
         "rdf:object" : {
           "@id" : null,
           "@type" : null,
           "@value" : "B"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:module_labour",
+        "rdf:predicate" : "welcome:moduleName",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Labour market knowledge"
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",

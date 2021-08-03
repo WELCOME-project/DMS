@@ -57,21 +57,21 @@
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
       "welcome:hasInputRDFContents" : [ {
         "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:module_language",
-        "rdf:predicate" : "welcome:moduleLabel",
-        "rdf:object" : {
-          "@id" : null,
-          "@type" : null,
-          "@value" : "A"
-        }
-      }, {
-        "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:course_catalanLanguage",
         "rdf:predicate" : "welcome:hasCourseName",
         "rdf:object" : {
           "@id" : null,
           "@type" : null,
           "@value" : "Catalan"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:course_catalanLanguage",
+        "rdf:predicate" : "welcome:hasNumberHours",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : "w3c:integer",
+          "@value" : "90"
         }
       }, {
         "@type" : "rdf:Statement",
@@ -93,12 +93,12 @@
         }
       }, {
         "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:course_catalanLanguage",
-        "rdf:predicate" : "welcome:hasNumberHours",
+        "rdf:subject" : "welcome:module_language",
+        "rdf:predicate" : "welcome:moduleLabel",
         "rdf:object" : {
           "@id" : null,
-          "@type" : "w3c:integer",
-          "@value" : "90"
+          "@type" : null,
+          "@value" : "A"
         }
       }, {
         "@type" : "rdf:Statement",

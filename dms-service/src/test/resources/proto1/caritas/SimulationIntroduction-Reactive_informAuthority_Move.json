@@ -57,12 +57,12 @@
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
       "welcome:hasInputRDFContents" : [ {
         "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:jobcenter",
-        "rdf:predicate" : "welcome:hasName",
+        "rdf:subject" : "welcome:Hamm",
+        "rdf:predicate" : "welcome:hasValue",
         "rdf:object" : {
           "@id" : null,
           "@type" : null,
-          "@value" : "Job Center"
+          "@value" : "Hamm"
         }
       }, {
         "@type" : "rdf:Statement",
@@ -84,12 +84,12 @@
         }
       }, {
         "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:Hamm",
-        "rdf:predicate" : "welcome:hasValue",
+        "rdf:subject" : "welcome:jobcenter",
+        "rdf:predicate" : "welcome:hasName",
         "rdf:object" : {
           "@id" : null,
           "@type" : null,
-          "@value" : "Hamm"
+          "@value" : "Job Center"
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",

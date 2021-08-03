@@ -1465,7 +1465,7 @@ public class DMSService {
 									schema = @Schema(implementation = DialogueMove.class),
 									examples = {
 											@ExampleObject(name = "Example using Opening DIP", value = OPENING_DIP_OUTPUT),
-											@ExampleObject(name = "Example using Obtain Registration Status DIP", value = FILL_PERSONAL_INFO_DIP_OUTPUT),
+											@ExampleObject(name = "Example using Fill Personal Info DIP", value = FILL_PERSONAL_INFO_DIP_OUTPUT),
 											@ExampleObject(name = "Example using Propose First Reception Service DIP", value = PROPOSE_SERVICE_DIP_OUTPUT)
 									}
 							))

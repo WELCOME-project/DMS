@@ -57,15 +57,6 @@
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
       "welcome:hasInputRDFContents" : [ {
         "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:module_society_hours",
-        "rdf:predicate" : "schema:dayOfWeek",
-        "rdf:object" : {
-          "@id" : "schema:Wednesdays",
-          "@type" : null,
-          "@value" : null
-        }
-      }, {
-        "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:module_society",
         "rdf:predicate" : "welcome:moduleLabel",
         "rdf:object" : {
@@ -76,11 +67,11 @@
       }, {
         "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:module_society_hours",
-        "rdf:predicate" : "schema:opens",
+        "rdf:predicate" : "schema:dayOfWeek",
         "rdf:object" : {
-          "@id" : null,
+          "@id" : "schema:Wednesdays",
           "@type" : null,
-          "@value" : "19:00"
+          "@value" : null
         }
       }, {
         "@type" : "rdf:Statement",
@@ -90,6 +81,15 @@
           "@id" : null,
           "@type" : null,
           "@value" : "21:00"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:module_society_hours",
+        "rdf:predicate" : "schema:opens",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "19:00"
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",

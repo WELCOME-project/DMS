@@ -57,21 +57,21 @@
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
       "welcome:hasInputRDFContents" : [ {
         "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:AppName",
-        "rdf:predicate" : "welcome:hasValue",
-        "rdf:object" : {
-          "@id" : null,
-          "@type" : null,
-          "@value" : "Skype"
-        }
-      }, {
-        "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:skype_informEnglish",
         "rdf:predicate" : "welcome:hasSkypeId",
         "rdf:object" : {
           "@id" : null,
           "@type" : null,
           "@value" : "asylum.service"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:AppName",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Skype"
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",
