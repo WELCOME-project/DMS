@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Yes_No_Question",
     "welcome:hasSlot" : {
       "@id" : "pps:obtainFirstApplication",
-      "@type" : null,
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
       "welcome:hasTemplateId" : "TObtainAsylumClaim",
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstTimeAsylumApplicant",
       "welcome:hasInputRDFContents" : [ {

@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Wh_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainRegistrationYear",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainRegistrationYear",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

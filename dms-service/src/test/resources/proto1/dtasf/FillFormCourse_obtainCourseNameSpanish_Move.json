@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Wh_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainCourseNameSpanish",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainCourseName",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

@@ -1413,7 +1413,7 @@ public class DMSService {
 		try {
     		manager = new DialogueManager(new DeterministicPolicy());
             
-            contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed_alt.jsonld");
+            contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
             if (contextFile == null) {
                 throw new WelcomeException("JSONLD context file not found!");
             }
@@ -1495,7 +1495,6 @@ public class DMSService {
 	
 	protected JsonNode realizeNextTurn(Frame dip) throws WelcomeException {
 		DialogueMove move = manager.map(dip);
-		logger.log(Level.INFO, "edu.upf.taln.welcome.nlg.commons.output.moves {0}", move.toString());
 
         ObjectMapper mapper = new ObjectMapper();
         JsonNode result = mapper.valueToTree(move);

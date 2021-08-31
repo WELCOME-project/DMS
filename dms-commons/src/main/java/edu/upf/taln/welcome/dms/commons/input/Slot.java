@@ -14,7 +14,7 @@ public class Slot {
     @JsonProperty("@id")
     public String id;
 
-    @JsonProperty("@type")
+    @JsonProperty("rdf:type")
     public String type;
 
     @JsonProperty("welcome:hasTemplateId")

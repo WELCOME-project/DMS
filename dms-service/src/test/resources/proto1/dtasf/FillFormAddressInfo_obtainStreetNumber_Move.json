@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Wh_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainStreetNumber",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainStreetNumber",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

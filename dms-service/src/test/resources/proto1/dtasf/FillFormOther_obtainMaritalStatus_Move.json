@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Wh_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainMaritalStatus",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainMaritalStatus",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

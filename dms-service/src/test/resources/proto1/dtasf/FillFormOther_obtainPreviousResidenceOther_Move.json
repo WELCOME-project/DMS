@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Declarative_Yes_No_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainPreviousResidenceOther",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainPreviousResidenceOther",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

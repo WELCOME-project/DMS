@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Declarative_Yes_No_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainAsylumClaim",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainAsylumClaim",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

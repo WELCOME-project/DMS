@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Yes_No_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainCertificateSpanish",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainCertificate",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

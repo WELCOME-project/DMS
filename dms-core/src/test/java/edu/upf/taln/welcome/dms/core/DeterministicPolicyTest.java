@@ -26,15 +26,18 @@ public class DeterministicPolicyTest {
     public void testProto1Opening() throws IOException, WelcomeException {
         
         ObjectMapper mapper = new ObjectMapper();
-        Frame frame = mapper.readValue(new File("src/test/resources/proto1/Opening_Frame.json"), Frame.class);
+        Frame frame = mapper.readValue(new File("src/test/resources/proto1/DTASF_Opening_Framed.json"), Frame.class);
+        //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(frame));
         
         DeterministicPolicy instance = new DeterministicPolicy();
         DialogueMove move = instance.map(frame);
 
-        File expectedFile = new File("src/test/resources/proto1/Opening_Move.json");
+        File expectedFile = new File("src/test/resources/proto1/DTASF_Opening_Move.json");
         //mapper.writerWithDefaultPrettyPrinter().writeValue(expectedFile, move);
         
         String result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(move);
+        //System.out.println(result);
+        
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");
         assertEquals(expResult, result);
     }

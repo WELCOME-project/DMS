@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Open_Question",
     "welcome:hasSlot" : {
       "@id" : "welcome:obtainRequest",
-      "@type" : null,
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
       "welcome:hasTemplateId" : "TObtainMatterConcern",
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest",
       "welcome:hasInputRDFContents" : [ {

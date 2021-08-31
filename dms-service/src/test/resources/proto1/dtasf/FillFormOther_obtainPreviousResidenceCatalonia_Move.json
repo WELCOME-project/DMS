@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Declarative_Yes_No_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainPreviousResidenceCatalonia",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainPreviousResidenceRegion",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

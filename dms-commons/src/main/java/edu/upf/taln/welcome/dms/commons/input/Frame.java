@@ -16,7 +16,7 @@ public class Frame {
     @JsonProperty("@id")
     public String id;
 
-    @JsonProperty("@type")
+    @JsonProperty("rdf:type")
     public String type;
 
     @JsonProperty("welcome:hasSlot")

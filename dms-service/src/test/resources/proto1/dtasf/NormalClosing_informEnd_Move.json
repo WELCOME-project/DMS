@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Statement_non_opinion",
     "welcome:hasSlot" : {
       "@id" : "welcome:informEnd",
-      "@type" : "welcome:SystemInfo",
+      "rdf:type" : null,
       "welcome:hasTemplateId" : "TInformEnd",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

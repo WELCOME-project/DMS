@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Statement_non_opinion",
     "welcome:hasSlot" : {
       "@id" : "frs:informTraining",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemInfo",
       "welcome:hasTemplateId" : "TInformTraining",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

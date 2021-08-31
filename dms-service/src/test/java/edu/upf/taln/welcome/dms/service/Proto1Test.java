@@ -34,7 +34,7 @@ public class Proto1Test {
         File inputFile = new File(jsonldPath);
         File expectedFile = new File(expectedPath);
         
-        URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed_alt.jsonld");
+        URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
         
         ObjectMapper mapper = new ObjectMapper();
         JsonNode input = mapper.readTree(inputFile);

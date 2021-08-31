@@ -52,7 +52,7 @@
     "welcome:hasLabel" : "Yes_No_Question",
     "welcome:hasSlot" : {
       "@id" : "frs:obtainCoursesSociety",
-      "@type" : null,
+      "rdf:type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TObtainCoursesSociety",
       "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {

@@ -20,6 +20,7 @@ import org.apache.commons.io.filefilter.FileFileFilter;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -44,42 +45,43 @@ import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
 public class DMSServiceTest {
 
 	private final Logger logger = Logger.getLogger(DMSServiceTest.class.getName());
+
+	        
+	private final ObjectWriter writer = new ObjectMapper()
+            .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
+            .writerWithDefaultPrettyPrinter();
+
     /**
-     * Base test to check outputs
+     * Base function to test all slots of a jsonld.
+     * 
+     * @param inputFile
+     * @throws Exception 
      */
     public void testSample(File inputFile) throws Exception {
     	
+        boolean overrideExpected = false;
+        String baseName = FilenameUtils.getBaseName(inputFile.getName());
+        
     	Map<String, Frame> frames = generateAllPossiblePendingSlots(inputFile);
         
     	for (String slotId : frames.keySet()) {
     		logger.log(Level.INFO, "Test file:{0}\tSlot: {1}", new Object[]{inputFile.getName(), slotId});
     		
     		Frame frame = frames.get(slotId);
-
-	        ObjectMapper mapper = new ObjectMapper();
 	        
 	        DMSService instance = new DMSService();
 	        JsonNode output = instance.realizeNextTurn(frame);
 	        
-	        ObjectWriter writer = mapper
-	                .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
-	                .writerWithDefaultPrettyPrinter();
-	        
-	        String expResult = null;
-	        String[] nameParts = inputFile.getName().split("\\.");
-    		if (nameParts.length == 2) {
-    			File expectedFile = new File(inputFile.getParent() + "/" + nameParts[0] + "_" + slotId + "_Move.json");
-    			if (!expectedFile.exists()) {
-    				writer.writeValue(expectedFile, output);        
-    			}
-    			expResult = FileUtils.readFileToString(expectedFile, "utf-8");
-    	        
-    		}
-    		
+            File expectedFile = new File(inputFile.getParent(), baseName + "_" + slotId + "_Move.json");
+            if (!expectedFile.exists() || overrideExpected) {
+                writer.writeValue(expectedFile, output);        
+            }
+            
+            String expected = FileUtils.readFileToString(expectedFile, "utf-8");    		
     		String result = writer.writeValueAsString(output);
     		//System.out.println(result);
     		
-    		assertEquals(expResult, result);
+    		assertEquals(expected, result);
     	}
     }
     
@@ -96,18 +98,16 @@ public class DMSServiceTest {
     
     public Map<String, Frame> generateAllPossiblePendingSlots(File inputFile) throws WelcomeException, JsonGenerationException, JsonMappingException, IOException {
     	
-    	ObjectMapper mapper = new ObjectMapper();
+        String baseName = FilenameUtils.getBaseName(inputFile.getName());
+
+        ObjectMapper mapper = new ObjectMapper();
     	JsonNode input = mapper.readValue(inputFile, JsonNode.class);
     	
-    	URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed_alt.jsonld");
+    	URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
     	Frame frame = JsonLDUtils.readFrame(input, contextFile);
     	List<Slot> slots = frame.slots;
-    	
-    	/*ObjectWriter writer = mapper
-                //.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
-                .writerWithDefaultPrettyPrinter();*/
-    	
-    	Map<String, Frame> frames = new LinkedHashMap<>();
+
+        Map<String, Frame> frames = new LinkedHashMap<>();
     	for (int i = 0; i < slots.size(); i++) {
     		for (int j = 0; j < slots.size(); j++) {
 	    		Slot slot = slots.get(j);
@@ -126,40 +126,13 @@ public class DMSServiceTest {
     		Frame newFrame = mapper.readValue(strFrame, Frame.class);
     		frames.put(slotId, newFrame);
 
-    		/*String[] nameParts = inputFile.getName().split("\\.");
-    		if (nameParts.length == 2) {
-    			File newOutputFile = new File(inputFile.getParent() + "/" + nameParts[0] + "_" + slotId + "_Frame.json");
-    			writer.writeValue(newOutputFile, frame);
-    		}*/
-    	}
+//			File newOutputFile = new File(inputFile.getParent(), baseName + "_" + slotId + "_Frame.json");
+// 			writer.writeValue(newOutputFile, frame);
+
+        }
     	
     	return frames;
     }
-
-    /*@Test
-    public void testSampleInitialExtrapolateTurn() throws Exception {
-        String baseDir = "src/test/resources/initial/";
-        {
-            File inputFile = new File(baseDir, "OpeningDIP_input.jsonld");
-            File expectedFile = new File(baseDir, "OpeningDIP_output.jsonld");
-            testSample(inputFile, expectedFile);
-        }
-        {
-            File inputFile = new File(baseDir, "ObtainRegistrationStatus_input.jsonld");
-            File expectedFile = new File(baseDir, "ObtainRegistrationStatus_output.jsonld");
-            testSample(inputFile, expectedFile);
-        }
-        {
-            File inputFile = new File(baseDir, "ProposeService_input.jsonld");
-            File expectedFile = new File(baseDir, "ProposeService_output.jsonld");
-            testSample(inputFile, expectedFile);
-        }
-//        {
-//            File inputFile = new File(baseDir, "InformFirstReception_input.jsonld");
-//            File expectedFile = new File(baseDir, "InformFirstReception_output.jsonld");
-//            testSample(inputFile, expectedFile);
-//        }
-    }*/
     
     private void applyTestOnDirectory(String baseDir) throws Exception {
         DialogueMove.resetCounter();
