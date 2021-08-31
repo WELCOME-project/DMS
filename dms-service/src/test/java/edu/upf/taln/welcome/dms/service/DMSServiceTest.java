@@ -10,9 +10,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.FilenameFilter;
+import java.util.Arrays;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.Test;
+
+import org.apache.commons.io.filefilter.AndFileFilter;
+import org.apache.commons.io.filefilter.FileFileFilter;
+import org.apache.commons.io.filefilter.IOFileFilter;
+import org.apache.commons.io.filefilter.SuffixFileFilter;
+import org.apache.commons.io.FileUtils;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -25,6 +32,8 @@ import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.input.Slot;
 import edu.upf.taln.welcome.dms.commons.input.Status;
+import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
+import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
 
 
@@ -152,42 +161,39 @@ public class DMSServiceTest {
 //        }
     }*/
     
+    private void applyTestOnDirectory(String baseDir) throws Exception {
+        DialogueMove.resetCounter();
+        SpeechAct.resetCounter();
+        
+        File folder = new File(baseDir);
+        
+        IOFileFilter filterFile = FileFileFilter.FILE;
+        SuffixFileFilter filterSuffix = new SuffixFileFilter(".jsonld");
+        FilenameFilter filter = new AndFileFilter(filterFile, filterSuffix);
+
+        File[] fileList = folder.listFiles(filter);
+        Arrays.sort(fileList);
+
+        for (final File fileEntry : fileList) {
+            testSample(fileEntry);
+        }
+    }
+    
     @Test
     public void testDtasfPrototype1() throws Exception {
         String baseDir = "src/test/resources/proto1/dtasf/";
-        
-        File folder = new File(baseDir);
-        for (final File fileEntry : folder.listFiles()) {
-            if (!fileEntry.isDirectory() && fileEntry.getName().endsWith(".jsonld")) {
-            	testSample(fileEntry);
-            }
-        }
+        applyTestOnDirectory(baseDir);
     }
     
     @Test
     public void testPraksisPrototype1() throws Exception {
         String baseDir = "src/test/resources/proto1/praksis/";
-        
-        File folder = new File(baseDir);
-        for (final File fileEntry : folder.listFiles()) {
-            if (!fileEntry.isDirectory() && fileEntry.getName().endsWith(".jsonld")) {
-            	testSample(fileEntry);
-            }
-        }
+        applyTestOnDirectory(baseDir);
     }
     
     @Test
     public void testCaritasPrototype1() throws Exception {
         String baseDir = "src/test/resources/proto1/caritas/";
-        
-        File folder = new File(baseDir);
-        for (final File fileEntry : folder.listFiles()) {
-            if (!fileEntry.isDirectory() && fileEntry.getName().endsWith(".jsonld")) {
-            	testSample(fileEntry);
-            }
-        }
+        applyTestOnDirectory(baseDir);
     }
-    
-    
-
 }

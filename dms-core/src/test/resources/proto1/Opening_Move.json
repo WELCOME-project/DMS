@@ -9,6 +9,7 @@
       "@id" : "welcome:confirmCommunication",
       "@type" : "welcome:SystemDemand",
       "welcome:hasTemplateId" : "TConfirmCommunication",
+      "welcome:hasOntologyType" : null,
       "welcome:hasInputRDFContents" : [ {
         "@id" : "welcome:Unknown"
       } ],

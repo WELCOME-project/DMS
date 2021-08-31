@@ -25,6 +25,10 @@ public class DialogueMove {
 
     @JsonIgnore
     private static int counter = 0;
+    
+    public static void resetCounter() {
+        counter = 0;
+    }
 
     public DialogueMove() { }
     public DialogueMove(List<SpeechAct> speechActs)

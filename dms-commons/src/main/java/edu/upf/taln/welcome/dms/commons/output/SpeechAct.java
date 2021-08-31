@@ -23,6 +23,10 @@ public class SpeechAct {
 
     @JsonIgnore
     private static int counter = 0;
+    
+    public static void resetCounter() {
+        counter = 0;
+    }
 
     public SpeechAct() { }
     public SpeechAct(SpeechActLabel label, Slot slot)
