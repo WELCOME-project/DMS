@@ -1,10 +1,11 @@
 {
   "@id" : "frs:InformFirstReceptionService",
-  "@type" : null,
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
   "welcome:hasSlot" : [ {
     "@id" : "frs:informOverview",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformOverview",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -14,20 +15,21 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:informLanguageModule",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformLanguageModule",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
-      "rdf:subject" : "welcome:module_language",
-      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:subject" : "welcome:course_catalanLanguage",
+      "rdf:predicate" : "welcome:hasCourseName",
       "rdf:object" : {
         "@id" : null,
         "@type" : null,
-        "@value" : "A"
+        "@value" : "Catalan"
       }
     }, {
       "@type" : "rdf:Statement",
-      "rdf:subject" : "welcome:course_spanishLanguage",
+      "rdf:subject" : "welcome:course_catalanLanguage",
       "rdf:predicate" : "welcome:hasNumberHours",
       "rdf:object" : {
         "@id" : null,
@@ -45,6 +47,24 @@
       }
     }, {
       "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:course_spanishLanguage",
+      "rdf:predicate" : "welcome:hasNumberHours",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : "w3c:integer",
+        "@value" : "90"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "A"
+      }
+    }, {
+      "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_language",
       "rdf:predicate" : "welcome:moduleName",
       "rdf:object" : {
@@ -59,8 +79,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informLanguageModuleAddress",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformModuleAddress",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_language",
@@ -86,8 +107,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informLanguageModuleHours",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformModuleHours",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_language",
@@ -100,20 +122,38 @@
     }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_language_hours",
-      "rdf:predicate" : "https://schema.org/dayOfWeek",
+      "rdf:predicate" : "schema:dayOfWeek",
       "rdf:object" : {
-        "@id" : "https://schema.org/Monday",
+        "@id" : "schema:Fridays",
         "@type" : null,
         "@value" : null
       }
     }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_language_hours",
-      "rdf:predicate" : "https://schema.org/dayOfWeek",
+      "rdf:predicate" : "schema:dayOfWeek",
       "rdf:object" : {
-        "@id" : "https://schema.org/Friday",
+        "@id" : "schema:Mondays",
         "@type" : null,
         "@value" : null
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language_hours",
+      "rdf:predicate" : "schema:closes",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "21:00"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_language_hours",
+      "rdf:predicate" : "schema:opens",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "19:00"
       }
     } ],
     "welcome:hasStatus" : "welcome:Pending",
@@ -122,8 +162,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informLabourModule",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformModule",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:course_labourCourse",
@@ -135,12 +176,12 @@
       }
     }, {
       "@type" : "rdf:Statement",
-      "rdf:subject" : "welcome:module_labour",
-      "rdf:predicate" : "welcome:moduleName",
+      "rdf:subject" : "welcome:course_labourCourse",
+      "rdf:predicate" : "welcome:hasNumberHours",
       "rdf:object" : {
         "@id" : null,
-        "@type" : null,
-        "@value" : "Labour market knowledge"
+        "@type" : "w3c:integer",
+        "@value" : "15"
       }
     }, {
       "@type" : "rdf:Statement",
@@ -153,12 +194,12 @@
       }
     }, {
       "@type" : "rdf:Statement",
-      "rdf:subject" : "welcome:course_labourCourse",
-      "rdf:predicate" : "welcome:hasNumberHours",
+      "rdf:subject" : "welcome:module_labour",
+      "rdf:predicate" : "welcome:moduleName",
       "rdf:object" : {
         "@id" : null,
-        "@type" : "w3c:integer",
-        "@value" : "15"
+        "@type" : null,
+        "@value" : "Labour market knowledge"
       }
     } ],
     "welcome:hasStatus" : "welcome:Pending",
@@ -167,9 +208,19 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informLabourModuleAddress",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformModuleAddress",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_labour",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "B"
+      }
+    }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:poi_2",
       "rdf:predicate" : "daml:name",
@@ -178,15 +229,6 @@
         "@type" : null,
         "@value" : "City Council Building"
       }
-    }, {
-      "@type" : "rdf:Statement",
-      "rdf:subject" : "welcome:module_labour",
-      "rdf:predicate" : "welcome:moduleLabel",
-      "rdf:object" : {
-        "@id" : null,
-        "@type" : null,
-        "@value" : "B"
-      }
     } ],
     "welcome:hasStatus" : "welcome:Pending",
     "welcome:hasNumberAttemps" : 0,
@@ -194,8 +236,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informLabourModuleHours",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformModuleHours",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_labour",
@@ -208,16 +251,16 @@
     }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_labour_hours",
-      "rdf:predicate" : "https://schema.org/opens",
+      "rdf:predicate" : "schema:dayOfWeek",
       "rdf:object" : {
-        "@id" : null,
+        "@id" : "schema:Wednesdays",
         "@type" : null,
-        "@value" : "19:00"
+        "@value" : null
       }
     }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_labour_hours",
-      "rdf:predicate" : "https://schema.org/closes",
+      "rdf:predicate" : "schema:closes",
       "rdf:object" : {
         "@id" : null,
         "@type" : null,
@@ -226,11 +269,11 @@
     }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_labour_hours",
-      "rdf:predicate" : "https://schema.org/dayOfWeek",
+      "rdf:predicate" : "schema:opens",
       "rdf:object" : {
-        "@id" : "https://schema.org/Wednesday",
+        "@id" : null,
         "@type" : null,
-        "@value" : null
+        "@value" : "19:00"
       }
     } ],
     "welcome:hasStatus" : "welcome:Pending",
@@ -239,9 +282,19 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informSocietyModule",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformModule",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:module_society",
+      "rdf:predicate" : "welcome:moduleLabel",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "C"
+      }
+    }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_society",
       "rdf:predicate" : "welcome:moduleName",
@@ -250,7 +303,17 @@
         "@type" : null,
         "@value" : "Catalan Society"
       }
-    }, {
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informSocietyModuleAddress",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+    "welcome:hasTemplateId" : "TInformModuleAddress",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+    "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_society",
       "rdf:predicate" : "welcome:moduleLabel",
@@ -259,16 +322,7 @@
         "@type" : null,
         "@value" : "C"
       }
-    } ],
-    "welcome:hasStatus" : "welcome:Pending",
-    "welcome:hasNumberAttemps" : 0,
-    "welcome:confidenceScore" : 0.0,
-    "welcome:isOptional" : true
-  }, {
-    "@id" : "frs:informSocietyModuleAddress",
-    "@type" : null,
-    "welcome:hasTemplateId" : "TInformModuleAddress",
-    "welcome:hasInputRDFContents" : [ {
+    }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:poi_3",
       "rdf:predicate" : "daml:name",
@@ -277,7 +331,17 @@
         "@type" : null,
         "@value" : "City Council Building"
       }
-    }, {
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttemps" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:informSocietyModuleHours",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+    "welcome:hasTemplateId" : "TInformModuleHours",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+    "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_society",
       "rdf:predicate" : "welcome:moduleLabel",
@@ -286,28 +350,19 @@
         "@type" : null,
         "@value" : "C"
       }
-    } ],
-    "welcome:hasStatus" : "welcome:Pending",
-    "welcome:hasNumberAttemps" : 0,
-    "welcome:confidenceScore" : 0.0,
-    "welcome:isOptional" : true
-  }, {
-    "@id" : "frs:informSocietyModuleHours",
-    "@type" : null,
-    "welcome:hasTemplateId" : "TInformModuleHours",
-    "welcome:hasInputRDFContents" : [ {
+    }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_society_hours",
-      "rdf:predicate" : "https://schema.org/dayOfWeek",
+      "rdf:predicate" : "schema:dayOfWeek",
       "rdf:object" : {
-        "@id" : "https://schema.org/Wednesday",
+        "@id" : "schema:Wednesdays",
         "@type" : null,
         "@value" : null
       }
     }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_society_hours",
-      "rdf:predicate" : "https://schema.org/closes",
+      "rdf:predicate" : "schema:closes",
       "rdf:object" : {
         "@id" : null,
         "@type" : null,
@@ -316,20 +371,11 @@
     }, {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module_society_hours",
-      "rdf:predicate" : "https://schema.org/opens",
+      "rdf:predicate" : "schema:opens",
       "rdf:object" : {
         "@id" : null,
         "@type" : null,
         "@value" : "19:00"
-      }
-    }, {
-      "@type" : "rdf:Statement",
-      "rdf:subject" : "welcome:module_society",
-      "rdf:predicate" : "welcome:moduleLabel",
-      "rdf:object" : {
-        "@id" : null,
-        "@type" : null,
-        "@value" : "C"
       }
     } ],
     "welcome:hasStatus" : "welcome:Pending",
@@ -338,8 +384,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informDetailsTime",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformDetailsCompletionTime",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module",
@@ -356,8 +403,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informDetailsCompletion",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformDetailsCompletion",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module",
@@ -374,8 +422,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informDetailsLanguage",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformDetailsLanguage",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:module",
@@ -401,8 +450,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:informDetailsValue",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformDetailsValue",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -412,8 +462,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainInterestRegistration",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainInterestAction",
+    "welcome:hasOntologyType" : "http://www.w3.org/2001/XMLSchema#boolean",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],

@@ -1,27 +1,46 @@
 package edu.upf.taln.welcome.dms.service;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.File;
-import java.io.InputStreamReader;
-import java.io.StringReader;
+import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.io.FilenameFilter;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
-import javax.json.JsonObject;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
+import org.apache.commons.io.filefilter.AndFileFilter;
+import org.apache.commons.io.filefilter.FileFileFilter;
+import org.apache.commons.io.filefilter.IOFileFilter;
+import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.apache.commons.io.FileUtils;
-import org.junit.Test;
+import org.apache.commons.io.FilenameUtils;
 
-import com.apicatalog.jsonld.JsonLd;
-import com.apicatalog.jsonld.api.JsonLdError;
-import com.apicatalog.jsonld.document.Document;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
+import edu.upf.taln.welcome.dms.commons.input.Slot;
+import edu.upf.taln.welcome.dms.commons.input.Status;
+import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
+import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+
 
 /**
  *
@@ -29,160 +48,196 @@ import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
  */
 public class Proto1Test {
 
-    public void readFrame(String jsonldPath, String expectedPath) throws Exception {
-        
-        File inputFile = new File(jsonldPath);
-        File expectedFile = new File(expectedPath);
-        
-        URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
-        
+	private final Logger logger = Logger.getLogger(Proto1Test.class.getName());
+
+	        
+	private final ObjectWriter writer = new ObjectMapper()
+            .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
+            .writerWithDefaultPrettyPrinter();
+
+    /**
+     * Base function to test a jsonld frame as is.
+     * 
+     * @param inputFile
+     * @throws Exception 
+     */
+    public void testFrame(File inputFile) throws Exception {
+    	
+        boolean overrideExpected = false;
+        String baseName = FilenameUtils.getBaseName(inputFile.getName());
+
         ObjectMapper mapper = new ObjectMapper();
-        JsonNode input = mapper.readTree(inputFile);
-        
-        Frame frame = JsonLDUtils.readFrame(input, contextFile);
+    	JsonNode input = mapper.readValue(inputFile, JsonNode.class);
+    	
+    	URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
+    	Frame frame = JsonLDUtils.readFrame(input, contextFile);
+        File newOutputFile = new File(inputFile.getParent(), baseName + "_Frame.json");
+        writer.writeValue(newOutputFile, frame);
 
-        ObjectWriter writer = mapper
-                .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
-                .writerWithDefaultPrettyPrinter();
+        DMSService instance = new DMSService();
+        JsonNode output = instance.realizeNextTurn(frame);
 
-        String result = writer.writeValueAsString(frame);        
-        //writer.writeValue(expectedFile, frame);
+        File expectedFile = new File(inputFile.getParent(), baseName + "_Move.json");
+        if (!expectedFile.exists() || overrideExpected) {
+            writer.writeValue(expectedFile, output);        
+        }
+
+        String expected = FileUtils.readFileToString(expectedFile, "utf-8");    		
+        String result = writer.writeValueAsString(output);
         //System.out.println(result);
 
-        String expResult = FileUtils.readFileToString(expectedFile, "utf8");
-        assertEquals(expResult, result);
+        Assertions.assertEquals(expected, result);
     }
-    
-    public void showFramed(String jsonldPath) throws Exception, JsonLdError {
+
+    /**
+     * Base function to test separately each slot of a jsonld frame.
+     * 
+     * @param inputFile
+     * @throws Exception 
+     */
+    public void testSeparateSlot(File inputFile) throws Exception {
+    	
+        boolean overrideExpected = false;
+        String baseName = FilenameUtils.getBaseName(inputFile.getName());
         
-        File inputFile = new File(jsonldPath);
+    	Map<String, Frame> frames = generateAllPossiblePendingSlots(inputFile);
         
-        URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
-        
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode input = mapper.readTree(inputFile);
-        
-        try (InputStreamReader reader = new InputStreamReader(contextFile.openStream())) {
+    	for (String slotId : frames.keySet()) {
+    		logger.log(Level.INFO, "Test file:{0}\tSlot: {1}", new Object[]{inputFile.getName(), slotId});
+    		
+    		Frame frame = frames.get(slotId);
+	        
+	        DMSService instance = new DMSService();
+	        JsonNode output = instance.realizeNextTurn(frame);
+	        
+            File expectedFile = new File(inputFile.getParent(), baseName + "_" + slotId + "_Move.json");
+            if (!expectedFile.exists() || overrideExpected) {
+                writer.writeValue(expectedFile, output);        
+            }
             
-            Document context = JsonLDUtils.loadDocument(reader);
-	        StringReader docReader = new StringReader(input.toString());
-	        Document doc = JsonLDUtils.loadDocument(docReader);
-	        
-	        JsonObject framed = JsonLd
-	                .frame(doc, context)
-	                .ordered()
-	                .get();
-	        
-	        System.out.println(framed.toString());
+            String expected = FileUtils.readFileToString(expectedFile, "utf-8");    		
+    		String result = writer.writeValueAsString(output);
+    		//System.out.println(result);
+    		
+            Assertions.assertEquals(expected, result);
+    	}
+    }
+    
+    public String cleanCompactedSchema(String value) {
+    	if (value == null) { return null; }
+    	
+    	String cleanValue = value;
+    	String[] splittedValue = value.split(":");
+        if(splittedValue.length > 1) {
+        	cleanValue = splittedValue[splittedValue.length-1];
         }
+    	return cleanValue;
     }
     
-    /*@Test
-    public void testOpening() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/Opening.jsonld";
-        String expectedPath = "src/test/resources/proto1/Opening_Frame.json";
+    public Map<String, Frame> generateAllPossiblePendingSlots(File inputFile) throws WelcomeException, JsonGenerationException, JsonMappingException, IOException {
+    	
+        String baseName = FilenameUtils.getBaseName(inputFile.getName());
+
+        ObjectMapper mapper = new ObjectMapper();
+    	JsonNode input = mapper.readValue(inputFile, JsonNode.class);
+    	
+    	URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
+    	Frame frame = JsonLDUtils.readFrame(input, contextFile);
         
-        readFrame(jsonldPath, expectedPath);
+    	List<Slot> slots = frame.slots;
+        Map<String, Frame> frames = new LinkedHashMap<>();
+    	for (int i = 0; i < slots.size(); i++) {
+    		for (int j = 0; j < slots.size(); j++) {
+	    		Slot slot = slots.get(j);
+	    		if (i==j) {
+	    			slot.status = Status.Pending;
+	    		} else {
+	    			slot.status = Status.Completed;
+	    		}
+	    		//slots.set(i, slot);
+    		}
+    		
+    		String slotId = cleanCompactedSchema(slots.get(i).id);
+    		
+    		//making a swallow copy by serializing object to string
+    		String strFrame = mapper.writeValueAsString(frame);
+    		Frame newFrame = mapper.readValue(strFrame, Frame.class);
+    		frames.put(slotId, newFrame);
+
+//			File newOutputFile = new File(inputFile.getParent(), baseName + "_" + slotId + "_Frame.json");
+// 			writer.writeValue(newOutputFile, frame);
+
+        }
+    	
+    	return frames;
+    }
+
+    static File[] getDirectoryInputs(String baseDir) {
+        
+        File folder = new File(baseDir);
+        
+        IOFileFilter filterFile = FileFileFilter.FILE;
+        SuffixFileFilter filterSuffix = new SuffixFileFilter(".jsonld");
+        FilenameFilter filter = new AndFileFilter(filterFile, filterSuffix);
+
+        File[] fileList = folder.listFiles(filter);
+        Arrays.sort(fileList);
+        
+        return fileList;
     }
     
-    @Test
-    public void testModifiedRegistration() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/ModifiedRegistrationStatus.jsonld";
-        String expectedPath = "src/test/resources/proto1/ModifiedRegistrationStatus_Frame.json";
+    static Stream<File> proto1DtasfInputs() {
+        String baseDir = "src/test/resources/proto1/dtasf/";
+        File[] fileList = getDirectoryInputs(baseDir);
         
-        readFrame(jsonldPath, expectedPath);
+        return Stream.of(fileList);
     }
     
-    @Test
-    public void testProposeService() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/ProposeService.jsonld";
-        String expectedPath = "src/test/resources/proto1/ProposeService_Frame.json";
+    static Stream<File> proto1PraksisInputs() {
+        String baseDir = "src/test/resources/proto1/praksis/";
+        File[] fileList = getDirectoryInputs(baseDir);
         
-        readFrame(jsonldPath, expectedPath);
-    }*/
-    
-    //NEW FILES
-    
-    @Test
-    public void testOpening() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/new/Opening.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/Opening_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
+        return Stream.of(fileList);
     }
     
-    @Test
-    public void testProposeService() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/new/ProposeService.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/ProposeService_Frame.json";
+    static Stream<File> proto1CaritasInputs() {
+        String baseDir = "src/test/resources/proto1/caritas/";
+        File[] fileList = getDirectoryInputs(baseDir);
         
-        readFrame(jsonldPath, expectedPath);
+        return Stream.of(fileList);
     }
     
-    @Test
-    public void testNormalClosing() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/new/NormalClosing.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/NormalClosing_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
+    @BeforeEach
+    public void resetCounters() {
+        DialogueMove.resetCounter();
+        SpeechAct.resetCounter();        
     }
     
-    @Test
-    public void testInformFirstReceptionService() throws Exception, JsonLdError {
-        String jsonldPath = "src/test/resources/proto1/new/InformFirstReceptionService.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/InformFirstReceptionService_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
+    @DisplayName("DTASF inputs separate tests")
+    @ParameterizedTest(name = "{0}")
+    @MethodSource("proto1DtasfInputs")
+    public void testDtasfPrototype1Separate(File jsonLDInput) throws Exception {
+        testSeparateSlot(jsonLDInput);
     }
     
-    @Test
-    public void testFillFormPersonalInfo() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/new/FillFormPersonalInfo.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/FillFormPersonalInfo_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
+    @DisplayName("DTASF inputs tests")
+    @ParameterizedTest(name = "{0}")
+    @MethodSource("proto1DtasfInputs")
+    public void testDtasfPrototype1(File jsonLDInput) throws Exception {
+        testFrame(jsonLDInput);
     }
     
-    @Test
-    public void testFillFormOther() throws Exception {
-    	//TODO not working properly although not crashing.
-        String jsonldPath = "src/test/resources/proto1/new/FillFormOther.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/FillFormOther_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
+    @DisplayName("Praksis inputs tests")
+    @ParameterizedTest(name = "{0}")
+    @MethodSource("proto1PraksisInputs")
+    public void testPraksisPrototype1Separate(File jsonLDInput) throws Exception {
+        testSeparateSlot(jsonLDInput);
     }
     
-    @Test
-    public void testFillFormModules() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/new/FillFormModules.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/FillFormModules_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
+    @DisplayName("Caritas inputs tests")
+    @ParameterizedTest(name = "{0}")
+    @MethodSource("proto1CaritasInputs")
+    public void testCaritasPrototype1Separate(File jsonLDInput) throws Exception {
+        testSeparateSlot(jsonLDInput);
     }
-    
-    @Test
-    public void testFillFormCourse() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/new/FillFormCourse.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/FillFormCourse_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
-    }
-    
-    @Test
-    public void testFillFormAddressInfo() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/new/FillFormAddressInfo.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/FillFormAddressInfo_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
-    }
-    
-    @Test
-    public void testClosingUponFailure() throws Exception {
-        String jsonldPath = "src/test/resources/proto1/new/ClosingUponFailure.jsonld";
-        String expectedPath = "src/test/resources/proto1/new/ClosingUponFailure_Frame.json";
-        
-        readFrame(jsonldPath, expectedPath);
-    }
-    
-    
 }

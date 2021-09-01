@@ -1,10 +1,11 @@
 {
   "@id" : "frs:FillFormPersonalInfo",
-  "@type" : null,
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
   "welcome:hasSlot" : [ {
     "@id" : "frs:obtainName",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainName",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:Name",
@@ -21,10 +22,18 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:confirmFirstSurname",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TConfirmSurname",
+    "welcome:hasOntologyType" : "http://www.w3.org/2001/XMLSchema#boolean",
     "welcome:hasInputRDFContents" : [ {
-      "@id" : "welcome:Unknown"
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:FirstSurname",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Doe"
+      }
     } ],
     "welcome:hasStatus" : "welcome:Pending",
     "welcome:hasNumberAttemps" : 0,
@@ -32,8 +41,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainFirstSurname",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainName",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:FirstSurname",
@@ -50,8 +60,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainSecondSurname",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainSecondSurname",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SecondSurname",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -61,8 +72,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainIDNumber",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainIDNumber",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDNumber",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -72,8 +84,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainIDType",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainIDType",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDType",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -83,8 +96,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainIDCountry",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainIDCountry",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#IDCountry",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -94,8 +108,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainGender",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainGender",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Gender",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -105,8 +120,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainBirthday",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainBirthDay",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -116,8 +132,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainCountryOfBirth",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainLocationOfBirth",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CountryOfBirth",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -127,8 +144,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainCityOfBirth",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainLocationOfBirth",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#CityOfBirth",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -138,10 +156,18 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainNationality",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainNationality",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Nationality",
     "welcome:hasInputRDFContents" : [ {
-      "@id" : "welcome:Unknown"
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:IDCountry",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Morocco"
+      }
     } ],
     "welcome:hasStatus" : "welcome:Completed",
     "welcome:hasNumberAttemps" : 0,
@@ -149,8 +175,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainLandline",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainLandline",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Landline",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -160,8 +187,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainMobilePhone",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainMobilePhone",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MobilePhone",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -171,8 +199,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainEmail",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainEmail",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -182,8 +211,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainNotificationPreferences",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainNotificationPreferences",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NotificationPreferences",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -193,8 +223,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainSMSNotifications",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainSMSNotifications",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SMSNotifications",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -204,8 +235,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainEMailNotifications",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainEMailNotifications",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#EmailNotifications",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],

@@ -44,10 +44,10 @@
       "@container" : "@list"
     }
   },
-  "@id" : "move_1",
+  "@id" : "move_0",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Apology_1",
+    "@id" : "Apology_0",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : "Apology",
     "welcome:hasSlot" : {

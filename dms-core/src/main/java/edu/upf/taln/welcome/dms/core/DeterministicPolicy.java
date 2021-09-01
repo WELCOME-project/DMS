@@ -17,6 +17,7 @@ import java.util.Optional;
  */
 public class DeterministicPolicy implements Policy {
 
+    private static final String SYSTEM_INFO_SLOT_TYPE = "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo";
     private final SpeechActDictionary speechActDictionary = new SpeechActDictionary();
 
     /**
@@ -26,22 +27,26 @@ public class DeterministicPolicy implements Policy {
      */
     @Override
     public DialogueMove map(Frame frame) throws WelcomeException {
+        
         ArrayList<SpeechAct> acts = new ArrayList<>();
+        
         boolean pickMore = checkUnforeseenSituations(frame, acts);
-        if (pickMore) {
-            Optional<Slot> firstPending = frame.slots.stream()
-                    .filter(slot -> slot.status == Status.Pending)
-                    .findFirst();
-
-            if (firstPending.isPresent()) {
-                Slot slot = firstPending.get();
+        
+        int idx = 0;
+        while (pickMore && idx < frame.slots.size()) {
+            
+            Slot slot = frame.slots.get(idx);
+            if (slot.status == Status.Pending) {
                 SpeechActLabel label = speechActDictionary.get(slot.id);
                 if (label == null) {
                     throw new WelcomeException("Unsupported slot type " + slot.id + "!");
                 }
                 SpeechAct act = new SpeechAct(label, slot);
                 acts.add(act);
+                
+                pickMore = SYSTEM_INFO_SLOT_TYPE.equals(slot.type);
             }
+            idx++;
         }
 
         return new DialogueMove(acts);

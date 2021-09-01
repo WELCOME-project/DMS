@@ -1,10 +1,11 @@
 {
   "@id" : "frs:FillFormModules",
-  "@type" : null,
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
   "welcome:hasSlot" : [ {
     "@id" : "frs:obtainCoursesSociety",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainCoursesSociety",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -14,8 +15,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:informTraining",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemInfo",
     "welcome:hasTemplateId" : "TInformTraining",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -25,8 +27,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainKnowledgeCatalan",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainKnowledgeLanguage",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -36,8 +39,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainCoursesCatalan",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainCoursesLanguage",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -47,8 +51,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainKnowledgeSpanish",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainKnowledgeLanguage",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -58,8 +63,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainCoursesSpanish",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainCoursesLanguage",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -69,8 +75,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainKnowledgeLabour",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainKnowledgeLabour",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -80,8 +87,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainCoursesLabour",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainCoursesLabour",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -91,8 +99,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainKnowledgeSociety",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainKnowledgeSociety",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],

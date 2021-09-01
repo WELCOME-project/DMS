@@ -44,10 +44,10 @@
       "@container" : "@list"
     }
   },
-  "@id" : "move_28",
+  "@id" : "move_0",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Statement_non_opinion_28",
+    "@id" : "Statement_non_opinion_0",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : "Statement_non_opinion",
     "welcome:hasSlot" : {

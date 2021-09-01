@@ -1,10 +1,11 @@
 {
   "@id" : "frs:FillFormAddressInfo",
-  "@type" : null,
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
   "welcome:hasSlot" : [ {
     "@id" : "frs:obtainEntrance",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainEntrance",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -14,8 +15,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainBuildingType",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainBuildingType",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -25,8 +27,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainFloorNumber",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainFloorNumber",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -36,8 +39,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainDoorNumber",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainDoorNumber",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -47,8 +51,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainPostCode",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainPostCode",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -58,8 +63,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainProvince",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainProvince",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -69,8 +75,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainMunicipality",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainMunicipality",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -80,8 +87,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainStreetType",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainStreetType",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -91,8 +99,9 @@
     "welcome:isOptional" : true
   }, {
     "@id" : "frs:obtainStreetName",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainStreetName",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -102,8 +111,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainStreetNumber",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainStreetNumber",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -113,8 +123,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "frs:obtainBuildingName",
-    "@type" : null,
+    "rdf:type" : "welcome:SystemDemand",
     "welcome:hasTemplateId" : "TObtainBuildingName",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],

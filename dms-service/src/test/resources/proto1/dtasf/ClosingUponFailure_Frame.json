@@ -1,10 +1,11 @@
 {
   "@id" : "welcome:ClosingUponFailure",
-  "@type" : null,
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
   "welcome:hasSlot" : [ {
     "@id" : "welcome:informMessage",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformMessage",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:reifiedReason2",
       "@type" : "rdf:Statement",

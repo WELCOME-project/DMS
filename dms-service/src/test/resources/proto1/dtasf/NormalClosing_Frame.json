@@ -1,10 +1,11 @@
 {
   "@id" : "welcome:NormalClosing",
-  "@type" : null,
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
   "welcome:hasSlot" : [ {
     "@id" : "welcome:informEnd",
-    "@type" : "welcome:SystemInfo",
+    "rdf:type" : null,
     "welcome:hasTemplateId" : "TInformEnd",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -14,8 +15,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "welcome:obtainConfirmation",
-    "@type" : "welcome:ConfirmationRequest",
+    "rdf:type" : null,
     "welcome:hasTemplateId" : "TObtainConfirmation",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],

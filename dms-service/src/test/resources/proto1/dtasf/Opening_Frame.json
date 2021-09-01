@@ -1,10 +1,11 @@
 {
   "@id" : "welcome:Opening",
-  "@type" : null,
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
   "welcome:hasSlot" : [ {
     "@id" : "welcome:confirmCommunication",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TConfirmCommunication",
+    "welcome:hasOntologyType" : null,
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],
@@ -14,8 +15,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "welcome:confirmLanguage",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TConfirmLanguage",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language",
     "welcome:hasInputRDFContents" : [ {
       "@type" : "rdf:Statement",
       "rdf:subject" : "welcome:Language",
@@ -32,8 +34,9 @@
     "welcome:isOptional" : false
   }, {
     "@id" : "welcome:obtainRequest",
-    "@type" : null,
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainMatterConcern",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest",
     "welcome:hasInputRDFContents" : [ {
       "@id" : "welcome:Unknown"
     } ],

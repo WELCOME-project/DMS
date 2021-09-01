@@ -44,30 +44,23 @@
       "@container" : "@list"
     }
   },
-  "@id" : "move_4",
+  "@id" : "move_0",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Declarative_Yes_No_Question_4",
+    "@id" : "Open_Question_0",
     "@type" : "welcome:SpeechAct",
-    "welcome:hasLabel" : "Declarative_Yes_No_Question",
+    "welcome:hasLabel" : "Open_Question",
     "welcome:hasSlot" : {
-      "@id" : "frs:obtainPreviousResidenceCatalonia",
-      "rdf:type" : "welcome:SystemDemand",
-      "welcome:hasTemplateId" : "TObtainPreviousResidenceRegion",
-      "welcome:hasOntologyType" : null,
+      "@id" : "welcome:obtainRequest",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+      "welcome:hasTemplateId" : "TObtainMatterConcern",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest",
       "welcome:hasInputRDFContents" : [ {
-        "@type" : "rdf:Statement",
-        "rdf:subject" : "welcome:Catalonia",
-        "rdf:predicate" : "welcome:regionName",
-        "rdf:object" : {
-          "@id" : null,
-          "@type" : null,
-          "@value" : "Catalonia"
-        }
+        "@id" : "welcome:Unknown"
       } ],
       "welcome:hasStatus" : "welcome:Pending",
       "welcome:hasNumberAttemps" : 0,
-      "welcome:confidenceScore" : 0.0,
+      "welcome:confidenceScore" : 1.0,
       "welcome:isOptional" : false
     }
   } ]

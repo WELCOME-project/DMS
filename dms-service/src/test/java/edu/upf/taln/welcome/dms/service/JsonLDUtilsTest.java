@@ -1,12 +1,12 @@
 package edu.upf.taln.welcome.dms.service;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.File;
 import java.net.URL;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
 import org.apache.commons.io.FileUtils;
-import org.junit.Test;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -48,7 +48,7 @@ public class JsonLDUtilsTest {
         //System.out.println(result);
 
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");
-        assertEquals(expResult, result);
+        Assertions.assertEquals(expResult, result);
     }
     
 }
