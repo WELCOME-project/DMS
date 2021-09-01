@@ -48,13 +48,16 @@
       "@type": "w3c:boolean"
     }
   }],
-	"rdf:type": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
-	"welcome#hasSlot": {
-      "@type": "welcome:SystemDemand",
-      "@type": "welcome:SystemInfo",
-      "welcome:hasInputRDFContents": {
-        "@type": "welcome:Unknown",
-        "@type": "rdf:Statement"
-        }
-	} 
+
+  "rdf:type": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome#hasSlot": {
+    "@container": "@list",    
+    "@type": "welcome:SystemDemand",
+    "@type": "welcome:SystemInfo",
+    "welcome:hasInputRDFContents": {
+      "@container": "@set",      
+      "@type": "welcome:Unknown",
+      "@type": "rdf:Statement"
+      }
+  } 
 }

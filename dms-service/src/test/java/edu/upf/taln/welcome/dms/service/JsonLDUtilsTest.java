@@ -29,8 +29,8 @@ public class JsonLDUtilsTest {
     public void testReadFrame() throws Exception {
         System.out.println("readFrame");
         
-        File inputFile = new File("src/test/resources/proto1/Opening.jsonld");
-        File expectedFile = new File("src/test/resources/proto1/Opening_Frame.json");
+        File inputFile = new File("src/test/resources/proto1/dtasf/Opening.jsonld");
+        File expectedFile = new File("src/test/resources/proto1/dtasf/Opening_Frame.json");
         
         URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
         
