@@ -79,31 +79,55 @@ public class JsonLDUtils {
         }
     }
     
-    public static JsonNode mergeResultContext(JsonNode input, URL contextURL) throws WelcomeException {
+    public static JsonNode mergeJsons(URL jsonFile1, URL jsonFile2) throws WelcomeException {
         
-        try (InputStreamReader reader = new InputStreamReader(contextURL.openStream())) {
+        try (InputStreamReader reader1 = new InputStreamReader(jsonFile1.openStream());
+        		InputStreamReader reader2 = new InputStreamReader(jsonFile2.openStream());) {
 
-            //ObjectMapper mapper = new ObjectMapper();
-            //JsonNode context = mapper.readTree(reader);
+            JsonReader jsonReader1 = Json.createReader(reader1);
+            JsonObject json1 = jsonReader1.readObject();
+            jsonReader1.close();
             
-            StringReader strReader = new StringReader(input.toString());
-            
-            JsonReader jsonReader = Json.createReader(reader);
-            JsonObject json1 = jsonReader.readObject();
-            jsonReader.close();
-            
-            JsonReader jsonReader2 = Json.createReader(strReader);
+            JsonReader jsonReader2 = Json.createReader(reader2);
             JsonObject json2 = jsonReader2.readObject();
             jsonReader2.close();
-            
-            JsonObject merged = JsonUtils.merge(json1, json2);
-            return toJsonNode(merged);
+
+            return mergeJsons(json1, json2);
         } catch (IOException ex) {
             throw new WelcomeException(ex);
         }
     }
     
-    public static JsonNode toJsonNode(JsonObject jsonObject) throws IOException {
+    public static JsonNode mergeJsons(JsonNode jsonNode1, JsonNode jsonNode2) throws WelcomeException, IOException {
+    	
+    	JsonObject json1 = jsonNode2JsonObject(jsonNode1);
+        JsonObject json2 = jsonNode2JsonObject(jsonNode2);	
+
+		return mergeJsons(json1, json2);
+    }
+    
+    public static JsonNode mergeJsons(JsonObject json1, JsonObject json2) throws WelcomeException, IOException {
+    	
+    	JsonObject merged = JsonUtils.merge(json1, json2);
+		return jsonObject2JsonNode(merged);
+    }
+       
+    public static JsonObject jsonNode2JsonObject(JsonNode jsonNode) throws IOException {
+
+        // Parse a JsonNode into a JSON string
+    	ObjectMapper objectMapper = new ObjectMapper();
+    	String jsonStr = objectMapper.writeValueAsString(jsonNode);
+    	
+    	// Parse a JSON string into a JsonObject
+    	StringReader strReader = new StringReader(jsonStr);
+    	JsonReader jsonReader = Json.createReader(strReader);
+        JsonObject jsonObject = jsonReader.readObject();
+        jsonReader.close();
+
+        return jsonObject;
+    }
+    
+    public static JsonNode jsonObject2JsonNode(JsonObject jsonObject) throws IOException {
 
         // Parse a JsonObject into a JSON string
         StringWriter stringWriter = new StringWriter();

@@ -3,12 +3,16 @@ package edu.upf.taln.welcome.dms.commons.utils;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collections;
 
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
+import javax.json.JsonWriter;
+import javax.json.stream.JsonGenerator;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Assertions;
@@ -78,16 +82,38 @@ public class JsonLDUtilsTest {
     }
     
     @Test
-    public void mergeResultContextTest() throws WelcomeException, IOException {
+    public void mergeJsonNodeTest() throws WelcomeException, IOException {
 
-    	File baseJsonFile = new File("src/test/resources/json/toMergeBody.json");
-    	File extraJsonFile = new File("src/test/resources/json/toMergeHeader.json");
-    	File expectedJsonFile = new File("src/test/resources/json/toMergeExpected.json");
+    	File jsonFile1 = new File("src/test/resources/json/merge/header.json");
+    	File jsonFile2 = new File("src/test/resources/json/merge/body.json");
+    	File expectedJsonFile = new File("src/test/resources/json/merge/expected.json");
     	
     	ObjectMapper mapper = new ObjectMapper();
-    	JsonNode baseJson = mapper.readTree(baseJsonFile);
+    	JsonNode baseJson = mapper.readTree(jsonFile1);
+    	JsonNode extraJson = mapper.readTree(jsonFile2);
     	
-    	JsonNode jsonResult = JsonLDUtils.mergeResultContext(baseJson, extraJsonFile.toURI().toURL());
+    	JsonNode jsonResult = JsonLDUtils.mergeJsons(baseJson, extraJson);
+    	
+    	ObjectWriter writer = mapper
+                .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
+                .writerWithDefaultPrettyPrinter();
+
+        String result = writer.writeValueAsString(jsonResult);
+
+        String expectedJson = FileUtils.readFileToString(expectedJsonFile, "utf8");
+        Assertions.assertEquals(expectedJson, result);
+    }
+    
+    @Test
+    public void mergeJsonURLTest() throws WelcomeException, IOException {
+
+    	File jsonFile1 = new File("src/test/resources/json/merge/header.json");
+    	File jsonFile2 = new File("src/test/resources/json/merge/body.json");
+    	File expectedJsonFile = new File("src/test/resources/json/merge/expected.json");
+    	
+    	ObjectMapper mapper = new ObjectMapper();
+    	
+    	JsonNode jsonResult = JsonLDUtils.mergeJsons(jsonFile1.toURI().toURL(), jsonFile2.toURI().toURL());
     	
     	ObjectWriter writer = mapper
                 .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
@@ -101,7 +127,7 @@ public class JsonLDUtilsTest {
     
     @Test
     public void jsonObject2jsonNodeTest() throws MalformedURLException, IOException {
-    	File jsonFile = new File("src/test/resources/json/toMergeBody.json");
+    	File jsonFile = new File("src/test/resources/json/object2Node/base.json");
     	
     	ObjectMapper mapper = new ObjectMapper();
     	
@@ -110,7 +136,7 @@ public class JsonLDUtilsTest {
             JsonObject jsonObject = jsonReader.readObject();
             jsonReader.close();
             
-            JsonNode jsonNode = JsonLDUtils.toJsonNode(jsonObject);
+            JsonNode jsonNode = JsonLDUtils.jsonObject2JsonNode(jsonObject);
             ObjectWriter writer = mapper
                     .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
                     .writerWithDefaultPrettyPrinter();
@@ -119,6 +145,26 @@ public class JsonLDUtilsTest {
             String expectedString = FileUtils.readFileToString(jsonFile, "utf8");
             Assertions.assertEquals(expectedString, jsonString);
     	}
+    }
+    
+    @Test
+    public void jsonNode2jsonObjectTest() throws MalformedURLException, IOException {
+    	File jsonFile = new File("src/test/resources/json/node2Object/base.json");
+    	File expectedFile = new File("src/test/resources/json/node2Object/expected.json");
+    	
+    	ObjectMapper mapper = new ObjectMapper();
+    	JsonNode jsonNode = mapper.readTree(jsonFile);
+    	
+    	JsonObject jsonObject = JsonLDUtils.jsonNode2JsonObject(jsonNode);
+    	StringWriter stringWriter = new StringWriter();
+        try (JsonWriter jsonWriter = Json.createWriter(stringWriter)) {
+            jsonWriter.writeObject(jsonObject);
+        }
+        String jsonString = stringWriter.toString();
+        
+        String expectedString = FileUtils.readFileToString(expectedFile, "utf8");
+        Assertions.assertEquals(expectedString, jsonString);
+    	
     }
     
 }

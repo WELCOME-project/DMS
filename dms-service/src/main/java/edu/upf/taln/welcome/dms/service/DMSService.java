@@ -1497,11 +1497,17 @@ public class DMSService {
 		DialogueMove move = manager.map(dip);
 
         ObjectMapper mapper = new ObjectMapper();
-        JsonNode result = mapper.valueToTree(move);
         
-        JsonNode mergedResult = JsonLDUtils.mergeResultContext(result, resultContextFile);
-        
-		return mergedResult;
+		try {
+			JsonNode result = mapper.valueToTree(move);
+			JsonNode resultContext = mapper.readTree(resultContextFile);
+		
+			JsonNode mergedResult = JsonLDUtils.mergeJsons(resultContext, result);
+			return mergedResult;
+			
+		} catch (IOException e) {
+			throw new WelcomeException(e);
+		}
 	}
 	
 	@GET
