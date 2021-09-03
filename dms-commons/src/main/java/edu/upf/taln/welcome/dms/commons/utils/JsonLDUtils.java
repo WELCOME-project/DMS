@@ -35,7 +35,7 @@ import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
  */
 public class JsonLDUtils {
     
-    public static Document loadDocument(Reader reader) throws WelcomeException {
+    private static Document loadDocument(Reader reader) throws WelcomeException {
         try {
             Document doc = DocumentParser.parse(MediaType.JSON_LD, reader);
             return doc;
@@ -53,6 +53,28 @@ public class JsonLDUtils {
             return readFrame(input, doc);
             
         } catch (IOException ex) {
+            throw new WelcomeException(ex);
+        }
+    }
+    
+    public static Frame readFrame(JsonNode input, Document context) throws WelcomeException {
+        
+        try {
+            StringReader reader = new StringReader(input.toString());
+            Document doc = loadDocument(reader);
+            
+            JsonObject framed = JsonLd
+                    .frame(doc, context)
+                    .ordered()
+                    .get();
+            
+            ObjectMapper mapper = new ObjectMapper();
+            //System.out.println(framed.toString());
+            Frame dip = mapper.readValue(framed.toString(), Frame.class);
+            
+            return dip;
+            
+        } catch (JsonLdError | IOException ex) {
             throw new WelcomeException(ex);
         }
     }
@@ -96,28 +118,6 @@ public class JsonLDUtils {
 
         return jsonNode;
     }
-    
-    public static Frame readFrame(JsonNode input, Document context) throws WelcomeException {
-               
-        try {
-            StringReader reader = new StringReader(input.toString());
-            Document doc = loadDocument(reader);
-            
-            JsonObject framed = JsonLd
-                    .frame(doc, context)
-                    .ordered()
-                    .get();
-            
-            ObjectMapper mapper = new ObjectMapper();
-            //System.out.println(framed.toString());
-            Frame dip = mapper.readValue(framed.toString(), Frame.class);
-            
-            return dip;
-            
-        } catch (JsonLdError | IOException ex) {
-            throw new WelcomeException(ex);
-        }
-    }
 
     public static DialogueMove readMove(JsonNode input) throws WelcomeException {
         try (StringReader readerInput = new StringReader(input.toString())) {
@@ -133,6 +133,7 @@ public class JsonLDUtils {
         }
     }
     
+    //NOT WORKING
     public static DialogueMove readMove(JsonNode input, URL contextURL) throws WelcomeException {
                
         try (InputStreamReader readerContext = new InputStreamReader(contextURL.openStream());
