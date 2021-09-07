@@ -1,18 +1,11 @@
 package edu.upf.taln.welcome.dms.commons.utils;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collections;
 
 import javax.json.Json;
 import javax.json.JsonObject;
-import javax.json.JsonReader;
-import javax.json.JsonWriter;
-import javax.json.stream.JsonGenerator;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Assertions;
@@ -26,6 +19,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
+import java.io.IOException;
+import java.util.Map;
+import javax.json.JsonObjectBuilder;
 
 /**
  *
@@ -33,6 +29,40 @@ import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
  */
 public class JsonLDUtilsTest {
 
+	@Test
+	public void testLoadJsonObject() throws MalformedURLException, WelcomeException {
+		File jsonFile = new File("src/test/resources/json/merge/header.json");
+		URL jsonUrl = jsonFile.toURI().toURL();
+		
+		JsonObjectBuilder builder = Json.createObjectBuilder();
+		JsonObject expected = builder.add("d", 8)
+				.add("e", "e")
+				.add("f", false)
+				.build();
+
+		JsonObject actual = JsonLDUtils.loadJsonObject(jsonUrl);
+		
+		Assertions.assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testToJsonObject() throws MalformedURLException, WelcomeException, IOException {
+		File jsonFile = new File("src/test/resources/json/merge/header.json");
+
+		ObjectMapper mapper = new ObjectMapper();
+		Map values = mapper.readValue(jsonFile, Map.class);
+
+		JsonObjectBuilder builder = Json.createObjectBuilder();
+		JsonObject expected = builder.add("d", 8)
+				.add("e", "e")
+				.add("f", false)
+				.build();
+
+		JsonObject actual = JsonLDUtils.toJsonObject(values);
+		
+		Assertions.assertEquals(expected, actual);
+	}
+	
     /**
      * Test of readFrame method, of class JsonLDUtils.
      */
@@ -48,7 +78,7 @@ public class JsonLDUtilsTest {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode input = mapper.readTree(inputFile);
         
-        Frame frame = JsonLDUtils.readFrame(input, contextFile);        
+        Frame frame = JsonLDUtils.readFrame(input.toString(), contextFile);        
 
         ObjectWriter writer = mapper
                 .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
@@ -69,7 +99,7 @@ public class JsonLDUtilsTest {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode input = mapper.readTree(inputFile);
         
-        DialogueMove move = JsonLDUtils.readMove(input);        
+        DialogueMove move = JsonLDUtils.readMove(input.toString());        
 
         ObjectWriter writer = mapper
                 .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
@@ -80,91 +110,4 @@ public class JsonLDUtilsTest {
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");
         Assertions.assertEquals(expResult, result);
     }
-    
-    @Test
-    public void mergeJsonNodeTest() throws WelcomeException, IOException {
-
-    	File jsonFile1 = new File("src/test/resources/json/merge/header.json");
-    	File jsonFile2 = new File("src/test/resources/json/merge/body.json");
-    	File expectedJsonFile = new File("src/test/resources/json/merge/expected.json");
-    	
-    	ObjectMapper mapper = new ObjectMapper();
-    	JsonNode baseJson = mapper.readTree(jsonFile1);
-    	JsonNode extraJson = mapper.readTree(jsonFile2);
-    	
-    	JsonNode jsonResult = JsonLDUtils.mergeJsons(baseJson, extraJson);
-    	
-    	ObjectWriter writer = mapper
-                .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
-                .writerWithDefaultPrettyPrinter();
-
-        String result = writer.writeValueAsString(jsonResult);
-
-        String expectedJson = FileUtils.readFileToString(expectedJsonFile, "utf8");
-        Assertions.assertEquals(expectedJson, result);
-    }
-    
-    @Test
-    public void mergeJsonURLTest() throws WelcomeException, IOException {
-
-    	File jsonFile1 = new File("src/test/resources/json/merge/header.json");
-    	File jsonFile2 = new File("src/test/resources/json/merge/body.json");
-    	File expectedJsonFile = new File("src/test/resources/json/merge/expected.json");
-    	
-    	ObjectMapper mapper = new ObjectMapper();
-    	
-    	JsonNode jsonResult = JsonLDUtils.mergeJsons(jsonFile1.toURI().toURL(), jsonFile2.toURI().toURL());
-    	
-    	ObjectWriter writer = mapper
-                .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
-                .writerWithDefaultPrettyPrinter();
-
-        String result = writer.writeValueAsString(jsonResult);
-
-        String expectedJson = FileUtils.readFileToString(expectedJsonFile, "utf8");
-        Assertions.assertEquals(expectedJson, result);
-    }
-    
-    @Test
-    public void jsonObject2jsonNodeTest() throws MalformedURLException, IOException {
-    	File jsonFile = new File("src/test/resources/json/object2Node/base.json");
-    	
-    	ObjectMapper mapper = new ObjectMapper();
-    	
-    	try (InputStreamReader reader = new InputStreamReader(jsonFile.toURI().toURL().openStream())) {
-            JsonReader jsonReader = Json.createReader(reader);
-            JsonObject jsonObject = jsonReader.readObject();
-            jsonReader.close();
-            
-            JsonNode jsonNode = JsonLDUtils.jsonObject2JsonNode(jsonObject);
-            ObjectWriter writer = mapper
-                    .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
-                    .writerWithDefaultPrettyPrinter();
-            String jsonString = writer.writeValueAsString(jsonNode);
-            
-            String expectedString = FileUtils.readFileToString(jsonFile, "utf8");
-            Assertions.assertEquals(expectedString, jsonString);
-    	}
-    }
-    
-    @Test
-    public void jsonNode2jsonObjectTest() throws MalformedURLException, IOException {
-    	File jsonFile = new File("src/test/resources/json/node2Object/base.json");
-    	File expectedFile = new File("src/test/resources/json/node2Object/expected.json");
-    	
-    	ObjectMapper mapper = new ObjectMapper();
-    	JsonNode jsonNode = mapper.readTree(jsonFile);
-    	
-    	JsonObject jsonObject = JsonLDUtils.jsonNode2JsonObject(jsonNode);
-    	StringWriter stringWriter = new StringWriter();
-        try (JsonWriter jsonWriter = Json.createWriter(stringWriter)) {
-            jsonWriter.writeObject(jsonObject);
-        }
-        String jsonString = stringWriter.toString();
-        
-        String expectedString = FileUtils.readFileToString(expectedFile, "utf8");
-        Assertions.assertEquals(expectedString, jsonString);
-    	
-    }
-    
 }

@@ -1,15 +1,21 @@
 package edu.upf.taln.welcome.dms.service;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.net.URL;
 
-import javax.ws.rs.*;
+import javax.json.JsonObject;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 
@@ -1402,9 +1408,9 @@ public class DMSService {
 
 	private final Logger logger = Logger.getLogger(DMSService.class.getName());
 
-    private final DialogueManager manager;
-    private URL resultContextFile;
-    private URL contextFile;
+    private final DialogueManager manager;	
+    private URL dmsContextURL;
+    private URL nlgContextFile;
     
 	@Context
 	ServletConfig config;
@@ -1413,12 +1419,15 @@ public class DMSService {
 		try {
     		manager = new DialogueManager(new DeterministicPolicy());
             
-            contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
-            if (contextFile == null) {
-                throw new WelcomeException("JSONLD context file not found!");
+			dmsContextURL = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
+            if (dmsContextURL == null) {
+                throw new WelcomeException("DMS JSONLD context file not found!");
             }
-            
-            resultContextFile = JsonLDUtils.class.getResource("/welcome-nlg-compacted.jsonld");
+					
+			nlgContextFile = JsonLDUtils.class.getResource("/welcome-nlg-compacted.jsonld");
+            if (nlgContextFile == null) {
+                throw new WelcomeException("NLG JSONLD context file not found!");
+            }
         
 		} catch (Exception ex) {
 			logger.log(Level.SEVERE, "Unexpected error! Failed to initialize service", ex);
@@ -1475,10 +1484,10 @@ public class DMSService {
 	 * Unmarshalls JSON-LD edu.upf.taln.welcome.nlg.commons.input to a POJO representations of a DIP frame, and passes it to the dialogue manager.
 	 * The resulting dialogue moves are serialized back into JSON-LD and returned.
 	 */
-	public JsonNode realizeNextTurn(@Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
+	public JsonObject realizeNextTurn(@Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
 		try {
-            
-			Frame dip = JsonLDUtils.readFrame(input, contextFile);
+            String content = input.toString();
+			Frame dip = JsonLDUtils.readFrame(content, dmsContextURL);
 			logger.log(Level.INFO, "dip: {0}\t{1}", new Object[]{dip.toString(), dip.type});
             
 			return realizeNextTurn(dip);
@@ -1493,16 +1502,17 @@ public class DMSService {
 		}
 	}
 	
-	protected JsonNode realizeNextTurn(Frame dip) throws WelcomeException {
+	protected JsonObject realizeNextTurn(Frame dip) throws WelcomeException {
 		DialogueMove move = manager.map(dip);
 
         ObjectMapper mapper = new ObjectMapper();
         
-		try {
-			JsonNode result = mapper.valueToTree(move);
-			JsonNode resultContext = mapper.readTree(resultContextFile);
+		try {			
+			JsonObject context = JsonLDUtils.loadJsonObject(dmsContextURL);
+			JsonObject result = JsonLDUtils.toJsonObject(move);
 		
-			JsonNode mergedResult = JsonLDUtils.mergeJsons(resultContext, result);
+			JsonObject mergedResult = JsonLDUtils.mergeJsonObjects(context, result);
+			
 			return mergedResult;
 			
 		} catch (IOException e) {

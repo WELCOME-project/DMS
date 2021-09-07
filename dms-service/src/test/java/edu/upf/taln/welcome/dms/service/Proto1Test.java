@@ -11,8 +11,10 @@ import java.util.logging.Logger;
 import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.stream.Stream;
+import javax.json.JsonObject;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -38,8 +40,6 @@ import edu.upf.taln.welcome.dms.commons.input.Status;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 
 
 /**
@@ -70,12 +70,12 @@ public class Proto1Test {
     	JsonNode input = mapper.readValue(inputFile, JsonNode.class);
     	
     	URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
-    	Frame frame = JsonLDUtils.readFrame(input, contextFile);
+    	Frame frame = JsonLDUtils.readFrame(input.toString(), contextFile);
         File newOutputFile = new File(inputFile.getParent(), baseName + "_Frame.json");
         writer.writeValue(newOutputFile, frame);
 
         DMSService instance = new DMSService();
-        JsonNode output = instance.realizeNextTurn(frame);
+        JsonObject output = instance.realizeNextTurn(frame);
 
         File expectedFile = new File(inputFile.getParent(), baseName + "_Move.json");
         if (!expectedFile.exists() || overrideExpected) {
@@ -108,7 +108,7 @@ public class Proto1Test {
     		Frame frame = frames.get(slotId);
 	        
 	        DMSService instance = new DMSService();
-	        JsonNode output = instance.realizeNextTurn(frame);
+	        JsonObject output = instance.realizeNextTurn(frame);
 	        
             File expectedFile = new File(inputFile.getParent(), baseName + "_" + slotId + "_Move.json");
             if (!expectedFile.exists() || overrideExpected) {
@@ -142,7 +142,7 @@ public class Proto1Test {
     	JsonNode input = mapper.readValue(inputFile, JsonNode.class);
     	
     	URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
-    	Frame frame = JsonLDUtils.readFrame(input, contextFile);
+    	Frame frame = JsonLDUtils.readFrame(input.toString(), contextFile);
         
     	List<Slot> slots = frame.slots;
         Map<String, Frame> frames = new LinkedHashMap<>();
