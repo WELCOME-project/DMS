@@ -1509,11 +1509,10 @@ public class DMSService {
 		try (InputStream inStream = nlgContextURL.openStream()) {
 
 	        ObjectMapper mapper = new ObjectMapper();
-	        DialogueMove contextMap = mapper.readValue(inStream, new TypeReference<DialogueMove>() {});
+	        DialogueMove updated = mapper.readerForUpdating(move).
+					readValue(inStream);
 			
-			move.context = contextMap.context;
-
-			return move;
+			return updated;
 			
 		} catch (IOException e) {
 			throw new WelcomeException(e);
