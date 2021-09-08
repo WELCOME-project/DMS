@@ -1,62 +1,47 @@
 {
   "@context" : {
-    "@context" : [ {
-      "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
-      "frs" : "http://localhost:8080/services/FirstReceptionService.owl#",
-      "pas" : "http://localhost:8080/services/SimulatePhoneAppointmentService.owl#",
-      "pps" : "http://localhost:8080/services/PreregistrationProcedureService.owl#",
-      "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-      "rdf:predicate" : {
-        "@type" : "@id"
-      },
-      "rdf:subject" : {
-        "@type" : "@id"
-      },
-      "rdf:type" : {
-        "@type" : "w3c:anyURI"
-      },
-      "schema" : "https://schema.org/",
-      "w3c" : "http://www.w3.org/2001/XMLSchema#",
-      "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
-      "welcome:confidenceScore" : {
-        "@type" : "w3c:float"
-      },
-      "welcome:hasDIPStatus" : {
-        "@type" : "@id"
-      },
-      "welcome:hasInputRDFContents" : {
-        "@container" : "@set"
-      },
-      "welcome:hasNumberAttempts" : {
-        "@type" : "w3c:integer"
-      },
-      "welcome:hasOntologyType" : {
-        "@type" : "w3c:anyURI"
-      },
-      "welcome:hasSlot" : {
-        "@container" : "@set"
-      },
-      "welcome:hasStatus" : {
-        "@type" : "@id"
-      },
-      "welcome:hasTCNAnswer" : {
-        "@type" : "@id"
-      },
-      "welcome:isCurrentDIP" : {
-        "@type" : "w3c:boolean"
-      },
-      "welcome:isOptional" : {
-        "@type" : "w3c:boolean"
-      }
-    } ],
-    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
-    "welcome#hasSlot" : {
-      "@container" : "@list",
-      "@type" : "welcome:SystemInfo",
-      "welcome:hasInputRDFContents" : {
-        "@container" : "@set",
-        "@type" : "rdf:Statement"
-      }
+    "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdf:predicate" : {
+      "@type" : "@id"
+    },
+    "rdf:subject" : {
+      "@type" : "@id"
+    },
+    "w3c" : "http://www.w3.org/2001/XMLSchema#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "welcome:confidenceScore" : {
+      "@type" : "w3c:float"
+    },
+    "welcome:hasDIPStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@container" : "@set"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "w3c:int"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSlot" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSpeechActs" : {
+      "@container" : "@list"
+    },
+    "welcome:hasStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@type" : "@id"
+    },
+    "welcome:isCurrentDIP" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:isOptional" : {
+      "@type" : "w3c:boolean"
     }
   },
   "@id" : "move_2",
