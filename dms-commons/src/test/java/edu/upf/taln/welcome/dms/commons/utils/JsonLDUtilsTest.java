@@ -4,9 +4,6 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import javax.json.Json;
-import javax.json.JsonObject;
-
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -16,12 +13,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
-import java.io.IOException;
-import java.util.Map;
-import javax.json.JsonObjectBuilder;
+
 
 /**
  *
@@ -29,40 +23,6 @@ import javax.json.JsonObjectBuilder;
  */
 public class JsonLDUtilsTest {
 
-	@Test
-	public void testLoadJsonObject() throws MalformedURLException, WelcomeException {
-		File jsonFile = new File("src/test/resources/json/merge/header.json");
-		URL jsonUrl = jsonFile.toURI().toURL();
-		
-		JsonObjectBuilder builder = Json.createObjectBuilder();
-		JsonObject expected = builder.add("d", 8)
-				.add("e", "e")
-				.add("f", false)
-				.build();
-
-		JsonObject actual = JsonLDUtils.loadJsonObject(jsonUrl);
-		
-		Assertions.assertEquals(expected, actual);
-	}
-
-	@Test
-	public void testToJsonObject() throws MalformedURLException, WelcomeException, IOException {
-		File jsonFile = new File("src/test/resources/json/merge/header.json");
-
-		ObjectMapper mapper = new ObjectMapper();
-		Map values = mapper.readValue(jsonFile, Map.class);
-
-		JsonObjectBuilder builder = Json.createObjectBuilder();
-		JsonObject expected = builder.add("d", 8)
-				.add("e", "e")
-				.add("f", false)
-				.build();
-
-		JsonObject actual = JsonLDUtils.toJsonObject(values);
-		
-		Assertions.assertEquals(expected, actual);
-	}
-	
     /**
      * Test of readFrame method, of class JsonLDUtils.
      */

@@ -34,43 +34,6 @@ import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
  */
 public class JsonLDUtils {
     
-	public static JsonObject loadJsonObject(URL jsonURL) throws WelcomeException {
-		
-		try (InputStream inStream = jsonURL.openStream();
-				JsonReader jsonReader = Json.createReader(inStream)) {
-			
-			return jsonReader.readObject();
-				
-		} catch (IOException ex) {
-            throw new WelcomeException(ex);
-		}
-	}
-
-	public static JsonObject toJsonObject(Object obj) throws WelcomeException {
-		
-		try(ByteArrayOutputStream out = new ByteArrayOutputStream();) {
-		
-			ObjectMapper mapper = new ObjectMapper();
-			mapper.writeValue(out, obj);
-
-			byte[] buf = out.toByteArray();
-			try (ByteArrayInputStream in = new ByteArrayInputStream(buf)) {
-				JsonReader reader = Json.createReader(in);
-				JsonObject jsonObj = reader.readObject();
-
-				return jsonObj;
-			}
-		} catch (IOException ex) {
-			throw new WelcomeException(ex);
-		}
-	}
-	
-    public static JsonObject mergeJsonObjects(JsonObject json1, JsonObject json2) throws WelcomeException, IOException {
-    	
-    	JsonObject merged = JsonUtils.merge(json1, json2);
-		return merged;
-    }
-    
     private static Document loadDocument(Reader reader) throws WelcomeException {
         try {
             Document doc = DocumentParser.parse(MediaType.JSON_LD, reader);
