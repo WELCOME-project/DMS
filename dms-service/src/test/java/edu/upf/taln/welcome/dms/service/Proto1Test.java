@@ -63,7 +63,7 @@ public class Proto1Test {
      */
     public void testFrame(File inputFile) throws Exception {
     	
-        boolean overrideExpected = false;
+        boolean overrideExpected = true;
         String baseName = FilenameUtils.getBaseName(inputFile.getName());
 
         ObjectMapper mapper = new ObjectMapper();
@@ -75,7 +75,7 @@ public class Proto1Test {
         writer.writeValue(newOutputFile, frame);
 
         DMSService instance = new DMSService();
-        JsonObject output = instance.realizeNextTurn(frame);
+        DialogueMove output = instance.realizeNextTurn(frame);
 
         File expectedFile = new File(inputFile.getParent(), baseName + "_Move.json");
         if (!expectedFile.exists() || overrideExpected) {
@@ -97,7 +97,7 @@ public class Proto1Test {
      */
     public void testSeparateSlot(File inputFile) throws Exception {
     	
-        boolean overrideExpected = false;
+        boolean overrideExpected = true;
         String baseName = FilenameUtils.getBaseName(inputFile.getName());
         
     	Map<String, Frame> frames = generateAllPossiblePendingSlots(inputFile);
@@ -108,7 +108,7 @@ public class Proto1Test {
     		Frame frame = frames.get(slotId);
 	        
 	        DMSService instance = new DMSService();
-	        JsonObject output = instance.realizeNextTurn(frame);
+	        DialogueMove output = instance.realizeNextTurn(frame);
 	        
             File expectedFile = new File(inputFile.getParent(), baseName + "_" + slotId + "_Move.json");
             if (!expectedFile.exists() || overrideExpected) {

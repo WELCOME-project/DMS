@@ -1,5 +1,6 @@
 package edu.upf.taln.welcome.dms.service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectReader;
 
 import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.DMInput;
@@ -39,6 +41,8 @@ import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
 import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
 import edu.upf.taln.welcome.dms.core.DialogueManager;
+import java.io.InputStream;
+import java.util.Map;
 
 
 /**
@@ -1484,7 +1488,7 @@ public class DMSService {
 	 * Unmarshalls JSON-LD edu.upf.taln.welcome.nlg.commons.input to a POJO representations of a DIP frame, and passes it to the dialogue manager.
 	 * The resulting dialogue moves are serialized back into JSON-LD and returned.
 	 */
-	public JsonObject realizeNextTurn(@Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
+	public DialogueMove realizeNextTurn(@Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
 		try {
             String content = input.toString();
 			Frame dip = JsonLDUtils.readFrame(content, dmsContextURL);
@@ -1502,18 +1506,17 @@ public class DMSService {
 		}
 	}
 	
-	protected JsonObject realizeNextTurn(Frame dip) throws WelcomeException {
+	protected DialogueMove realizeNextTurn(Frame dip) throws WelcomeException {
 		DialogueMove move = manager.map(dip);
-
-        ObjectMapper mapper = new ObjectMapper();
         
-		try {			
-			JsonObject context = JsonLDUtils.loadJsonObject(dmsContextURL);
-			JsonObject result = JsonLDUtils.toJsonObject(move);
-		
-			JsonObject mergedResult = JsonLDUtils.mergeJsonObjects(context, result);
+		try (InputStream inStream = dmsContextURL.openStream()) {
+
+	        ObjectMapper mapper = new ObjectMapper();
+			Map<String, Object> contextMap = mapper.readValue(inStream, new TypeReference<Map<String,Object>>() {});
 			
-			return mergedResult;
+			move.context = contextMap;
+
+			return move;
 			
 		} catch (IOException e) {
 			throw new WelcomeException(e);

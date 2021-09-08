@@ -94,7 +94,7 @@ public class JsonLDUtilsTest {
     public void readMoveTest() throws Exception {
         
         File inputFile = new File("src/test/resources/jsonld/Opening_Move.json");
-        File expectedFile = new File("src/test/resources/jsonld/Opening_Move_expected.json");
+        File expectedFile = new File("src/test/resources/jsonld/Opening_Move.json");
 
         ObjectMapper mapper = new ObjectMapper();
         JsonNode input = mapper.readTree(inputFile);

@@ -6,8 +6,6 @@ import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonMerge;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,9 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A dialogue move represents the output of the DMS.
  * It consists of a list of speech acts.
  */
-@JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DialogueMove {
+public class ContextDialogueMove {
 
 	@JsonMerge
     @JsonProperty("@context")
@@ -39,8 +36,8 @@ public class DialogueMove {
         counter = 0;
     }
 
-    public DialogueMove() { }
-    public DialogueMove(List<SpeechAct> speechActs)
+    public ContextDialogueMove() { }
+    public ContextDialogueMove(List<SpeechAct> speechActs)
     {
         this.id = "move_" + counter++;
         this.type = "welcome:DialogueMove";
