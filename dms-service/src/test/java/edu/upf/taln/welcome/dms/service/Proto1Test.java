@@ -1,30 +1,28 @@
 package edu.upf.taln.welcome.dms.service;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.io.FilenameFilter;
-import java.util.Arrays;
 import java.util.stream.Stream;
-import javax.json.JsonObject;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.filefilter.AndFileFilter;
 import org.apache.commons.io.filefilter.FileFileFilter;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -63,7 +61,7 @@ public class Proto1Test {
      */
     public void testFrame(File inputFile) throws Exception {
     	
-        boolean overrideExpected = true;
+        boolean overrideExpected = false;
         String baseName = FilenameUtils.getBaseName(inputFile.getName());
 
         ObjectMapper mapper = new ObjectMapper();
@@ -97,7 +95,7 @@ public class Proto1Test {
      */
     public void testSeparateSlot(File inputFile) throws Exception {
     	
-        boolean overrideExpected = true;
+        boolean overrideExpected = false;
         String baseName = FilenameUtils.getBaseName(inputFile.getName());
         
     	Map<String, Frame> frames = generateAllPossiblePendingSlots(inputFile);

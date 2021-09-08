@@ -1,36 +1,28 @@
 package edu.upf.taln.welcome.dms.service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.json.JsonObject;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
 
 import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.DMInput;
@@ -41,8 +33,13 @@ import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
 import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
 import edu.upf.taln.welcome.dms.core.DialogueManager;
-import java.io.InputStream;
-import java.util.Map;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 
 /**
@@ -1414,7 +1411,7 @@ public class DMSService {
 
     private final DialogueManager manager;	
     private URL dmsContextURL;
-    private URL nlgContextFile;
+    private URL nlgContextURL;
     
 	@Context
 	ServletConfig config;
@@ -1428,8 +1425,8 @@ public class DMSService {
                 throw new WelcomeException("DMS JSONLD context file not found!");
             }
 					
-			nlgContextFile = JsonLDUtils.class.getResource("/welcome-nlg-compacted.jsonld");
-            if (nlgContextFile == null) {
+			nlgContextURL = JsonLDUtils.class.getResource("/welcome-nlg-compacted.jsonld");
+            if (nlgContextURL == null) {
                 throw new WelcomeException("NLG JSONLD context file not found!");
             }
         
@@ -1509,12 +1506,12 @@ public class DMSService {
 	protected DialogueMove realizeNextTurn(Frame dip) throws WelcomeException {
 		DialogueMove move = manager.map(dip);
         
-		try (InputStream inStream = dmsContextURL.openStream()) {
+		try (InputStream inStream = nlgContextURL.openStream()) {
 
 	        ObjectMapper mapper = new ObjectMapper();
-			Map<String, Object> contextMap = mapper.readValue(inStream, new TypeReference<Map<String,Object>>() {});
+	        DialogueMove contextMap = mapper.readValue(inStream, new TypeReference<DialogueMove>() {});
 			
-			move.context = contextMap;
+			move.context = contextMap.context;
 
 			return move;
 			
