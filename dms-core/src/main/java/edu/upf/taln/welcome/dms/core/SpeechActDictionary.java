@@ -26,7 +26,8 @@ public class SpeechActDictionary {
         dictionary.put("welcome:informMessage", SpeechActLabel.Apology);
         
         dictionary.put("welcome:obtainName", SpeechActLabel.Wh_Question);
-        dictionary.put("welcome:obtainStatus", SpeechActLabel.Wh_Question);
+        dictionary.put("frs:obtainName", SpeechActLabel.Wh_Question);
+        dictionary.put("frs:obtainStatus", SpeechActLabel.Wh_Question);
         
         dictionary.put("frs:obtainInterest", SpeechActLabel.Yes_No_Question);
         
@@ -130,9 +131,15 @@ public class SpeechActDictionary {
         dictionary.put("frs:obtainDurationCatalanSociety", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainCertificateCatalanSociety", SpeechActLabel.Yes_No_Question);
 
+        dictionary.put("welcome:obtainConfirmationNormalClosing", SpeechActLabel.Yes_No_Question);
+        dictionary.put("frs:obtainConfirmationNormalClosing", SpeechActLabel.Yes_No_Question);
+        
         dictionary.put("welcome:informEnd", SpeechActLabel.Statement_non_opinion);
         dictionary.put("welcome:obtainConfirmation", SpeechActLabel.Yes_No_Question);
+        dictionary.put("frs:informEnd", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("frs:obtainConfirmation", SpeechActLabel.Yes_No_Question);
 
+        dictionary.put("welcome:informGenericDTASFContact", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:informGenericDTASFContact", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:obtainConfirmation", SpeechActLabel.Yes_No_Question);
         
@@ -181,6 +188,7 @@ public class SpeechActDictionary {
         dictionary.put("pas:obtainConfirmationNormalClosing", SpeechActLabel.Yes_No_Question);
         
         dictionary.put("welcome:informGenericCARITASContact", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("pas:informGenericCARITASContact", SpeechActLabel.Statement_non_opinion);
         dictionary.put("pas:obtainConfirmation", SpeechActLabel.Yes_No_Question);
         
         //PRAKSIS
@@ -232,6 +240,7 @@ public class SpeechActDictionary {
         dictionary.put("pps:informEnd", SpeechActLabel.Statement_non_opinion);
         dictionary.put("pps:obtainConfirmationNormalClosing", SpeechActLabel.Yes_No_Question);
         
+        dictionary.put("welcome:informGenericPRAKSISContact", SpeechActLabel.Statement_non_opinion);
         dictionary.put("pps:informGenericPRAKSISContact", SpeechActLabel.Statement_non_opinion);
         dictionary.put("pps:obtainConfirmation", SpeechActLabel.Yes_No_Question);
     }
