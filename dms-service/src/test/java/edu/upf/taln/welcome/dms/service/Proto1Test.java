@@ -38,6 +38,7 @@ import edu.upf.taln.welcome.dms.commons.input.Status;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -237,5 +238,23 @@ public class Proto1Test {
     @MethodSource("proto1CaritasInputs")
     public void testCaritasPrototype1Separate(File jsonLDInput) throws Exception {
         testSeparateSlot(jsonLDInput);
+    }
+
+	@Test
+    public void testClarifyPrototype1() throws Exception {
+		
+		File inputFile = new File("src/test/resources/proto1/input_to_dms.txt");
+		
+        ObjectMapper mapper = new ObjectMapper();
+    	JsonNode input = mapper.readValue(inputFile, JsonNode.class);
+    	
+    	URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
+    	Frame frame = JsonLDUtils.readFrame(input.toString(), contextFile);
+		
+		DMSService instance = new DMSService();
+		DialogueMove output = instance.realizeNextTurn(frame);
+		
+		String result = writer.writeValueAsString(output);
+		System.out.println(result);
     }
 }
