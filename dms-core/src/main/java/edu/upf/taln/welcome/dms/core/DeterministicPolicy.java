@@ -18,6 +18,8 @@ import java.util.Optional;
 public class DeterministicPolicy implements Policy {
 
     private static final String SYSTEM_INFO_SLOT_TYPE = "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo";
+    private static final String SYSTEM_DEMAND_SLOT_TYPE = "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand";
+	
     private final SpeechActDictionary speechActDictionary = new SpeechActDictionary();
 
     /**
@@ -98,12 +100,17 @@ public class DeterministicPolicy implements Policy {
                 .findFirst();
         if (firstClarifyRequest.isPresent())
         {
-            SpeechAct accept = new SpeechAct();
-            accept.label = SpeechActLabel.Agree_or_Accept;
+            Slot slot = firstClarifyRequest.get();
+
+			SpeechAct accept = new SpeechAct();
+			if (slot.type.equals(SYSTEM_DEMAND_SLOT_TYPE)) {				
+				accept.label = SpeechActLabel.Apology_Repeat_Question;
+			} else {
+				accept.label = SpeechActLabel.Apology_Repeat_Information;
+			}
             moves.add(accept);
 
             SpeechAct repeat = new SpeechAct();
-            Slot slot = firstClarifyRequest.get();
             repeat.label = speechActDictionary.get(slot.id);
             repeat.slot = slot;
             moves.add(repeat);
