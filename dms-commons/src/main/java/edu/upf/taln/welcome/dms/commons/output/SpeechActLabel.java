@@ -47,5 +47,6 @@ public enum SpeechActLabel {
     Apology,
     Apology_Repeat_Question,
     Apology_Repeat_Information,
+	Apology_No_Extra_Information,
     Thanking}
 

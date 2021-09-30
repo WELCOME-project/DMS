@@ -63,6 +63,7 @@ public class DeterministicPolicy implements Policy {
      */
     private boolean checkUnforeseenSituations(Frame frame, List<SpeechAct> moves)
     {
+		boolean more_moves = true;
         Optional<Slot> firstFailedAnalysis = frame.slots.stream()
                 .filter(slot -> slot.status == Status.FailedAnalysis)
                 .findFirst();
@@ -73,14 +74,14 @@ public class DeterministicPolicy implements Policy {
             not_understanding.label = SpeechActLabel.Signal_non_understanding;
             not_understanding.slot = slot;
             moves.add(not_understanding);
-
-            return false; // no more moves
+			
+			more_moves = false;
         }
 
         Optional<Slot> firstUnclearAnalysis = frame.slots.stream()
                 .filter(slot -> slot.status == Status.UnclearAnalysis)
                 .findFirst();
-        if (firstUnclearAnalysis.isPresent())
+        if (moves.isEmpty() && firstUnclearAnalysis.isPresent())
         {
             SpeechAct not_understanding = new SpeechAct();
             not_understanding.label = SpeechActLabel.Signal_non_understanding;
@@ -92,13 +93,13 @@ public class DeterministicPolicy implements Policy {
             quote.slot = slot;
             moves.add(quote);
 
-            return false; // no more moves
-        }
+			more_moves = false;
+		}
 
         Optional<Slot> firstClarifyRequest = frame.slots.stream()
                 .filter(slot -> slot.status == Status.TCNClarifyRequest)
                 .findFirst();
-        if (firstClarifyRequest.isPresent())
+        if (moves.isEmpty() && firstClarifyRequest.isPresent())
         {
             Slot slot = firstClarifyRequest.get();
 
@@ -115,23 +116,34 @@ public class DeterministicPolicy implements Policy {
             repeat.slot = slot;
             moves.add(repeat);
 
-            return false; // no more moves
-        }
+			more_moves = false;
+		}
 
         Optional<Slot> firstElaborateRequest = frame.slots.stream()
                 .filter(slot -> slot.status == Status.TCNElaborateRequest)
                 .findFirst();
-        if (firstElaborateRequest.isPresent())
+        if (moves.isEmpty() && firstElaborateRequest.isPresent())
         {
             Slot slot = firstElaborateRequest.get();
+			
             SpeechAct apologize = new SpeechAct();
-            apologize.label = SpeechActLabel.Apology;
-            apologize.slot = slot;
-            moves.add(apologize);
+			if (slot.type.equals(SYSTEM_DEMAND_SLOT_TYPE)) {				
+				apologize.label = SpeechActLabel.Apology_Repeat_Question;
+	            moves.add(apologize);
 
-            return true;
+				SpeechAct repeat = new SpeechAct();
+				repeat.label = speechActDictionary.get(slot.id);
+				repeat.slot = slot;
+				moves.add(repeat);
+
+				more_moves = false;
+
+			} else {
+				apologize.label = SpeechActLabel.Apology_No_Extra_Information;
+	            moves.add(apologize);
+			}
         }
 
-        return true;
+        return more_moves;
     }
 }

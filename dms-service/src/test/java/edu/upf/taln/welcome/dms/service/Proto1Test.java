@@ -257,4 +257,22 @@ public class Proto1Test {
 		String result = writer.writeValueAsString(output);
 		System.out.println(result);
     }
+
+	@Test
+    public void testElaboratePrototype1() throws Exception {
+		
+		File inputFile = new File("src/test/resources/proto1/input_to_dms_elaborate.json");
+		
+        ObjectMapper mapper = new ObjectMapper();
+    	JsonNode input = mapper.readValue(inputFile, JsonNode.class);
+    	
+    	URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
+    	Frame frame = JsonLDUtils.readFrame(input.toString(), contextFile);
+		
+		DMSService instance = new DMSService();
+		DialogueMove output = instance.realizeNextTurn(frame);
+		
+		String result = writer.writeValueAsString(output);
+		System.out.println(result);
+    }
 }
