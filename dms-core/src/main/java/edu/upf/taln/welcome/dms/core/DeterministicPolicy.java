@@ -70,70 +70,51 @@ public class DeterministicPolicy implements Policy {
 		while (idx < slots.size() && moves.isEmpty()) {
 			
 			Slot slot = slots.get(idx);
+
+			boolean repeat = false;
+			SpeechActLabel label = null;
 			switch(slot.status) {
 				
 				case FailedAnalysis:
 				{
-					SpeechAct not_understanding = new SpeechAct();
-					not_understanding.label = SpeechActLabel.Signal_non_understanding;
-					moves.add(not_understanding);
-
+					label = SpeechActLabel.Signal_non_understanding;
 					more_moves = false;
+					repeat = false;
 				}
 				break;
 
 				case UnclearAnalysis:
 				{
-					SpeechAct not_understanding = new SpeechAct();
-					not_understanding.label = SpeechActLabel.Signal_non_understanding;
-					moves.add(not_understanding);
-
-					SpeechAct quote = new SpeechAct();
-					quote.label = SpeechActLabel.Quotation;
-					quote.slot = slot;
-					moves.add(quote);
-
+					label = SpeechActLabel.Signal_non_understanding;
 					more_moves = false;
+					repeat = false;
 				}
 				break;
 
 				case TopicSwitch:
 				case TCNClarifyRequest:
 				{
-					SpeechAct accept = new SpeechAct();
 					if (slot.type.equals(SYSTEM_DEMAND_SLOT_TYPE)) {				
-						accept.label = SpeechActLabel.Apology_Repeat_Question;
+						label = SpeechActLabel.Apology_Repeat_Question;
 					} else {
-						accept.label = SpeechActLabel.Apology_Repeat_Information;
+						label = SpeechActLabel.Apology_Repeat_Information;
 					}
-					moves.add(accept);
-
-					SpeechAct repeat = new SpeechAct();
-					repeat.label = speechActDictionary.get(slot.id);
-					repeat.slot = slot;
-					moves.add(repeat);
-
 					more_moves = false;
+					repeat = true;
 				}
 				break;
 
 				case TCNElaborateRequest:
 				{
-					SpeechAct apologize = new SpeechAct();
 					if (slot.type.equals(SYSTEM_DEMAND_SLOT_TYPE)) {				
-						apologize.label = SpeechActLabel.Apology_Repeat_Question;
-						moves.add(apologize);
-
-						SpeechAct repeat = new SpeechAct();
-						repeat.label = speechActDictionary.get(slot.id);
-						repeat.slot = slot;
-						moves.add(repeat);
-
+						label = SpeechActLabel.Apology_Repeat_Question;
 						more_moves = false;
+						repeat = true;
 
 					} else {
-						apologize.label = SpeechActLabel.Apology_No_Extra_Information;
-						moves.add(apologize);
+						label = SpeechActLabel.Apology_No_Extra_Information;
+						more_moves = true;
+						repeat = false;
 					}
 				}
 				break;
@@ -141,6 +122,23 @@ public class DeterministicPolicy implements Policy {
 				default:
 					break;
 			}
+			
+			if (label != null) {
+				if (repeat) {
+					SpeechAct sp1 = new SpeechAct(label, null);
+					moves.add(sp1);
+					
+					SpeechActLabel repeatLabel = speechActDictionary.get(slot.id);
+					SpeechAct sp2 = new SpeechAct(repeatLabel, slot);
+					moves.add(sp2);
+					
+				} else {
+					SpeechAct sp = new SpeechAct(label, slot);
+					moves.add(sp);
+				}
+				
+			}
+			
 			idx++;
 		}
 
