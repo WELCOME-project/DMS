@@ -57,6 +57,15 @@
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
       "welcome:hasInputRDFContents" : [ {
         "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Language",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "English"
+        }
+      }, {
+        "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:slot_ef_thes",
         "rdf:predicate" : "schema:dayOfWeek",
         "rdf:object" : {

@@ -57,6 +57,24 @@
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
       "welcome:hasInputRDFContents" : [ {
         "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Language",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "English"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Language",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "French"
+        }
+      }, {
+        "@type" : "rdf:Statement",
         "rdf:subject" : "welcome:skype_informEnglish",
         "rdf:predicate" : "welcome:hasSkypeId",
         "rdf:object" : {
