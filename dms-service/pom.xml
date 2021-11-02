@@ -4,7 +4,7 @@
     <parent>
         <groupId>edu.upf.taln.welcome</groupId>
         <artifactId>dms-parent</artifactId>
-        <version>0.2.3-SNAPSHOT</version>
+        <version>0.3.0-SNAPSHOT</version>
     </parent>
     
     <artifactId>dms-service</artifactId>
