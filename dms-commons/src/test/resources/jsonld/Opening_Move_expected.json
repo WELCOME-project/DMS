@@ -1,0 +1,22 @@
+{
+  "@id" : "move_0",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Open_Question_0",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Open_Question",
+    "welcome:hasSlot" : {
+      "@id" : "welcome:obtainRequest",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+      "welcome:hasTemplateId" : "TObtainMatterConcern",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest",
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:Unknown"
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 1.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}

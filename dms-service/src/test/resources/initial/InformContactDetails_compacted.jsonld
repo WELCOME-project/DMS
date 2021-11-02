@@ -1,0 +1,126 @@
+{
+  "@context": {
+    "w3c": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "welcome": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "daml": "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf:subject": {
+      "@type": "@id"
+    },
+    "rdf:predicate": {
+      "@type": "@id"
+    },
+    "welcome:hasSlot": {
+      "@type": "@id"
+    },
+    "welcome:hasOntologyType": {
+      "@type": "@id"
+    },
+    "welcome:hasStatus": {
+      "@type": "@id"
+    },
+    "welcome:hasDIPStatus": {
+      "@type": "@id"
+    },
+    "welcome:hasInputRDFContents": {
+      "@type": "@id"
+    },
+    "welcome:hasTCNAnswer": {
+      "@type": "@id"
+    },
+    "welcome:confidenceScore": {
+      "@type": "w3c:integer"
+    },
+    "welcome:hasNumberAttempts": {
+      "@type": "w3c:integer"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "_:node5195",
+      "@type": "rdf:Statement",
+      "rdf:object": "False",
+      "rdf:predicate": "welcome:hasValue",
+      "rdf:subject": "_:node1fa047ptvx1"
+    },
+    {
+      "@id": "_:node5196",
+      "@type": "rdf:Statement",
+      "rdf:object": "meyer.mrs@hammjobcenter.de",
+      "rdf:predicate": "daml:email",
+      "rdf:subject": "welcome:caritasContactPerson"
+    },
+    {
+      "@id": "_:node5197",
+      "@type": "rdf:Statement",
+      "rdf:object": "02381-144 270",
+      "rdf:predicate": "daml:phone",
+      "rdf:subject": "welcome:caritasContactPerson"
+    },
+    {
+      "@id": "_:node5198",
+      "@type": "rdf:Statement",
+      "rdf:object": "www.test.com",
+      "rdf:predicate": "daml:webURL",
+      "rdf:subject": "welcome:caritasContactPerson"
+    },
+    {
+      "@id": "welcome:InformContactDetails",
+      "@type": "welcome:DIP",
+      "welcome:DIPId": "1625651729894",
+      "welcome:hasDIPStatus": "welcome:Unknown",
+      "welcome:hasSlot": [
+        "welcome:reactiveFlag",
+        "welcome:informContactPhone",
+        "welcome:informContactOtherInfo",
+        "welcome:obtainConfirmationContactDetails"
+      ]
+    },
+    {
+      "@id": "welcome:informContactOtherInfo",
+      "@type": "welcome:SystemInfo",
+      "welcome:confidenceScore": "0",
+      "welcome:hasInputRDFContents": [
+        "_:node5196",
+        "_:node5198"
+      ],
+      "welcome:hasNumberAttempts": "0",
+      "welcome:hasOntologyType": "welcome:Template",
+      "welcome:hasStatus": "welcome:Pending",
+      "welcome:isOptional": "no"
+    },
+    {
+      "@id": "welcome:informContactPhone",
+      "@type": "welcome:SystemInfo",
+      "welcome:confidenceScore": "0",
+      "welcome:hasInputRDFContents": "_:node5197",
+      "welcome:hasNumberAttempts": "0",
+      "welcome:hasOntologyType": "welcome:Template",
+      "welcome:hasStatus": "welcome:Pending",
+      "welcome:isOptional": "no"
+    },
+    {
+      "@id": "welcome:obtainConfirmationContactDetails",
+      "@type": "welcome:SystemDemand",
+      "welcome:confidenceScore": "0",
+      "welcome:hasInputRDFContents": "welcome:Unknown",
+      "welcome:hasNumberAttempts": "0",
+      "welcome:hasOntologyType": "welcome:Boolean",
+      "welcome:hasStatus": "welcome:Pending",
+      "welcome:hasTCNAnswer": "welcome:Unknown",
+      "welcome:isOptional": "no"
+    },
+    {
+      "@id": "welcome:reactiveFlag",
+      "@type": "welcome:SystemDemand",
+      "welcome:confidenceScore": "1",
+      "welcome:hasInputRDFContents": "welcome:Unknown",
+      "welcome:hasNumberAttempts": "0",
+      "welcome:hasOntologyType": "welcome:AppointmentConcern",
+      "welcome:hasStatus": "welcome:Completed",
+      "welcome:hasTCNAnswer": "_:node5195",
+      "welcome:isOptional": "no"
+    }
+  ],
+  "@id": "welcome:DIP-1625651729894"
+}

@@ -1,0 +1,83 @@
+@prefix schema: <https://schema.org/> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix welcomeService: <http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#> .
+@prefix geovocab: <http://geovocab.org/spatial#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:confirmCommunication a :SystemDemand;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :Boolean;
+  :hasStatus :Completed;
+  :confidenceScore 1;
+  :hasNumberAttempts 0;
+  :isOptional "yes";
+  :hasTCNAnswer _:node4988 .
+
+:confirmLanguage a :SystemDemand;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :Language;
+  :hasStatus :Completed;
+  :confidenceScore 1;
+  :hasNumberAttempts 0;
+  :isOptional "yes";
+  :hasTCNAnswer _:node4994 .
+
+:obtainRequest a :SystemDemand;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :Unknown;
+  :hasStatus "Completed";
+  :confidenceScore 0;
+  :hasNumberAttempts 8;
+  :isOptional "no";
+  :hasTCNAnswer _:node4992 .
+
+:Opening a :DIP;
+  :hasSlot :confirmCommunication, :confirmLanguage, :obtainRequest;
+  :DIPId "1625642729463";
+  :hasDIPStatus :Unknown .
+
+_:node4988 a rdf:Statement;
+  rdf:subject _:node4989;
+  rdf:predicate :hasValue;
+  rdf:object "Yes" .
+
+_:node4992 a rdf:Statement;
+  rdf:subject _:node4993;
+  rdf:predicate :hasValue;
+  rdf:object "Unknown" .
+
+:C-SpeechAct1625643005165 a :SpeechActContainer;
+  :hasContainerTranscription "Hello I would need some information on how to schedule an appointment";
+  :hasSpeechActObject service:Service-1625643005165;
+  :hasSpeechActType :Commit;
+  :hasContainerId "1625643005165"^^xsd:long;
+  :isLastContainer "true" .
+
+service:Service-1625643005165 a service:Service, :ServiceRequest;
+  service:describedBy process:Process-1625643005165;
+  service:presents profile:Profile-1625643005165 .
+
+process:Process-1625643005165 a process:AtomicProcess;
+  service:describes service:Service-1625643005165 .
+
+profile:Profile-1625643005165 a profile:Profile;
+  service:presentedBy service:Service-1625643005165;
+  profile:textDescription "Training Appointment" .
+
+_:node4994 a rdf:Statement;
+  rdf:subject _:node1f9vtlmrtx6;
+  rdf:predicate :hasValue;
+  rdf:object "English" .

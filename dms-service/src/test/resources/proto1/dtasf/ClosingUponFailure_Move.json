@@ -1,0 +1,75 @@
+{
+  "@context" : {
+    "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdf:predicate" : {
+      "@type" : "@id"
+    },
+    "rdf:subject" : {
+      "@type" : "@id"
+    },
+    "w3c" : "http://www.w3.org/2001/XMLSchema#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "welcome:confidenceScore" : {
+      "@type" : "w3c:float"
+    },
+    "welcome:hasDIPStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@container" : "@set"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "w3c:int"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSlot" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSpeechActs" : {
+      "@container" : "@list"
+    },
+    "welcome:hasStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@type" : "@id"
+    },
+    "welcome:isCurrentDIP" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:isOptional" : {
+      "@type" : "w3c:boolean"
+    }
+  },
+  "@id" : "move_0",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Apology_0",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Apology",
+    "welcome:hasSlot" : {
+      "@id" : "welcome:informMessage",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+      "welcome:hasTemplateId" : "TInformMessage",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:reifiedReason2",
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:subTemplate",
+        "rdf:predicate" : "welcome:isReason",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "STReasonNoFoundService"
+        }
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}

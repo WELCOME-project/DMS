@@ -1,0 +1,53 @@
+@prefix schema: <https://schema.org/> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix process: <http://www.daml.org/services/owl-s/1.1/Process.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix profile: <http://www.daml.org/services/owl-s/1.1/Profile.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix welcomeService: <http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix actor: <http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#> .
+@prefix geovocab: <http://geovocab.org/spatial#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix service: <http://www.daml.org/services/owl-s/1.1/Service.owl#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:ScenarioIntroduction a :DIP;
+  :hasSlot :informSimulation, :informPersonNameIntro, :obtainReadiness;
+  :DIPId "1625644738798";
+  :hasDIPStatus :Unknown .
+
+:informSimulation a :SystemInfo;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :Template;
+  :hasStatus :Pending;
+  :confidenceScore 0;
+  :hasNumberAttempts 0;
+  :isOptional "no" .
+
+:informPersonNameIntro a :SystemInfo;
+  :hasInputRDFContents _:node4996;
+  :hasOntologyType :Template;
+  :hasStatus :Pending;
+  :confidenceScore 0;
+  :hasNumberAttempts 0;
+  :isOptional "no" .
+
+:obtainReadiness a :SystemDemand;
+  :hasInputRDFContents :Unknown;
+  :hasOntologyType :Boolean;
+  :hasStatus :Pending;
+  :confidenceScore 0;
+  :hasNumberAttempts 0;
+  :isOptional "no";
+  :hasTCNAnswer :Unknown .
+
+_:node4996 a rdf:Statement;
+  rdf:subject :SimulationAgent;
+  rdf:predicate :hasName;
+  rdf:object "Mr. Muller" .

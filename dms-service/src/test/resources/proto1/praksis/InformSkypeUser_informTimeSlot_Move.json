@@ -1,0 +1,110 @@
+{
+  "@context" : {
+    "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdf:predicate" : {
+      "@type" : "@id"
+    },
+    "rdf:subject" : {
+      "@type" : "@id"
+    },
+    "w3c" : "http://www.w3.org/2001/XMLSchema#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "welcome:confidenceScore" : {
+      "@type" : "w3c:float"
+    },
+    "welcome:hasDIPStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@container" : "@set"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "w3c:int"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSlot" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSpeechActs" : {
+      "@container" : "@list"
+    },
+    "welcome:hasStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@type" : "@id"
+    },
+    "welcome:isCurrentDIP" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:isOptional" : {
+      "@type" : "w3c:boolean"
+    }
+  },
+  "@id" : "move_1",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Statement_non_opinion_1",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Statement_non_opinion",
+    "welcome:hasSlot" : {
+      "@id" : "pps:informTimeSlot",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+      "welcome:hasTemplateId" : "TInformAppCallTimeSlot",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+      "welcome:hasInputRDFContents" : [ {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Language",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "English"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:slot_ef_thes",
+        "rdf:predicate" : "schema:dayOfWeek",
+        "rdf:object" : {
+          "@id" : "schema:Friday",
+          "@type" : null,
+          "@value" : null
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:slot_ef_thes",
+        "rdf:predicate" : "schema:closes",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "10:00"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:slot_ef_thes",
+        "rdf:predicate" : "schema:opens",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "09:00"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:AppName",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Skype"
+        }
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}

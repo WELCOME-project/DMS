@@ -1,7 +1,6 @@
 package edu.upf.taln.welcome.dms.commons.input;
 
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 /**
  *

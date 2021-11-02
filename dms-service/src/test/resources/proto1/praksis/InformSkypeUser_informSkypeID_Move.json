@@ -1,0 +1,101 @@
+{
+  "@context" : {
+    "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdf:predicate" : {
+      "@type" : "@id"
+    },
+    "rdf:subject" : {
+      "@type" : "@id"
+    },
+    "w3c" : "http://www.w3.org/2001/XMLSchema#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "welcome:confidenceScore" : {
+      "@type" : "w3c:float"
+    },
+    "welcome:hasDIPStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@container" : "@set"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "w3c:int"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSlot" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSpeechActs" : {
+      "@container" : "@list"
+    },
+    "welcome:hasStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@type" : "@id"
+    },
+    "welcome:isCurrentDIP" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:isOptional" : {
+      "@type" : "w3c:boolean"
+    }
+  },
+  "@id" : "move_2",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Statement_non_opinion_2",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Statement_non_opinion",
+    "welcome:hasSlot" : {
+      "@id" : "pps:informSkypeID",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+      "welcome:hasTemplateId" : "TInformAppCallAccountID",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+      "welcome:hasInputRDFContents" : [ {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Language",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "English"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Language",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "French"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:skype_informEnglish",
+        "rdf:predicate" : "welcome:hasSkypeId",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "asylum.service"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:AppName",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Skype"
+        }
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}
