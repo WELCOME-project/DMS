@@ -14,7 +14,6 @@ public class SpeechActDictionary {
 
     public SpeechActDictionary()
     {
-       	dictionary.put("frs:informNeedRegistration", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:confirmFirstSurname", SpeechActLabel.Yes_No_Question);
         dictionary.put("frs:informDetailsCompletion", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:informDetailsLanguage", SpeechActLabel.Statement_non_opinion);
@@ -30,6 +29,7 @@ public class SpeechActDictionary {
         dictionary.put("frs:informLanguageModuleAddress", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:informLanguageModuleHours", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:informNeedAskAppointment", SpeechActLabel.Statement_non_opinion);
+       	dictionary.put("frs:informNeedRegistration", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:informOfficeAddress", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:informOfficeHours", SpeechActLabel.Statement_non_opinion);
         dictionary.put("frs:informOverview", SpeechActLabel.Statement_non_opinion);
@@ -49,7 +49,6 @@ public class SpeechActDictionary {
         dictionary.put("frs:obtainCertificateSpanish", SpeechActLabel.Yes_No_Question);
         dictionary.put("frs:obtainCityOfBirth", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainConfirmation", SpeechActLabel.Yes_No_Question);
-        dictionary.put("frs:obtainConfirmation", SpeechActLabel.Yes_No_Question);
         dictionary.put("frs:obtainConfirmationNormalClosing", SpeechActLabel.Yes_No_Question);
         dictionary.put("frs:obtainCountryOfBirth", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainCourseInstitutionCatalan", SpeechActLabel.Wh_Question);
@@ -67,7 +66,6 @@ public class SpeechActDictionary {
         dictionary.put("frs:obtainDoorNumber", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainDurationCatalan", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainDurationCatalanSociety", SpeechActLabel.Wh_Question);
-        dictionary.put("frs:obtainDurationLabourMarket", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainDurationLabourMarket", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainDurationSpanish", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainEmail", SpeechActLabel.Wh_Question);
@@ -92,7 +90,6 @@ public class SpeechActDictionary {
         dictionary.put("frs:obtainMobilePhone", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainMunicipality", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainName", SpeechActLabel.Wh_Question);
-        dictionary.put("frs:obtainName", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainNationality", SpeechActLabel.Declarative_Yes_No_Question);
         dictionary.put("frs:obtainNotificationPreferences", SpeechActLabel.Yes_No_Question);
         dictionary.put("frs:obtainPostCode", SpeechActLabel.Wh_Question);
@@ -114,7 +111,6 @@ public class SpeechActDictionary {
         dictionary.put("frs:obtainYearArrivalRegion", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainYearCompletionCatalan", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainYearCompletionCatalanSociety", SpeechActLabel.Wh_Question);
-        dictionary.put("frs:obtainYearCompletionLabourMarket", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainYearCompletionLabourMarket", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainYearCompletionSpanish", SpeechActLabel.Wh_Question);
 		
