@@ -33,3 +33,4 @@ nbactions*.xml
 
 /dms-service/nbproject/
 /dms-core/nbproject/
+deploy_token
