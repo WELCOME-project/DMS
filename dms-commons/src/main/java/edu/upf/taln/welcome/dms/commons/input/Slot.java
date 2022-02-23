@@ -1,8 +1,10 @@
 package edu.upf.taln.welcome.dms.commons.input;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -38,4 +40,9 @@ public class Slot {
 
     @JsonProperty("welcome:isOptional")
     public boolean isOptional;
+	
+    @JsonInclude(JsonInclude.Include.NON_NULL) 
+	@JsonProperty("welcome:hasTCNAnswer")
+	@JsonAlias("https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer")	
+    public RDFContent tcnAnswer;
 }

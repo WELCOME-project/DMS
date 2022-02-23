@@ -14,9 +14,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class RDFContent {
 	
 	public static class JsonldGeneric {
+	    @JsonInclude(JsonInclude.Include.NON_NULL) 
 		@JsonProperty("@id")
 	    public String id;
 
+        @JsonInclude(JsonInclude.Include.NON_NULL) 
 	    @JsonProperty("@type")
 	    public String type;
 	    

@@ -16,7 +16,10 @@
       "welcome:hasStatus" : "welcome:Pending",
       "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 1.0,
-      "welcome:isOptional" : false
+      "welcome:isOptional" : false,
+      "welcome:hasTCNAnswer" : {
+        "@id" : "welcome:Unknown"
+      }
     }
   } ]
 }

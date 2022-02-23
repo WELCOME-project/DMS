@@ -127,6 +127,15 @@ public class DeterministicPolicy implements Policy {
 					}
 				}
 				break;
+				
+				case NeedsUpdate:
+					if (slot.tcnAnswer == null) {
+						label = SpeechActLabel.NeedsUpdate;
+						
+					} else {
+						label = SpeechActLabel.NeedsUpdateAnswer;
+					}
+					break;
 
 				default:
 					break;

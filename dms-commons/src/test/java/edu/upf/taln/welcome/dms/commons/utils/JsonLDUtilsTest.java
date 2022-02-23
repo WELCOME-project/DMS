@@ -44,6 +44,7 @@ public class JsonLDUtilsTest {
                 .writerWithDefaultPrettyPrinter();
 
         String result = writer.writeValueAsString(frame);
+		//System.out.println(result);
 
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");
         Assertions.assertEquals(expResult, result);

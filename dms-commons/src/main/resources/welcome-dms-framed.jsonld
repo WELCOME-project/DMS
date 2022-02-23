@@ -39,7 +39,8 @@
       "@container": "@set"
     },
     "welcome:hasTCNAnswer": {
-      "@type": "@id"
+      "@type": "welcome:Unknown",
+      "@type": "rdf:Statement"
     },
     "welcome:confidenceScore": {
       "@type": "w3c:float"
@@ -61,6 +62,11 @@
       "@container": "@set",      
       "@type": "welcome:Unknown",
       "@type": "rdf:Statement"
-      }
+    },
+    "welcome#hasTCNAnswer": {
+      "@container": "@set",      
+      "@type": "welcome:Unknown",
+      "@type": "rdf:Statement"
+    }
   } 
 }

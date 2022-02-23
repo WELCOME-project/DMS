@@ -32,7 +32,7 @@
     "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
-    "@id" : "_:node1fb87e8b5x4"
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language"
   } ]
 }, {
   "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Opening",

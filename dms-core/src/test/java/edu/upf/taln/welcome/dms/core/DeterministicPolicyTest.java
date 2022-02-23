@@ -39,12 +39,15 @@ public class DeterministicPolicyTest {
         
         DeterministicPolicy instance = new DeterministicPolicy();
         DialogueMove move = instance.map(frame);
+        
+        String result = mapper
+                //.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
+				.writerWithDefaultPrettyPrinter()
+				.writeValueAsString(move);
+        System.out.println(result);
 
         File expectedFile = new File("src/test/resources/proto1/DTASF_Opening_Move.json");
         //mapper.writerWithDefaultPrettyPrinter().writeValue(expectedFile, move);
-        
-        String result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(move);
-        //System.out.println(result);
         
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");
         assertEquals(expResult, result);

@@ -27,5 +27,8 @@ public enum Status {
     TCNElaborateRequest,
     
     @JsonProperty("welcome:TopicSwitch")
-    TopicSwitch
+    TopicSwitch,
+	
+    @JsonProperty("welcome:NeedsUpdate")
+	NeedsUpdate
 }

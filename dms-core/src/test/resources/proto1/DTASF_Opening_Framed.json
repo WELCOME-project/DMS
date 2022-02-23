@@ -45,7 +45,7 @@
         "@type": "rdf:Statement",
         "rdf:object": "English",
         "rdf:predicate": "welcome:hasValue",
-        "rdf:subject": {}
+        "rdf:subject": "welcome:Language"
       },
       "welcome:hasTemplateId": "TConfirmLanguage",
       "welcome:isOptional": "false"
@@ -62,7 +62,9 @@
       "welcome:hasNumberAttempts": "0",
       "welcome:hasOntologyType": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest",
       "welcome:hasStatus": "welcome:Pending",
-      "welcome:hasTCNAnswer": "welcome:Unknown",
+      "welcome:hasTCNAnswer":  {
+      "@id" : "welcome:Unknown"
+    },
       "welcome:hasTemplateId": "TObtainMatterConcern",
       "welcome:isOptional": "false"
     }

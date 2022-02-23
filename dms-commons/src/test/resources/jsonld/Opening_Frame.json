@@ -1,7 +1,8 @@
 {
   "@id" : "welcome:Opening",
   "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
-  "welcome:hasSlot" : [ {
+  "welcome:hasSlot" : [
+  {
     "@id" : "welcome:confirmCommunication",
     "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TConfirmCommunication",
@@ -12,8 +13,17 @@
     "welcome:hasStatus" : "welcome:Completed",
     "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 1.0,
-    "welcome:isOptional" : false
-  }, {
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Boolean",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@value" : "Yes"
+      }
+    }
+  },
+  {
     "@id" : "welcome:confirmLanguage",
     "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TConfirmLanguage",
@@ -23,16 +33,23 @@
       "rdf:subject" : "welcome:Language",
       "rdf:predicate" : "welcome:hasValue",
       "rdf:object" : {
-        "@id" : null,
-        "@type" : null,
         "@value" : "English"
       }
     } ],
     "welcome:hasStatus" : "welcome:Completed",
     "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 1.0,
-    "welcome:isOptional" : false
-  }, {
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Language",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@value" : "English"
+      }
+    }
+  },
+  {
     "@id" : "welcome:obtainRequest",
     "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainMatterConcern",
@@ -43,6 +60,9 @@
     "welcome:hasStatus" : "welcome:Pending",
     "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 1.0,
-    "welcome:isOptional" : false
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : {
+      "@id" : "welcome:Unknown"
+    }
   } ]
 }
