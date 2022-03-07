@@ -70,4 +70,33 @@ public class JsonLDUtilsTest {
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");
         Assertions.assertEquals(expResult, result);
     }
+
+    /**
+     * Test of readFrame method, of class JsonLDUtils.
+	 * @throws java.lang.Exception
+     */
+    @Test
+    public void testReadProto2() throws Exception {
+        System.out.println("readProto2");
+        
+        File inputFile = new File("src/test/resources/proto2/ScenarioIntroduction.jsonld");
+        File expectedFile = new File("src/test/resources/proto2/ScenarioIntroduction_Frame.json");
+        
+        URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
+        
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode input = mapper.readTree(inputFile);
+        
+        Frame frame = JsonLDUtils.readFrame(input.toString(), contextFile);        
+
+        ObjectWriter writer = mapper
+                .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
+                .writerWithDefaultPrettyPrinter();
+
+        String result = writer.writeValueAsString(frame);
+		System.out.println(result);
+
+        String expResult = FileUtils.readFileToString(expectedFile, "utf8");
+        Assertions.assertEquals(expResult, result);
+    }
 }

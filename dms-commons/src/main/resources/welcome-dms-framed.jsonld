@@ -8,6 +8,7 @@
     "schema": "https://schema.org/",
     "pas": "http://localhost:8080/services/SimulatePhoneAppointmentService.owl#",
     "pps": "http://localhost:8080/services/PreregistrationProcedureService.owl#",
+    "fpr": "http://localhost:8080/services/FullRegistration.owl#",
     "rdf:type": {
       "@type": "w3c:anyURI"
     },
