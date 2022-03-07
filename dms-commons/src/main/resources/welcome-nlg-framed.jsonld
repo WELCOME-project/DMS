@@ -8,8 +8,9 @@
     "frs": "http://localhost:8080/services/FirstReceptionService.owl#",
     "pas": "http://localhost:8080/services/SimulatePhoneAppointmentService.owl#",
     "pps": "http://localhost:8080/services/PreregistrationProcedureService.owl#",
-    "fpr": "http://localhost:8080/services/FullPreRegistration.owl#",
-    "sa": "http://localhost:8080/services/SimulateAppointment.owl#",
+    "fpr": "http://localhost:8080/services/FullPreregistration.owl#",
+    "sa": "http://localhost:8080/services/SimulateAppointmentService.owl#",
+    "ccv": "http://localhost:8080/services/CreateCV.owl#",
     "rdf:subject": {
       "@type": "@id"
     },
