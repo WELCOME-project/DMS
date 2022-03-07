@@ -1,0 +1,56 @@
+{
+  "@id" : "move_0",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Statement_non_opinion_0",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Statement_non_opinion",
+    "welcome:hasSlot" : {
+      "@id" : "fpr:informGreeting",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+      "welcome:hasTemplateId" : "TInformGreeting",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:Unknown"
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  }, {
+    "@id" : "Statement_non_opinion_1",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Statement_non_opinion",
+    "welcome:hasSlot" : {
+      "@id" : "fpr:informScenarioIntroduction",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+      "welcome:hasTemplateId" : "TInformScenarioIntroduction",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:Unknown"
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  }, {
+    "@id" : "Wh_Question_2",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Wh_Question",
+    "welcome:hasSlot" : {
+      "@id" : "fpr:obtainInterest",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+      "welcome:hasTemplateId" : "TObtainInterest",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean",
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:Unknown"
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttemps" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}

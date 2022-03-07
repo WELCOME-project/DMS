@@ -9,6 +9,7 @@
     "pas": "http://localhost:8080/services/SimulatePhoneAppointmentService.owl#",
     "pps": "http://localhost:8080/services/PreregistrationProcedureService.owl#",
     "fpr": "http://localhost:8080/services/FullRegistration.owl#",
+    "fpr": "http://localhost:8080/services/SimulateAppointment.owl#",
     "rdf:type": {
       "@type": "w3c:anyURI"
     },

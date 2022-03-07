@@ -92,9 +92,11 @@ public class JsonLDUtilsTest {
         ObjectWriter writer = mapper
                 .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
                 .writerWithDefaultPrettyPrinter();
+		
+//		writer.writeValue(expectedFile, frame);
 
         String result = writer.writeValueAsString(frame);
-		System.out.println(result);
+//		System.out.println(result);
 
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");
         Assertions.assertEquals(expResult, result);
