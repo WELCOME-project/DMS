@@ -39,7 +39,7 @@ public class Proto2Test {
         DialogueMove move = instance.map(frame);
 
         File expectedFile = new File("src/test/resources/proto2/ScenarioIntroduction_Move.json");
-        writer.writeValue(expectedFile, move);
+        //writer.writeValue(expectedFile, move);
         
         String result = writer.writeValueAsString(move);
         //System.out.println(result);
