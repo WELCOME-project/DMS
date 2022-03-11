@@ -196,6 +196,7 @@ public class SpeechActDictionary {
         dictionary.put("fpr:informFarewell", SpeechActLabel.Statement_non_opinion);
         dictionary.put("fpr:informFarewell", SpeechActLabel.Statement_non_opinion);
         dictionary.put("fpr:informFormDisclaimer", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("fpr:informGenericPRAKSISContact", SpeechActLabel.Statement_non_opinion);
         dictionary.put("fpr:informGreeting", SpeechActLabel.Statement_non_opinion);
         dictionary.put("fpr:informLanguageSelection", SpeechActLabel.Statement_non_opinion);
         dictionary.put("fpr:informLoginMechanism", SpeechActLabel.Statement_non_opinion);
