@@ -269,6 +269,7 @@ public class SpeechActDictionary {
 
         dictionary.put("welcome:confirmCommunication", SpeechActLabel.Yes_No_Question);
         dictionary.put("welcome:confirmLanguage", SpeechActLabel.Declarative_Yes_No_Question);
+        dictionary.put("welcome:flagMoreSimulations", SpeechActLabel.Statement_non_opinion);
         dictionary.put("welcome:informClosingFailureFarewell", SpeechActLabel.Statement_non_opinion);
         dictionary.put("welcome:informContactNGOFarewell", SpeechActLabel.Statement_non_opinion);
         dictionary.put("welcome:informEnd", SpeechActLabel.Statement_non_opinion);
@@ -280,10 +281,11 @@ public class SpeechActDictionary {
         dictionary.put("welcome:informNormalClosingFarewell", SpeechActLabel.Statement_non_opinion);
         dictionary.put("welcome:obtainConfirmation", SpeechActLabel.Yes_No_Question);
         dictionary.put("welcome:obtainConfirmationNormalClosing", SpeechActLabel.Yes_No_Question);
+        dictionary.put("welcome:obtainContactNGOSimulationConfirmation", SpeechActLabel.Yes_No_Question);
         dictionary.put("welcome:obtainName", SpeechActLabel.Wh_Question);
         dictionary.put("welcome:obtainRequest", SpeechActLabel.Open_Question);
     }
-
+    
     public SpeechActLabel get(String slot) { return dictionary.get(slot); }
 
 }
