@@ -19,6 +19,7 @@ public class DeterministicPolicy implements Policy {
 
     private static final String SYSTEM_INFO_SLOT_TYPE = "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo";
     private static final String SYSTEM_DEMAND_SLOT_TYPE = "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand";
+    private static final String CONFIRMATION_REQUEST_SLOT_TYPE = "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest";
 	
     private final SpeechActDictionary speechActDictionary = new SpeechActDictionary();
 
@@ -47,6 +48,17 @@ public class DeterministicPolicy implements Policy {
                 acts.add(act);
                 
                 pickMore = SYSTEM_INFO_SLOT_TYPE.equals(slot.type);
+				
+				if (slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE) && slot.numAttempts > 0) {
+					SpeechActLabel yesNoLabel;
+					if (acts.size() > 1) {
+						yesNoLabel = SpeechActLabel.Say_Yes_No_Information;
+					} else {
+						yesNoLabel = SpeechActLabel.Say_Yes_No;
+					}
+					SpeechAct sp = new SpeechAct(yesNoLabel, null);
+					acts.add(0, sp);
+				}
             }
             idx++;
         }
