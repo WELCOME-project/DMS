@@ -269,7 +269,7 @@ public class DMSService {
 			"        \"@id\" : \"welcome:Unknown\"\n" + 
 			"      } ],\n" + 
 			"      \"welcome:hasStatus\" : \"welcome:Pending\",\n" + 
-			"      \"welcome:hasNumberAttemps\" : 0,\n" + 
+			"      \"welcome:hasNumberAttempts\" : 0,\n" + 
 			"      \"welcome:confidenceScore\" : 1.0,\n" + 
 			"      \"welcome:isOptional\" : false\n" + 
 			"    }\n" + 
@@ -1260,7 +1260,7 @@ public class DMSService {
 			"        }\n" + 
 			"      } ],\n" + 
 			"      \"welcome:hasStatus\" : \"welcome:Pending\",\n" + 
-			"      \"welcome:hasNumberAttemps\" : 0,\n" + 
+			"      \"welcome:hasNumberAttempts\" : 0,\n" + 
 			"      \"welcome:confidenceScore\" : 0.0,\n" + 
 			"      \"welcome:isOptional\" : false\n" + 
 			"    }\n" + 
@@ -1400,7 +1400,7 @@ public class DMSService {
 			"        }\n" + 
 			"      } ],\n" + 
 			"      \"welcome:hasStatus\" : \"welcome:Pending\",\n" + 
-			"      \"welcome:hasNumberAttemps\" : 0,\n" + 
+			"      \"welcome:hasNumberAttempts\" : 0,\n" + 
 			"      \"welcome:confidenceScore\" : 0.0,\n" + 
 			"      \"welcome:isOptional\" : false\n" + 
 			"    }\n" + 

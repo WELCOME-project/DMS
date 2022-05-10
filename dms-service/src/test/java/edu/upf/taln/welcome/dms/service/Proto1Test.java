@@ -5,7 +5,6 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -38,6 +37,7 @@ import edu.upf.taln.welcome.dms.commons.input.Status;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.utils.JsonLDUtils;
+import java.util.TreeMap;
 import org.junit.jupiter.api.Test;
 
 
@@ -144,7 +144,7 @@ public class Proto1Test {
     	Frame frame = JsonLDUtils.readFrame(input.toString(), contextFile);
         
     	List<Slot> slots = frame.slots;
-        Map<String, Frame> frames = new LinkedHashMap<>();
+        Map<String, Frame> frames = new TreeMap();
     	for (int i = 0; i < slots.size(); i++) {
     		for (int j = 0; j < slots.size(); j++) {
 	    		Slot slot = slots.get(j);
@@ -254,8 +254,8 @@ public class Proto1Test {
 		DMSService instance = new DMSService();
 		DialogueMove output = instance.realizeNextTurn(frame);
 		
-		String result = writer.writeValueAsString(output);
-		System.out.println(result);
+		//String result = writer.writeValueAsString(output);
+		//System.out.println(result);
     }
 
 	@Test
@@ -272,7 +272,7 @@ public class Proto1Test {
 		DMSService instance = new DMSService();
 		DialogueMove output = instance.realizeNextTurn(frame);
 		
-		String result = writer.writeValueAsString(output);
-		System.out.println(result);
+		//String result = writer.writeValueAsString(output);
+		//System.out.println(result);
     }
 }
