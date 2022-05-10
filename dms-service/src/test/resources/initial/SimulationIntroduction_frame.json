@@ -22,7 +22,7 @@
       "rdf:object" : "Mr. Muller"
     } ],
     "welcome:hasStatus" : "welcome:Pending",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
     "welcome:isOptional" : false
   }, {
@@ -36,7 +36,7 @@
       "rdf:object" : "Mr. Muller"
     } ],
     "welcome:hasStatus" : "welcome:Pending",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
     "welcome:isOptional" : false
   }, {
@@ -47,7 +47,7 @@
       "@id" : "welcome:Unknown"
     } ],
     "welcome:hasStatus" : "welcome:Completed",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
     "welcome:isOptional" : false
   } ]

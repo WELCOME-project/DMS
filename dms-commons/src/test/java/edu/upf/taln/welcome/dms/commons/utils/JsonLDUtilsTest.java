@@ -1,7 +1,6 @@
 package edu.upf.taln.welcome.dms.commons.utils;
 
 import java.io.File;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.commons.io.FileUtils;
@@ -97,6 +96,37 @@ public class JsonLDUtilsTest {
 
         String result = writer.writeValueAsString(frame);
 //		System.out.println(result);
+
+        String expResult = FileUtils.readFileToString(expectedFile, "utf8");
+        Assertions.assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of readFrame method, of class JsonLDUtils.
+	 * @throws java.lang.Exception
+     */
+    @Test
+    public void testReadAttempts() throws Exception {
+        System.out.println("readAttempts");
+        
+        File inputFile = new File("src/test/resources/proto2/ConfirmationRequest_pending.json");
+        File expectedFile = new File("src/test/resources/proto2/ConfirmationRequest_pending_Frame.json");
+        
+        URL contextFile = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
+        
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode input = mapper.readTree(inputFile);
+        
+        Frame frame = JsonLDUtils.readFrame(input.toString(), contextFile);        
+
+        ObjectWriter writer = mapper
+                .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
+                .writerWithDefaultPrettyPrinter();
+		
+		writer.writeValue(expectedFile, frame);
+
+        String result = writer.writeValueAsString(frame);
+		System.out.println(result);
 
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");
         Assertions.assertEquals(expResult, result);

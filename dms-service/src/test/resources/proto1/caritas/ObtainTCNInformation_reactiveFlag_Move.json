@@ -47,7 +47,7 @@
   "@id" : "move_5",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Statement_non_opinion_5",
+    "@id" : "Statement_non_opinion_6",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : "Statement_non_opinion",
     "welcome:hasSlot" : {
@@ -59,7 +59,7 @@
         "@id" : "welcome:Unknown"
       } ],
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 1.0,
       "welcome:isOptional" : false
     }

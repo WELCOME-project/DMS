@@ -1,8 +1,8 @@
 {
-  "@id" : "http://localhost:8080/services/FullPreRegistration.owl#ScenarioIntroduction",
+  "@id" : "fpr:ScenarioIntroduction",
   "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
   "welcome:hasSlot" : [ {
-    "@id" : "http://localhost:8080/services/FullPreRegistration.owl#informGreeting",
+    "@id" : "fpr:informGreeting",
     "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformGreeting",
     "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
@@ -10,11 +10,11 @@
       "@id" : "welcome:Unknown"
     } ],
     "welcome:hasStatus" : "welcome:Pending",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
     "welcome:isOptional" : false
   }, {
-    "@id" : "http://localhost:8080/services/FullPreRegistration.owl#informScenarioIntroduction",
+    "@id" : "fpr:informScenarioIntroduction",
     "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
     "welcome:hasTemplateId" : "TInformScenarioIntroduction",
     "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
@@ -22,11 +22,11 @@
       "@id" : "welcome:Unknown"
     } ],
     "welcome:hasStatus" : "welcome:Pending",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
     "welcome:isOptional" : false
   }, {
-    "@id" : "http://localhost:8080/services/FullPreRegistration.owl#obtainInterest",
+    "@id" : "fpr:obtainInterest",
     "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
     "welcome:hasTemplateId" : "TObtainInterest",
     "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean",
@@ -34,7 +34,7 @@
       "@id" : "welcome:Unknown"
     } ],
     "welcome:hasStatus" : "welcome:Pending",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
     "welcome:isOptional" : false
   } ]

@@ -44,10 +44,10 @@
       "@type" : "w3c:boolean"
     }
   },
-  "@id" : "move_3",
+  "@id" : "move_9",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Wh_Question_3",
+    "@id" : "Wh_Question_9",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : "Wh_Question",
     "welcome:hasSlot" : {
@@ -66,7 +66,7 @@
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
       "welcome:isOptional" : false
     }

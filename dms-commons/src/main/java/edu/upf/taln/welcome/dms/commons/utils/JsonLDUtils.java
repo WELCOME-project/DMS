@@ -4,14 +4,10 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.InputStream;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.net.URL;
 
-import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
-import javax.json.JsonReader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -22,7 +18,6 @@ import com.apicatalog.jsonld.document.Document;
 import com.apicatalog.jsonld.document.DocumentParser;
 import com.apicatalog.jsonld.document.JsonDocument;
 import com.apicatalog.jsonld.http.media.MediaType;
-import com.apicatalog.jsonld.json.JsonUtils;
 
 import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
@@ -142,7 +137,7 @@ public class JsonLDUtils {
             //JsonObject expObject = expanded.getJsonObject(0);
             JsonDocument expDocument = JsonDocument.of(expanded);
             
-            System.out.println(expanded.toString());
+            //System.out.println(expanded.toString());
             
             JsonObject framed = JsonLd
                     .frame(expDocument, context)

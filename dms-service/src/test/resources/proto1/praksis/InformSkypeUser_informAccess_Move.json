@@ -44,10 +44,10 @@
       "@type" : "w3c:boolean"
     }
   },
-  "@id" : "move_3",
+  "@id" : "move_0",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Statement_non_opinion_3",
+    "@id" : "Statement_non_opinion_0",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : "Statement_non_opinion",
     "welcome:hasSlot" : {
@@ -75,7 +75,7 @@
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
       "welcome:isOptional" : false
     }

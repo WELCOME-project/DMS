@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
-    "@id" : "http://localhost:8080/services/FullPreRegistration.owl#ScenarioIntroduction",
+    "@id" : "http://localhost:8080/services/FullPreregistration.owl#ScenarioIntroduction",
     "rdf:type" : {
       "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
       "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP"
     },
     "welcome:DIPId" : "44444444440",
     "welcome:hasSlot" : [ {
-      "@id" : "http://localhost:8080/services/FullPreRegistration.owl#informGreeting"
+      "@id" : "http://localhost:8080/services/FullPreregistration.owl#informGreeting"
     }, {
-      "@id" : "http://localhost:8080/services/FullPreRegistration.owl#informScenarioIntroduction"
+      "@id" : "http://localhost:8080/services/FullPreregistration.owl#informScenarioIntroduction"
     }, {
-      "@id" : "http://localhost:8080/services/FullPreRegistration.owl#obtainInterest"
+      "@id" : "http://localhost:8080/services/FullPreregistration.owl#obtainInterest"
     } ],
     "welcome:isCurrentDIP" : {
       "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
       "@value" : "true"
     }
   }, {
-    "@id" : "http://localhost:8080/services/FullPreRegistration.owl#informGreeting",
+    "@id" : "http://localhost:8080/services/FullPreregistration.owl#informGreeting",
     "rdf:type" : {
       "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
       "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
@@ -56,7 +56,7 @@
       "@value" : "false"
     }
   }, {
-    "@id" : "http://localhost:8080/services/FullPreRegistration.owl#informScenarioIntroduction",
+    "@id" : "http://localhost:8080/services/FullPreregistration.owl#informScenarioIntroduction",
     "rdf:type" : {
       "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
       "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
@@ -69,7 +69,7 @@
       "@value" : "0.0"
     },
     "welcome:dependsOn" : {
-      "@id" : "http://localhost:8080/services/FullPreRegistration.owl#InformSimulation"
+      "@id" : "http://localhost:8080/services/FullPreregistration.owl#InformSimulation"
     },
     "welcome:hasInputRDFContents" : {
       "@id" : "welcome:Unknown"
@@ -94,7 +94,7 @@
       "@value" : "false"
     }
   }, {
-    "@id" : "http://localhost:8080/services/FullPreRegistration.owl#obtainInterest",
+    "@id" : "http://localhost:8080/services/FullPreregistration.owl#obtainInterest",
     "rdf:type" : {
       "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
       "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
@@ -107,7 +107,7 @@
       "@value" : "0.0"
     },
     "welcome:dependsOn" : {
-      "@id" : "http://localhost:8080/services/FullPreRegistration.owl#informContactPerson"
+      "@id" : "http://localhost:8080/services/FullPreregistration.owl#informContactPerson"
     },
     "welcome:hasInputRDFContents" : {
       "@id" : "welcome:Unknown"

@@ -44,10 +44,10 @@
       "@type" : "w3c:boolean"
     }
   },
-  "@id" : "move_2",
+  "@id" : "move_3",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Declarative_Yes_No_Question_2",
+    "@id" : "Declarative_Yes_No_Question_3",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : "Declarative_Yes_No_Question",
     "welcome:hasSlot" : {
@@ -57,7 +57,7 @@
       "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MatterConcernStatus",
       "welcome:hasInputRDFContents" : null,
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 1.0,
       "welcome:isOptional" : false
     }

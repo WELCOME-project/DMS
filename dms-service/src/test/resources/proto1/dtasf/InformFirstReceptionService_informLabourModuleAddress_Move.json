@@ -75,7 +75,7 @@
         }
       } ],
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
       "welcome:isOptional" : true
     }

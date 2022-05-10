@@ -10,7 +10,7 @@
       "@id" : "welcome:Unknown"
     } ],
     "welcome:hasStatus" : "welcome:Completed",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 1.0,
     "welcome:isOptional" : false
   }, {
@@ -29,7 +29,7 @@
       }
     } ],
     "welcome:hasStatus" : "welcome:Completed",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 1.0,
     "welcome:isOptional" : false
   }, {
@@ -41,7 +41,7 @@
       "@id" : "welcome:Unknown"
     } ],
     "welcome:hasStatus" : "welcome:Pending",
-    "welcome:hasNumberAttemps" : 0,
+    "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 1.0,
     "welcome:isOptional" : false
   } ]

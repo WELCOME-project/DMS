@@ -1,4 +1,49 @@
 {
+  "@context" : {
+    "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdf:predicate" : {
+      "@type" : "@id"
+    },
+    "rdf:subject" : {
+      "@type" : "@id"
+    },
+    "w3c" : "http://www.w3.org/2001/XMLSchema#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "welcome:confidenceScore" : {
+      "@type" : "w3c:float"
+    },
+    "welcome:hasDIPStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@container" : "@set"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "w3c:int"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSlot" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSpeechActs" : {
+      "@container" : "@list"
+    },
+    "welcome:hasStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@type" : "@id"
+    },
+    "welcome:isCurrentDIP" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:isOptional" : {
+      "@type" : "w3c:boolean"
+    }
+  },
   "@id" : "move_0",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
@@ -14,7 +59,7 @@
         "@id" : "welcome:Unknown"
       } ],
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
       "welcome:isOptional" : false
     }
@@ -31,7 +76,7 @@
         "@id" : "welcome:Unknown"
       } ],
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
       "welcome:isOptional" : false
     }
@@ -48,7 +93,7 @@
         "@id" : "welcome:Unknown"
       } ],
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
       "welcome:isOptional" : false
     }

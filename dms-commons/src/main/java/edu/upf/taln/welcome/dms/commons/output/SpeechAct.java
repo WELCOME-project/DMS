@@ -35,5 +35,6 @@ public class SpeechAct {
         this.type = "welcome:SpeechAct";
         this.label = label;
         this.slot = slot;
+		System.out.println(id);
     }
 }

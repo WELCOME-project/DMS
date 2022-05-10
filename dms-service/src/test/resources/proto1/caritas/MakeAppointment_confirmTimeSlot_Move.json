@@ -44,10 +44,10 @@
       "@type" : "w3c:boolean"
     }
   },
-  "@id" : "move_5",
+  "@id" : "move_0",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Yes_No_Question_5",
+    "@id" : "Yes_No_Question_0",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : "Yes_No_Question",
     "welcome:hasSlot" : {
@@ -57,7 +57,7 @@
       "welcome:hasOntologyType" : "http://www.w3.org/2001/XMLSchema#boolean",
       "welcome:hasInputRDFContents" : null,
       "welcome:hasStatus" : "welcome:Pending",
-      "welcome:hasNumberAttemps" : 0,
+      "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 1.0,
       "welcome:isOptional" : false
     }

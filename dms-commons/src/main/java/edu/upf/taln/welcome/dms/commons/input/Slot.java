@@ -30,7 +30,7 @@ public class Slot {
     @JsonProperty("welcome:hasStatus")
     public Status status;
 
-    @JsonProperty("welcome:hasNumberAttemps")
+    @JsonProperty("welcome:hasNumberAttempts")
     public int numAttempts;
 
     @JsonProperty("welcome:confidenceScore")
