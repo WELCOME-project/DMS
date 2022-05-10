@@ -10,7 +10,6 @@ import edu.upf.taln.welcome.dms.commons.output.SpeechActLabel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Rule-base policy
@@ -49,7 +48,7 @@ public class DeterministicPolicy implements Policy {
                 
                 pickMore = SYSTEM_INFO_SLOT_TYPE.equals(slot.type);
 				
-				if (slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE) && slot.numAttempts > 0) {
+				if (slot.numAttempts > 0) {
 					SpeechActLabel yesNoLabel;
 					if (acts.size() > 1) {
 						yesNoLabel = SpeechActLabel.Say_Yes_No_Information;
@@ -57,7 +56,11 @@ public class DeterministicPolicy implements Policy {
 						yesNoLabel = SpeechActLabel.Say_Yes_No;
 					}
 					SpeechAct sp = new SpeechAct(yesNoLabel, null);
-					acts.add(0, sp);
+					if (slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
+						acts.add(0, sp);
+					} else if (slot.status.equals(Status.FailedAnalysis)) {
+						acts.add(sp);					
+					}
 				}
             }
             idx++;
@@ -88,18 +91,16 @@ public class DeterministicPolicy implements Policy {
 			switch(slot.status) {
 				
 				case FailedAnalysis:
-				{
-					label = SpeechActLabel.Signal_non_understanding;
-					more_moves = false;
-					repeat = false;
-				}
-				break;
-
 				case UnclearAnalysis:
 				{
-					label = SpeechActLabel.Signal_non_understanding;
+					if (slot.numAttempts == 0) {
+						label = SpeechActLabel.Signal_non_understanding;
+						repeat = false;
+					} else {
+						label = SpeechActLabel.Say_Yes_No;
+						repeat = true;
+					}
 					more_moves = false;
-					repeat = false;
 				}
 				break;
 

@@ -1,0 +1,52 @@
+{
+  "@id" : "move_0",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Say_Yes_No_0",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Say_Yes_No",
+    "welcome:hasSlot" : null
+  }, {
+    "@id" : "Wh_Question_1",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Wh_Question",
+    "welcome:hasSlot" : {
+      "@id" : "pps:obtainCity",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest",
+      "welcome:hasTemplateId" : "TObtainResidenceAddressInCountry",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City",
+      "welcome:hasInputRDFContents" : [ {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Country",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Greece"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Country",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Greece"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Country",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@id" : null,
+          "@type" : null,
+          "@value" : "Greece"
+        }
+      } ],
+      "welcome:hasStatus" : "welcome:FailedAnalysis",
+      "welcome:hasNumberAttempts" : 1,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}

@@ -5,13 +5,15 @@ import java.io.IOException;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.Before;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
+import org.apache.commons.io.FileUtils;
 
+import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
-import org.apache.commons.io.FileUtils;
+import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 
 /**
  *
@@ -19,6 +21,12 @@ import org.apache.commons.io.FileUtils;
  */
 public class DeterministicPolicyTest {
 
+	@Before
+	public void reset() {
+		SpeechAct.resetCounter();
+		DialogueMove.resetCounter();
+	}	
+	
     /**
      * Test of map method, of class DeterministicPolicy.
      */
