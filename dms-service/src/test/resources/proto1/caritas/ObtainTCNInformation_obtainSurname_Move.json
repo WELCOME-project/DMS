@@ -47,7 +47,7 @@
   "@id" : "move_4",
   "@type" : "welcome:DialogueMove",
   "welcome:hasSpeechActs" : [ {
-    "@id" : "Wh_Question_5",
+    "@id" : "Wh_Question_4",
     "@type" : "welcome:SpeechAct",
     "welcome:hasLabel" : "Wh_Question",
     "welcome:hasSlot" : {
