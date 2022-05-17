@@ -73,7 +73,7 @@ public class Proto2Test {
         DialogueMove move = instance.map(frame);
 
         File expectedFile = new File("src/test/resources/proto2/ConfirmationRequest_pending_Move.json");
-        writer.writeValue(expectedFile, move);
+        //writer.writeValue(expectedFile, move);
         
         String result = writer.writeValueAsString(move);
         //System.out.println(result);
@@ -99,6 +99,32 @@ public class Proto2Test {
         DialogueMove move = instance.map(frame);
 
         File expectedFile = new File("src/test/resources/proto2/ConfirmationRequest_failedanalysis_Move.json");
+        //writer.writeValue(expectedFile, move);
+        
+        String result = writer.writeValueAsString(move);
+        //System.out.println(result);
+        
+        String expResult = FileUtils.readFileToString(expectedFile, "utf8");
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testAssylum() throws IOException, WelcomeException {
+        
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectWriter writer = mapper
+                .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
+                .writerWithDefaultPrettyPrinter();
+		
+		URL dmsContextURL = JsonLDUtils.class.getResource("/welcome-dms-framed.jsonld");
+		File fd = new File("src/test/resources/proto2/AsylumClaimRegistration_s2a.jsonld");
+        Frame frame = JsonLDUtils.readFrame(FileUtils.readFileToString(fd, StandardCharsets.UTF_8), dmsContextURL);
+        //System.out.println(writer.writeValueAsString(frame));
+        
+        DeterministicPolicy instance = new DeterministicPolicy();
+        DialogueMove move = instance.map(frame);
+
+        File expectedFile = new File("src/test/resources/proto2/AsylumClaimRegistration_s2a_Move.jsonld");
         writer.writeValue(expectedFile, move);
         
         String result = writer.writeValueAsString(move);

@@ -46,9 +46,7 @@ public class DeterministicPolicy implements Policy {
                 SpeechAct act = new SpeechAct(label, slot);
                 acts.add(act);
                 
-                pickMore = SYSTEM_INFO_SLOT_TYPE.equals(slot.type);
-				
-				if (slot.numAttempts > 0) {
+				if (slot.numAttempts > 0 && slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
 					SpeechActLabel yesNoLabel;
 					if (acts.size() > 1) {
 						yesNoLabel = SpeechActLabel.Say_Yes_No_Information;
@@ -56,12 +54,10 @@ public class DeterministicPolicy implements Policy {
 						yesNoLabel = SpeechActLabel.Say_Yes_No;
 					}
 					SpeechAct sp = new SpeechAct(yesNoLabel, null);
-					if (slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
-						acts.add(0, sp);
-					} else if (slot.status.equals(Status.FailedAnalysis)) {
-						acts.add(sp);					
-					}
+					acts.add(0, sp);
 				}
+
+				pickMore = SYSTEM_INFO_SLOT_TYPE.equals(slot.type);
             }
             idx++;
         }
@@ -93,12 +89,12 @@ public class DeterministicPolicy implements Policy {
 				case FailedAnalysis:
 				case UnclearAnalysis:
 				{
-					if (slot.numAttempts == 0) {
-						label = SpeechActLabel.Signal_non_understanding;
-						repeat = false;
-					} else {
+					if (slot.numAttempts > 0 && slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
 						label = SpeechActLabel.Say_Yes_No;
 						repeat = true;
+					} else {
+						label = SpeechActLabel.Signal_non_understanding;
+						repeat = false;
 					}
 					more_moves = false;
 				}
