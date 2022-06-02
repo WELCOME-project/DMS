@@ -27,5 +27,11 @@ public enum Status {
     TCNElaborateRequest,
     
     @JsonProperty("welcome:TopicSwitch")
-    TopicSwitch
+    TopicSwitch,
+    
+    @JsonProperty("welcome:Unfinished")
+    Unfinished,
+    
+    @JsonProperty("welcome:Undefined")
+    Undefined
 }
