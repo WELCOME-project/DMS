@@ -50,7 +50,7 @@ public enum SpeechActLabel {
 	Apology_No_Extra_Information,
     Thanking,
 	NeedsUpdate,
-	NeedsUpdateAnswer
+	NeedsUpdateAnswer,
 	Say_Yes_No,
 	Say_Yes_No_Information,
 }
