@@ -61,7 +61,10 @@
       "welcome:hasStatus" : "welcome:Pending",
       "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
-      "welcome:isOptional" : false
+      "welcome:isOptional" : false,
+      "welcome:hasTCNAnswer" : [ {
+        "@id" : "welcome:Unknown"
+      } ]
     }
   }, {
     "@id" : "Statement_non_opinion_1",
@@ -78,7 +81,10 @@
       "welcome:hasStatus" : "welcome:Pending",
       "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
-      "welcome:isOptional" : false
+      "welcome:isOptional" : false,
+      "welcome:hasTCNAnswer" : [ {
+        "@id" : "welcome:Unknown"
+      } ]
     }
   }, {
     "@id" : "Wh_Question_2",
@@ -95,7 +101,10 @@
       "welcome:hasStatus" : "welcome:Pending",
       "welcome:hasNumberAttempts" : 0,
       "welcome:confidenceScore" : 0.0,
-      "welcome:isOptional" : false
+      "welcome:isOptional" : false,
+      "welcome:hasTCNAnswer" : [ {
+        "@id" : "welcome:Unknown"
+      } ]
     }
   } ]
 }

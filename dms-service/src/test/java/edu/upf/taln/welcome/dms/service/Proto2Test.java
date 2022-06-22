@@ -211,4 +211,10 @@ public class Proto2Test {
     public void testProto2(File jsonLDInput) throws Exception {
         testFrame(jsonLDInput);
     }
+    
+    @Test
+    public void testNeedsUpdate() throws Exception {
+    	File jsonLDInput = new File("src/test/resources/proto2/NeedsUpdate-Original.jsonld");
+    	testFrame(jsonLDInput);
+    }
 }

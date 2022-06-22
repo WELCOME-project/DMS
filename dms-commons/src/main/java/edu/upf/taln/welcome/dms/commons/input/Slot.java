@@ -41,8 +41,8 @@ public class Slot {
     @JsonProperty("welcome:isOptional")
     public boolean isOptional;
 	
-    @JsonInclude(JsonInclude.Include.NON_NULL) 
+    //@JsonInclude(JsonInclude.Include.NON_NULL) 
 	@JsonProperty("welcome:hasTCNAnswer")
-	@JsonAlias("https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer")	
-    public RDFContent tcnAnswer;
+	//@JsonAlias("https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer")	
+    public List<RDFContent> tcnAnswer;
 }

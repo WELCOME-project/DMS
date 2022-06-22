@@ -44,9 +44,32 @@ public class DeterministicPolicyTest {
                 //.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
 				.writerWithDefaultPrettyPrinter()
 				.writeValueAsString(move);
-        System.out.println(result);
+        //System.out.println(result);
 
         File expectedFile = new File("src/test/resources/proto1/DTASF_Opening_Move.json");
+        //mapper.writerWithDefaultPrettyPrinter().writeValue(expectedFile, move);
+        
+        String expResult = FileUtils.readFileToString(expectedFile, "utf8");
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testNeedsUpdate() throws IOException, WelcomeException {
+        
+        ObjectMapper mapper = new ObjectMapper();
+        Frame frame = mapper.readValue(new File("src/test/resources/proto1/NeedsUpdate_Framed.json"), Frame.class);
+        //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(frame));
+        
+        DeterministicPolicy instance = new DeterministicPolicy();
+        DialogueMove move = instance.map(frame);
+        
+        String result = mapper
+                //.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
+				.writerWithDefaultPrettyPrinter()
+				.writeValueAsString(move);
+        //System.out.println(result);
+
+        File expectedFile = new File("src/test/resources/proto1/NeedsUpdate_Move.json");
         //mapper.writerWithDefaultPrettyPrinter().writeValue(expectedFile, move);
         
         String expResult = FileUtils.readFileToString(expectedFile, "utf8");

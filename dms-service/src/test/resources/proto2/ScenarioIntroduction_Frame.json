@@ -12,7 +12,10 @@
     "welcome:hasStatus" : "welcome:Pending",
     "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
-    "welcome:isOptional" : false
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
   }, {
     "@id" : "fpr:informScenarioIntroduction",
     "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
@@ -24,7 +27,10 @@
     "welcome:hasStatus" : "welcome:Pending",
     "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
-    "welcome:isOptional" : false
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
   }, {
     "@id" : "fpr:obtainInterest",
     "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
@@ -36,6 +42,9 @@
     "welcome:hasStatus" : "welcome:Pending",
     "welcome:hasNumberAttempts" : 0,
     "welcome:confidenceScore" : 0.0,
-    "welcome:isOptional" : false
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
   } ]
 }

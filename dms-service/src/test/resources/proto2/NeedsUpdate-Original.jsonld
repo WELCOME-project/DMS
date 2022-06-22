@@ -1,0 +1,1368 @@
+{
+    "@graph": [
+        {
+            "@id": "_:node1g5e8bcp8x1105",
+            "@type": "rdf:Statement",
+            "rdf:object": "Unknown",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Boolean"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1106",
+            "@type": "rdf:Statement",
+            "rdf:object": "testuser@example.com",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Email"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1107",
+            "@type": "rdf:Statement",
+            "rdf:object": "User",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:FirstSurname"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1108",
+            "@type": "rdf:Statement",
+            "rdf:object": "YYYY-mm-dd",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Birthday"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1109",
+            "@type": "rdf:Statement",
+            "rdf:object": "Test",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Name"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1110",
+            "@type": "rdf:Statement",
+            "rdf:object": "2",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:FloorNumber"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1111",
+            "@type": "rdf:Statement",
+            "rdf:object": "Street",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:StreetType"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1112",
+            "@type": "rdf:Statement",
+            "rdf:object": "B2",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:ApartmentNumber"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1113",
+            "@type": "rdf:Statement",
+            "rdf:object": "54250",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:PostCode"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1114",
+            "@type": "rdf:Statement",
+            "rdf:object": "Stefanou",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:StreetName"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1115",
+            "@type": "rdf:Statement",
+            "rdf:object": "2310333333",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Landline"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1116",
+            "@type": "rdf:Statement",
+            "rdf:object": "testuser@example.com",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Email"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1117",
+            "@type": "rdf:Statement",
+            "rdf:object": "Greek",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:NativeLanguageName"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1118",
+            "@type": "rdf:Statement",
+            "rdf:object": "35",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:StreetNumber"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1119",
+            "@type": "rdf:Statement",
+            "rdf:object": "Ntioudis",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:FirstSurname"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1120",
+            "@type": "rdf:Statement",
+            "rdf:object": "",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:SecondSurname"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1121",
+            "@type": "rdf:Statement",
+            "rdf:object": "6/26/1990",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Birthday"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1122",
+            "@type": "rdf:Statement",
+            "rdf:object": "Thessaloniki",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:City"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1123",
+            "@type": "rdf:Statement",
+            "rdf:object": "6987879824",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:MobilePhone"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1124",
+            "@type": "rdf:Statement",
+            "rdf:object": "Dimos",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Name"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1125",
+            "@type": "rdf:Statement",
+            "rdf:object": "Stefanou",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:StreetName"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1126",
+            "@type": "rdf:Statement",
+            "rdf:object": "2310333333",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Landline"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1127",
+            "@type": "rdf:Statement",
+            "rdf:object": "testuser@example.com",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Email"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1128",
+            "@type": "rdf:Statement",
+            "rdf:object": "Ntioudis",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:FirstSurname"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1129",
+            "@type": "rdf:Statement",
+            "rdf:object": "6/26/1990",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Birthday"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1130",
+            "@type": "rdf:Statement",
+            "rdf:object": "Thessaloniki",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:City"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1131",
+            "@type": "rdf:Statement",
+            "rdf:object": "6987879824",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:MobilePhone"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1132",
+            "@type": "rdf:Statement",
+            "rdf:object": "Dimos",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Name"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1133",
+            "@type": "rdf:Statement",
+            "rdf:object": "Greek",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:NativeLanguageName"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1134",
+            "@type": "rdf:Statement",
+            "rdf:object": "35",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:StreetNumber"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1135",
+            "@type": "rdf:Statement",
+            "rdf:object": "",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:SecondSurname"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1136",
+            "@type": "rdf:Statement",
+            "rdf:object": "personal information",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:cvSection"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1137",
+            "@type": "rdf:Statement",
+            "rdf:object": "User",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:FirstSurname"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1138",
+            "@type": "rdf:Statement",
+            "rdf:object": "Ntioudis",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:FirstSurname"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1139",
+            "@type": "rdf:Statement",
+            "rdf:object": "Ntioudis",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:FirstSurname"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1140",
+            "@type": "rdf:Statement",
+            "rdf:object": "YYYY-mm-dd",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Birthday"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1141",
+            "@type": "rdf:Statement",
+            "rdf:object": "6/26/1990",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Birthday"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1142",
+            "@type": "rdf:Statement",
+            "rdf:object": "6/26/1990",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Birthday"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1143",
+            "@type": "rdf:Statement",
+            "rdf:object": "Test",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Name"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1144",
+            "@type": "rdf:Statement",
+            "rdf:object": "Dimos",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Name"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1145",
+            "@type": "rdf:Statement",
+            "rdf:object": "Dimos",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Name"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1146",
+            "@type": "rdf:Statement",
+            "rdf:object": "Unknown",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:Country"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1147",
+            "@type": "rdf:Statement",
+            "rdf:object": "Stefanou",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:StreetName"
+            }
+        },
+        {
+            "@id": "_:node1g5e8bcp8x1148",
+            "@type": "rdf:Statement",
+            "rdf:object": "Stefanou",
+            "rdf:predicate": {
+                "@id": "welcome:hasValue"
+            },
+            "rdf:subject": {
+                "@id": "welcome:StreetName"
+            }
+        },
+        {
+            "@id": "employment:PersonalInfo",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP"
+            },
+            "welcome:DIPId": "1655125529486",
+            "welcome:hasSlot": [
+                {
+                    "@id": "employment:informIntroductionSection"
+                },
+                {
+                    "@id": "employment:obtainName"
+                },
+                {
+                    "@id": "employment:obtainFirstSurname"
+                },
+                {
+                    "@id": "employment:obtainSecondSurname"
+                },
+                {
+                    "@id": "employment:obtainBirthDay"
+                },
+                {
+                    "@id": "employment:obtainMotherTongue"
+                },
+                {
+                    "@id": "employment:obtainMobilePhone"
+                },
+                {
+                    "@id": "employment:obtainLandline"
+                },
+                {
+                    "@id": "employment:obtainEmail"
+                },
+                {
+                    "@id": "employment:obtainCity"
+                },
+                {
+                    "@id": "employment:obtainStreetName"
+                },
+                {
+                    "@id": "employment:obtainStreetType"
+                },
+                {
+                    "@id": "employment:obtainPostCode"
+                },
+                {
+                    "@id": "employment:obtainIncludeFullAddress"
+                },
+                {
+                    "@id": "employment:obtainStreetNumber"
+                },
+                {
+                    "@id": "employment:obtainFloorNumber"
+                },
+                {
+                    "@id": "employment:obtainApartmentNumber"
+                },
+                {
+                    "@id": "employment:obtainPersonalInfoConfirmation"
+                }
+            ],
+            "welcome:isCurrentDIP": {
+                "@type": "xsd:boolean",
+                "@value": "true"
+            }
+        },
+        {
+            "@id": "employment:informIntroductionSection",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "0.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasTemplateId": "TInformIntroductionSection",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainApartmentNumber",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "employment:obtainIncludeFullAddress"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ApartmentNumber"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": {
+                "@id": "_:node1g5e8bcp8x1112"
+            },
+            "welcome:hasTemplateId": "TObtainApartmentNumber",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "true"
+            }
+        },
+        {
+            "@id": "employment:obtainBirthDay",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": [
+                {
+                    "@id": "_:node1g5e8bcp8x1140"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1141"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1142"
+                }
+            ],
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1108"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1121"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1129"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainBirthDay",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainCity",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "_:node1g5e8bcp8x1146"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1122"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1130"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainCity",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainEmail",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:NeedsUpdate"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1106"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1116"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1127"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainEmail",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainFirstSurname",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "employment:obtainName"
+            },
+            "welcome:hasInputRDFContents": [
+                {
+                    "@id": "_:node1g5e8bcp8x1137"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1138"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1139"
+                }
+            ],
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1107"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1119"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1128"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainName",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainFloorNumber",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "employment:obtainIncludeFullAddress"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FloorNumber"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": {
+                "@id": "_:node1g5e8bcp8x1110"
+            },
+            "welcome:hasTemplateId": "TObtainFloorNumber",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "true"
+            }
+        },
+        {
+            "@id": "employment:obtainIncludeFullAddress",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": {
+                "@id": "_:node1g5e8bcp8x1105"
+            },
+            "welcome:hasTemplateId": "TObtainIncludeFullAddress",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainLandline",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "employment:obtainMobilePhone"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Landline"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1115"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1126"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainLandline",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "true"
+            }
+        },
+        {
+            "@id": "employment:obtainMobilePhone",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MobilePhone"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1123"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1131"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainMobilePhone",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainMotherTongue",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NativeLanguageName"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1117"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1133"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainMotherTongue",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainName",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": [
+                {
+                    "@id": "_:node1g5e8bcp8x1143"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1144"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1145"
+                }
+            ],
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1109"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1124"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1132"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainName",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainPersonalInfoConfirmation",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "0.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "_:node1g5e8bcp8x1136"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasTemplateId": "TObtainCVSectionConfirmation",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainPostCode",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PostCode"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": {
+                "@id": "_:node1g5e8bcp8x1113"
+            },
+            "welcome:hasTemplateId": "TObtainPostCode",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "true"
+            }
+        },
+        {
+            "@id": "employment:obtainSecondSurname",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": [
+                {
+                    "@id": "employment:obtainName"
+                },
+                {
+                    "@id": "employment:obtainFirstSurname"
+                }
+            ],
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SecondSurname"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1120"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1135"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainSecondSurname",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "true"
+            }
+        },
+        {
+            "@id": "employment:obtainStreetName",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetName"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1114"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1125"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainStreetName",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        },
+        {
+            "@id": "employment:obtainStreetNumber",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "employment:obtainIncludeFullAddress"
+            },
+            "welcome:hasInputRDFContents": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": [
+                {
+                    "@id": "_:node1g5e8bcp8x1118"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1134"
+                }
+            ],
+            "welcome:hasTemplateId": "TObtainStreetNumber",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "true"
+            }
+        },
+        {
+            "@id": "employment:obtainStreetType",
+            "rdf:type": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+            },
+            "welcome:associatedWith": {
+                "@id": "welcome:Unknown"
+            },
+            "welcome:confidenceScore": {
+                "@type": "xsd:float",
+                "@value": "1.0"
+            },
+            "welcome:dependsOn": {
+                "@id": "employment:obtainStreetName"
+            },
+            "welcome:hasInputRDFContents": [
+                {
+                    "@id": "_:node1g5e8bcp8x1147"
+                },
+                {
+                    "@id": "_:node1g5e8bcp8x1148"
+                }
+            ],
+            "welcome:hasNumberAttempts": {
+                "@type": "xsd:integer",
+                "@value": "0"
+            },
+            "welcome:hasOntologyType": {
+                "@type": "xsd:anyURI",
+                "@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetType"
+            },
+            "welcome:hasStatus": {
+                "@id": "welcome:Completed"
+            },
+            "welcome:hasTCNAnswer": {
+                "@id": "_:node1g5e8bcp8x1111"
+            },
+            "welcome:hasTemplateId": "TObtainStreetType",
+            "welcome:isOptional": {
+                "@type": "xsd:boolean",
+                "@value": "false"
+            }
+        }
+    ],
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "welcome": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+        "preregistration": "http://localhost:8080/services/PreregistrationProcedureService.owl#",
+        "simulateAppointment": "http://localhost:8080/services/SimulateAppointmentService.owl#",
+        "fullpreregistration": "http://localhost:8080/services/FullPreregistration.owl#",
+        "employment": "http://localhost:8080/services/CreateCV.owl#"
+    }
+}
