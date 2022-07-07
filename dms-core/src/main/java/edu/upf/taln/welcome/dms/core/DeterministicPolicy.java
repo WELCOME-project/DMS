@@ -38,7 +38,7 @@ public class DeterministicPolicy implements Policy {
         while (pickMore && idx < frame.slots.size()) {
             
             Slot slot = frame.slots.get(idx);
-            if (slot.status == Status.Pending) {
+            if (slot.status == Status.Pending || slot.status == Status.NeedsUpdate) {
                 SpeechActLabel label = speechActDictionary.get(slot.id);
                 if (label == null) {
                     throw new WelcomeException("Unsupported slot type " + slot.id + "!");
@@ -64,6 +64,10 @@ public class DeterministicPolicy implements Policy {
 
         return new DialogueMove(acts);
     }
+    
+    private enum ExtraSpeechAct {
+    	none, start, end
+    }
 
     /**
      * Checks for unforeseen situations.
@@ -82,7 +86,7 @@ public class DeterministicPolicy implements Policy {
 			
 			Slot slot = slots.get(idx);
 
-			boolean repeat = false;
+			ExtraSpeechAct extraSpeechAct = ExtraSpeechAct.none;
 			SpeechActLabel label = null;
 			switch(slot.status) {
 				
@@ -91,10 +95,9 @@ public class DeterministicPolicy implements Policy {
 				{
 					if (slot.numAttempts > 0 && slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
 						label = SpeechActLabel.Say_Yes_No;
-						repeat = true;
+						extraSpeechAct = ExtraSpeechAct.start;
 					} else {
 						label = SpeechActLabel.Signal_non_understanding;
-						repeat = false;
 					}
 					more_moves = false;
 				}
@@ -109,7 +112,7 @@ public class DeterministicPolicy implements Policy {
 						label = SpeechActLabel.Apology_Repeat_Information;
 					}
 					more_moves = false;
-					repeat = true;
+					extraSpeechAct = ExtraSpeechAct.start;
 				}
 				break;
 
@@ -118,12 +121,11 @@ public class DeterministicPolicy implements Policy {
 					if (slot.type.equals(SYSTEM_DEMAND_SLOT_TYPE)) {				
 						label = SpeechActLabel.Apology_Repeat_Question;
 						more_moves = false;
-						repeat = true;
+						extraSpeechAct = ExtraSpeechAct.start;
 
 					} else {
 						label = SpeechActLabel.Apology_No_Extra_Information;
 						more_moves = true;
-						repeat = false;
 					}
 				}
 				break;
@@ -131,10 +133,11 @@ public class DeterministicPolicy implements Policy {
 				case NeedsUpdate:
 					if (slot.tcnAnswer == null) {
 						label = SpeechActLabel.NeedsUpdate;
-						
 					} else {
 						label = SpeechActLabel.NeedsUpdateAnswer;
+						extraSpeechAct = ExtraSpeechAct.end;
 					}
+					more_moves = false;
 					break;
 
 				default:
@@ -142,19 +145,27 @@ public class DeterministicPolicy implements Policy {
 			}
 			
 			if (label != null) {
-				if (repeat) {
-					SpeechAct sp1 = new SpeechAct(label, null);
-					moves.add(sp1);
-					
-					SpeechActLabel repeatLabel = speechActDictionary.get(slot.id);
-					SpeechAct sp2 = new SpeechAct(repeatLabel, slot);
-					moves.add(sp2);
-					
-				} else {
-					SpeechAct sp = new SpeechAct(label, slot);
-					moves.add(sp);
+				switch(extraSpeechAct) {
+					case start:
+						SpeechAct sp1 = new SpeechAct(label, null);
+						moves.add(sp1);
+						
+						SpeechActLabel repeatLabel = speechActDictionary.get(slot.id);
+						SpeechAct sp2 = new SpeechAct(repeatLabel, slot);
+						moves.add(sp2);
+						break;
+					case end:
+						repeatLabel = speechActDictionary.get(slot.id);
+						sp1 = new SpeechAct(repeatLabel, slot);
+						moves.add(sp1);
+						
+						sp2 = new SpeechAct(label, slot);
+						moves.add(sp2);
+						break;
+					default:
+						SpeechAct sp = new SpeechAct(label, slot);
+						moves.add(sp);
 				}
-				
 			}
 			
 			idx++;
