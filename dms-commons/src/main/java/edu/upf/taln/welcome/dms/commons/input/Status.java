@@ -28,6 +28,12 @@ public enum Status {
     
     @JsonProperty("welcome:TopicSwitch")
     TopicSwitch,
+    
+    @JsonProperty("welcome:Unfinished")
+    Unfinished,
+    
+    @JsonProperty("welcome:Undefined")
+    Undefined,
 	
     @JsonProperty("welcome:NeedsUpdate")
 	NeedsUpdate
