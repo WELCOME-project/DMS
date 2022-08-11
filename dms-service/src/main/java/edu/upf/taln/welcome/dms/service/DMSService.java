@@ -529,7 +529,7 @@ public class DMSService {
 			"    \"@id\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#FillFormPersonalInfo\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#FillFormPersonalInfo\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP\"\n" + 
@@ -538,48 +538,48 @@ public class DMSService {
 			"    \"@value\" : \"2222222222\"\n" + 
 			"  } ],\n" + 
 			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot\" : [ {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainName\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainName\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#confirmFirstSurname\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#confirmFirstSurname\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainFirstSurname\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainFirstSurname\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainSecondSurname\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainSecondSurname\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainIDNumber\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainIDNumber\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainIDType\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainIDType\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainIDCountry\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainIDCountry\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainGender\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainGender\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainBirthday\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainBirthday\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainCountryOfBirth\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainCountryOfBirth\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainCityOfBirth\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainCityOfBirth\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainNationality\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainNationality\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainLandline\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainLandline\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainMobilePhone\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainMobilePhone\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainEmail\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainEmail\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainNotificationPreferences\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainNotificationPreferences\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainSMSNotifications\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainSMSNotifications\"\n" + 
 			"  }, {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainEMailNotifications\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainEMailNotifications\"\n" + 
 			"  } ],\n" + 
 			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCurrentDIP\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#boolean\",\n" + 
 			"    \"@value\" : \"true\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#confirmFirstSurname\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#confirmFirstSurname\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -613,7 +613,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainBirthday\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainBirthday\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -647,7 +647,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainCityOfBirth\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainCityOfBirth\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -681,7 +681,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainCountryOfBirth\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainCountryOfBirth\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -715,7 +715,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainEMailNotifications\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainEMailNotifications\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -749,7 +749,7 @@ public class DMSService {
 			"    \"@value\" : \"true\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainEmail\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainEmail\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -783,7 +783,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainFirstSurname\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainFirstSurname\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -817,7 +817,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainGender\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainGender\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -851,7 +851,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainIDCountry\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainIDCountry\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -885,7 +885,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainIDNumber\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainIDNumber\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -919,7 +919,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainIDType\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainIDType\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -953,7 +953,7 @@ public class DMSService {
 			"    \"@value\" : \"true\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainLandline\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainLandline\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -987,7 +987,7 @@ public class DMSService {
 			"    \"@value\" : \"true\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainMobilePhone\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainMobilePhone\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -1021,7 +1021,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainName\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainName\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -1055,7 +1055,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainNationality\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainNationality\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -1089,7 +1089,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainNotificationPreferences\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainNotificationPreferences\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -1123,7 +1123,7 @@ public class DMSService {
 			"    \"@value\" : \"false\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainSMSNotifications\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainSMSNotifications\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -1157,7 +1157,7 @@ public class DMSService {
 			"    \"@value\" : \"true\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainSecondSurname\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainSecondSurname\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
@@ -1268,7 +1268,7 @@ public class DMSService {
 			"}";
 
 	private static final String PROPOSE_SERVICE_DIP_INPUT = "[ {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#ProposeService\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#ProposeService\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP\"\n" + 
@@ -1277,14 +1277,14 @@ public class DMSService {
 			"    \"@value\" : \"1626683426019\"\n" + 
 			"  } ],\n" + 
 			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot\" : [ {\n" + 
-			"    \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainInterest\"\n" + 
+			"    \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainInterest\"\n" + 
 			"  } ],\n" + 
 			"  \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCurrentDIP\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#boolean\",\n" + 
 			"    \"@value\" : \"true\"\n" + 
 			"  } ]\n" + 
 			"}, {\n" + 
-			"  \"@id\" : \"http://localhost:8080/services/FirstReceptionService.owl#obtainInterest\",\n" + 
+			"  \"@id\" : \"http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#obtainInterest\",\n" + 
 			"  \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\" : [ {\n" + 
 			"    \"@type\" : \"http://www.w3.org/2001/XMLSchema#anyURI\",\n" + 
 			"    \"@value\" : \"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand\"\n" + 
