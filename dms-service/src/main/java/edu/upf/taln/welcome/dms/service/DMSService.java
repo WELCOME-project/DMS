@@ -1463,7 +1463,7 @@ public class DMSService {
 					content = @Content(mediaType = MediaType.APPLICATION_JSON,
 							schema = @Schema(implementation = DMInput.class),
 							examples = {
-									@ExampleObject(name = "Example using Opening DIP", value = OPENING_DIP_INPUT),
+									//@ExampleObject(name = "Example using Opening DIP", value = OPENING_DIP_INPUT),
 									@ExampleObject(name = "Example using Fill Personal Info DIP", value = FILL_PERSONAL_INFO_DIP_INPUT),
 									@ExampleObject(name = "Example using Propose First Reception Service DIP", value = PROPOSE_SERVICE_DIP_INPUT)
 							}
@@ -1474,7 +1474,7 @@ public class DMSService {
 							content = @Content(mediaType = MediaType.APPLICATION_JSON,
 									schema = @Schema(implementation = DialogueMove.class),
 									examples = {
-											@ExampleObject(name = "Example using Opening DIP", value = OPENING_DIP_OUTPUT),
+											//@ExampleObject(name = "Example using Opening DIP", value = OPENING_DIP_OUTPUT),
 											@ExampleObject(name = "Example using Fill Personal Info DIP", value = FILL_PERSONAL_INFO_DIP_OUTPUT),
 											@ExampleObject(name = "Example using Propose First Reception Service DIP", value = PROPOSE_SERVICE_DIP_OUTPUT)
 									}
