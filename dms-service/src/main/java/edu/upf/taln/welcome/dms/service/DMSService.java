@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,9 +18,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -35,6 +38,7 @@ import edu.upf.taln.welcome.dms.core.DeterministicPolicy;
 import edu.upf.taln.welcome.dms.core.DialogueManager;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -1459,6 +1463,14 @@ public class DMSService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Operation(summary = "Determines the system's next dialogue moves given an edu.upf.taln.welcome.nlg.commons.input dialogue edu.upf.taln.welcome.nlg.commons.input package.",
 			description = "Returns the data needed to generate the next utterance.",
+			parameters = {
+			    @Parameter(in = ParameterIn.HEADER,
+			        name = "X-Language",
+			        description = "Templates Language",
+			        required = false,
+			        schema = @Schema(type = "string")
+			    )
+			},
 			requestBody = @RequestBody(
 					content = @Content(mediaType = MediaType.APPLICATION_JSON,
 							schema = @Schema(implementation = DMInput.class),
@@ -1485,13 +1497,34 @@ public class DMSService {
 	 * Unmarshalls JSON-LD edu.upf.taln.welcome.nlg.commons.input to a POJO representations of a DIP frame, and passes it to the dialogue manager.
 	 * The resulting dialogue moves are serialized back into JSON-LD and returned.
 	 */
-	public DialogueMove realizeNextTurn(@Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
+	public Response realizeNextTurn(@Context HttpHeaders headers, @Parameter(description = "Dialogue edu.upf.taln.welcome.nlg.commons.input packages", required = true) JsonNode input) throws WelcomeException {
+		
+		StringBuffer strb = new StringBuffer(); 
+		MultivaluedMap<String, String> rh = headers.getRequestHeaders();
+		strb.append("Headers:\n");
+		for(Entry<String, List<String>> header : rh.entrySet()) {
+			strb.append("\t" + header.getKey() + ": [" + String.join(", ", header.getValue()) + "]\n");
+		}
+		logger.log(Level.INFO, strb.toString());
+		
+		String language = "eng";
+		List<String> languageArray = headers.getRequestHeader("x-language");
+		if(languageArray != null) {
+			language = languageArray.get(0);
+		}
+		logger.log(Level.INFO, "Language: " + language);
+		
 		try {
             String content = input.toString();
 			Frame dip = JsonLDUtils.readFrame(content, dmsContextURL);
 			logger.log(Level.INFO, "dip: {0}\t{1}", new Object[]{dip.toString(), dip.type});
             
-			return realizeNextTurn(dip);
+			DialogueMove output = realizeNextTurn(dip);
+			
+			ResponseBuilder rBuild = Response
+										.ok(output, MediaType.APPLICATION_JSON)
+										.header("x-language", language);
+	        return rBuild.build();
             
 		} catch (WelcomeException ex) {
 			logger.log(Level.SEVERE, "Failed to determine next dialogue move", ex);

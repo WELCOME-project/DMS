@@ -1,10 +1,8 @@
 package edu.upf.taln.welcome.dms.commons.input;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
