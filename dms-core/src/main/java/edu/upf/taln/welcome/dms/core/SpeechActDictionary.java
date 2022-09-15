@@ -132,6 +132,7 @@ public class SpeechActDictionary {
         dictionary.put("pas:informPersonNameIntro", SpeechActLabel.Statement_non_opinion);
         dictionary.put("pas:informSimulation", SpeechActLabel.Statement_non_opinion);
         dictionary.put("pas:informSimulationEnd", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("pas:informIntroductionSection", SpeechActLabel.Statement_non_opinion);
         dictionary.put("pas:obtainBirthDay", SpeechActLabel.Wh_Question);
         dictionary.put("pas:obtainBirthMonth", SpeechActLabel.Wh_Question);
         dictionary.put("pas:obtainBirthYear", SpeechActLabel.Wh_Question);
@@ -146,6 +147,7 @@ public class SpeechActDictionary {
         dictionary.put("pas:obtainReadiness", SpeechActLabel.Yes_No_Question);
         dictionary.put("pas:obtainRequest", SpeechActLabel.Declarative_Yes_No_Question);
         dictionary.put("pas:obtainSurname", SpeechActLabel.Wh_Question);
+        dictionary.put("pas:obtainPersonalInfoConfirmation", SpeechActLabel.Wh_Question);
         dictionary.put("pas:proposeTimeSlot", SpeechActLabel.Statement_non_opinion);
         dictionary.put("pas:reactiveFlag", SpeechActLabel.Statement_non_opinion);
 		

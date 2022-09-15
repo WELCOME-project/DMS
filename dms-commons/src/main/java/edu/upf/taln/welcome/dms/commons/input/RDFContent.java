@@ -25,9 +25,17 @@ public class RDFContent {
 	    @JsonProperty("@value")
 	    public String value;
 	    
+	    @JsonInclude(JsonInclude.Include.NON_NULL) 
+	    @JsonProperty("@language")
+	    public String language;
+	    
 	    public JsonldGeneric() {}
 	    public JsonldGeneric(String value) {
 	    	this.value = value;
+	    }
+	    public JsonldGeneric(String value, String language) {
+	    	this.value = value;
+	    	this.language = language;
 	    }
 	}
 	
