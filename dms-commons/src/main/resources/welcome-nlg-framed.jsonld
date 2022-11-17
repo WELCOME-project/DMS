@@ -11,6 +11,8 @@
     "fpr": "http://localhost:8080/services/FullPreregistration.owl#",
     "sa": "http://localhost:8080/services/SimulateAppointmentService.owl#",
     "ccv": "http://localhost:8080/services/CreateCV.owl#",
+    "schc": "http://localhost:8060/services/SchoolingCARITAS.owl#",
+    "schd": "http://localhost:8060/services/SchoolingDIFE.owl#",
     "rdf:subject": {
       "@type": "@id"
     },

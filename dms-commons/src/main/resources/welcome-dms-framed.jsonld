@@ -11,6 +11,8 @@
     "fpr": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FullPreregistration.owl#",
     "sa": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulateAppointmentService.owl#",
     "ccv": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/CreateCV.owl#",
+    "schc": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SchoolingCARITAS.owl#",
+    "schd": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SchoolingDIFE.owl#",
     "rdf:type": {
       "@type": "w3c:anyURI"
     },
