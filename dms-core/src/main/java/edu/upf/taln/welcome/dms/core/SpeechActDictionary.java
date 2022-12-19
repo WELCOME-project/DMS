@@ -483,6 +483,28 @@ public class SpeechActDictionary {
         dictionary.put("schd:informEducationSubtopic", SpeechActLabel.Statement_non_opinion);
         dictionary.put("schd:informEducationDepartment", SpeechActLabel.Statement_non_opinion);
         dictionary.put("schd:obtainEducationDepartmentConfirmation", SpeechActLabel.Yes_No_Question);  
+        
+        dictionary.put("hlth:informScenarioIntroduction", SpeechActLabel.Statement_non_opinion);  
+        dictionary.put("hlth:obtainSubtopic", SpeechActLabel.Yes_No_Question);  
+        dictionary.put("hlth:flagMedEmergencyRequested", SpeechActLabel.Yes_No_Question);  
+        dictionary.put("hlth:flagMedEmergencyInformed", SpeechActLabel.Yes_No_Question);  
+        dictionary.put("hlth:flagDocRegistrationRequested", SpeechActLabel.Yes_No_Question);  
+        dictionary.put("hlth:flagDocRegistrationInformed", SpeechActLabel.Yes_No_Question);  
+        dictionary.put("hlth:informLegislation", SpeechActLabel.Statement_non_opinion);  
+        dictionary.put("hlth:obtainLegislationConfirmation", SpeechActLabel.Yes_No_Question);  
+        dictionary.put("hlth:obtainSSNumberAvailable", SpeechActLabel.Yes_No_Question);
+        dictionary.put("hlth:obtainPAAYPAConfirmation", SpeechActLabel.Yes_No_Question);
+        dictionary.put("hlth:informSSRights", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("hlth:obtainInfoSufficient", SpeechActLabel.Yes_No_Question);
+        dictionary.put("hlth:informRegistraionProcedure", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("hlth:obtainRegistrationInterest", SpeechActLabel.Yes_No_Question);
+        dictionary.put("hlth:informTaxisnet", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("hlth:informGenericPRAKSISContact", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("hlth:obtainContinueScenario", SpeechActLabel.Yes_No_Question);
+        dictionary.put("hlth:informAvailableFAQ", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("hlth:obtainInterest", SpeechActLabel.Yes_No_Question);
+        dictionary.put("hlth:informSSNumberInFAQ", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("hlth:obtainChecking", SpeechActLabel.Yes_No_Question);
        
     }
     

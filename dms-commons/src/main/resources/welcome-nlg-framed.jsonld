@@ -13,6 +13,7 @@
     "ccv": "http://localhost:8080/services/CreateCV.owl#",
     "schc": "http://localhost:8060/services/SchoolingCARITAS.owl#",
     "schd": "http://localhost:8060/services/SchoolingDIFE.owl#",
+    "hlth": "http://localhost:8060/services/Health.owl#",
     "rdf:subject": {
       "@type": "@id"
     },
