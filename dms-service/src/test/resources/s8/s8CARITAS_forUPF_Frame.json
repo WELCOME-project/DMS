@@ -1,0 +1,114 @@
+{
+  "@id" : "schc:ScenarioIntroduction",
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "schc:informScenarioIntroduction",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+    "welcome:hasTemplateId" : "TInformSchoolingScenarioIntroductionCARITAS",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:SchoolingTopic",
+      "rdf:predicate" : "welcome:topicName",
+      "rdf:object" : {
+        "@value" : "school degrees"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:SchoolingTopic",
+      "rdf:predicate" : "welcome:topicName",
+      "rdf:object" : {
+        "@value" : "university diplomas"
+      }
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Country",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@value" : "Germany"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
+  }, {
+    "@id" : "schc:obtainSubtopic",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : "TObtainSubtopic",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
+  }, {
+    "@id" : "schc:flagSchoolDegreeRequested",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
+  }, {
+    "@id" : "schc:flagSchoolDegreeInformed",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
+  }, {
+    "@id" : "schc:flagUDiplomaRequested",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
+  }, {
+    "@id" : "schc:flagUDiplomaInformed",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false,
+    "welcome:hasTCNAnswer" : [ {
+      "@id" : "welcome:Unknown"
+    } ]
+  } ]
+}
