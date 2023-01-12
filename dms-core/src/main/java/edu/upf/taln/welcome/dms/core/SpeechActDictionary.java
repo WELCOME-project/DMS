@@ -457,7 +457,7 @@ public class SpeechActDictionary {
         dictionary.put("schd:obtainDocumentsAvailability", SpeechActLabel.Yes_No_Question);
         dictionary.put("schd:informDocTranslationNeed", SpeechActLabel.Statement_non_opinion);
         dictionary.put("schd:obtainAvailableTranslation", SpeechActLabel.Yes_No_Question);
-        dictionary.put("schd:infomUMasterRecognition", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("schd:informUMasterRecognition", SpeechActLabel.Statement_non_opinion);
         dictionary.put("schd:obtainUMasterRecogInfoConfirmation", SpeechActLabel.Yes_No_Question);
         dictionary.put("schd:informSARUService", SpeechActLabel.Statement_non_opinion);
         dictionary.put("schd:obtainSARUInfoConfirmation", SpeechActLabel.Yes_No_Question);
