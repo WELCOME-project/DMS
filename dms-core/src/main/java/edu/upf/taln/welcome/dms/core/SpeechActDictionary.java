@@ -496,7 +496,7 @@ public class SpeechActDictionary {
         dictionary.put("hlth:obtainPAAYPAConfirmation", SpeechActLabel.Yes_No_Question);
         dictionary.put("hlth:informSSRights", SpeechActLabel.Statement_non_opinion);
         dictionary.put("hlth:obtainInfoSufficient", SpeechActLabel.Yes_No_Question);
-        dictionary.put("hlth:informRegistraionProcedure", SpeechActLabel.Statement_non_opinion);
+        dictionary.put("hlth:informRegistrationProcedure", SpeechActLabel.Statement_non_opinion);
         dictionary.put("hlth:obtainRegistrationInterest", SpeechActLabel.Yes_No_Question);
         dictionary.put("hlth:informTaxisnet", SpeechActLabel.Statement_non_opinion);
         dictionary.put("hlth:informGenericPRAKSISContact", SpeechActLabel.Statement_non_opinion);
