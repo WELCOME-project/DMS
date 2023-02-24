@@ -1,0 +1,25 @@
+{
+  "@id" : "frs:ProposeService",
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "frs:obtainInterest",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : "TObtainInterestInform",
+    "welcome:hasOntologyType" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:reifiedInterest",
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:ServiceName",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "First Reception Service in Catalonia"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

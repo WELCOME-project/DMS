@@ -1,0 +1,21 @@
+{
+  "@id" : "move_3",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Yes_No_Question_3",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Yes_No_Question",
+    "welcome:hasSlot" : {
+      "@id" : "welcome:obtainInterest",
+      "@type" : "welcome:SystemInfo",
+      "welcome:hasTemplateId" : null,
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:Unknown"
+      } ],
+      "welcome:hasStatus" : "welcome:Pending",
+      "welcome:hasNumberAttempts" : 0,
+      "welcome:confidenceScore" : 0.0,
+      "welcome:isOptional" : false
+    }
+  } ]
+}

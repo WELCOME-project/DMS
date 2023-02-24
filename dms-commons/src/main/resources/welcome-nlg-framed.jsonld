@@ -1,0 +1,58 @@
+{
+  "@context": [{
+    "schema": "https://schema.org/",
+    "w3c": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "daml": "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "welcome": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "frs": "http://localhost:8080/services/FirstReceptionService.owl#",
+    "pas": "http://localhost:8080/services/SimulatePhoneAppointmentService.owl#",
+    "pps": "http://localhost:8080/services/PreregistrationProcedureService.owl#",
+    "fpr": "http://localhost:8080/services/FullPreregistration.owl#",
+    "sa": "http://localhost:8080/services/SimulateAppointmentService.owl#",
+    "ccv": "http://localhost:8080/services/CreateCV.owl#",
+    "schc": "http://localhost:8060/services/SchoolingCARITAS.owl#",
+    "schd": "http://localhost:8060/services/SchoolingDIFE.owl#",
+    "hlth": "http://localhost:8060/services/Health.owl#",
+    "rdf:subject": {
+      "@type": "@id"
+    },
+    "rdf:predicate": {
+      "@type": "@id"
+    },
+    "welcome:hasSlot": {
+      "@type": "@id"
+    },
+    "welcome:hasOntologyType": {
+      "@type": "@id"
+    },
+    "welcome:hasStatus": {
+      "@type": "@id"
+    },
+    "welcome:isCurrentDIP": {
+      "@type": "w3c:boolean"
+    },
+    "welcome:hasDIPStatus": {
+      "@type": "@id"
+    },
+    "welcome:hasInputRDFContents": {
+      "@container": "@set"
+    },
+    "welcome:hasTCNAnswer": {
+      "@container": "@set"
+    },
+    "welcome:confidenceScore": {
+      "@type": "w3c:float"
+    },
+    "welcome:hasNumberAttempts": {
+      "@type": "w3c:int"
+    },
+    "welcome:isOptional": {
+      "@type": "w3c:boolean"
+    },
+    "welcome:hasSpeechActs": {
+      "@container": "@list"
+    }
+  }],
+	"@type": "welcome:DialogueMove"
+}

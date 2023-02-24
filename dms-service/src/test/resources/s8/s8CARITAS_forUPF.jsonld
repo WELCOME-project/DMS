@@ -1,0 +1,317 @@
+{
+	"@graph": [
+		{
+			"@id": "_:node1giutgk7ox421",
+			"@type": "rdf:Statement",
+			"rdf:object": "school degrees",
+			"rdf:predicate": {
+				"@id": "welcome:topicName"
+			},
+			"rdf:subject": {
+				"@id": "welcome:SchoolingTopic"
+			}
+		},
+		{
+			"@id": "_:node1giutgk7ox422",
+			"@type": "rdf:Statement",
+			"rdf:object": "university diplomas",
+			"rdf:predicate": {
+				"@id": "welcome:topicName"
+			},
+			"rdf:subject": {
+				"@id": "welcome:SchoolingTopic"
+			}
+		},
+		{
+			"@id": "_:node1giutgk7ox423",
+			"@type": "rdf:Statement",
+			"rdf:object": "Germany",
+			"rdf:predicate": {
+				"@id": "welcome:hasValue"
+			},
+			"rdf:subject": {
+				"@id": "welcome:Country"
+			}
+		},
+		{
+			"@id": "schooling:ScenarioIntroduction",
+			"rdf:type": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP"
+			},
+			"welcome:DIPId": "1669633860434",
+			"welcome:hasSlot": [
+				{
+					"@id": "schooling:informScenarioIntroduction"
+				},
+				{
+					"@id": "schooling:obtainSubtopic"
+				},
+				{
+					"@id": "schooling:flagSchoolDegreeRequested"
+				},
+				{
+					"@id": "schooling:flagSchoolDegreeInformed"
+				},
+				{
+					"@id": "schooling:flagUDiplomaRequested"
+				},
+				{
+					"@id": "schooling:flagUDiplomaInformed"
+				}
+			],
+			"welcome:isCurrentDIP": {
+				"@type": "xsd:boolean",
+				"@value": "true"
+			}
+		},
+		{
+			"@id": "schooling:flagSchoolDegreeInformed",
+			"rdf:type": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+			},
+			"welcome:associatedWith": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:confidenceScore": {
+				"@type": "xsd:float",
+				"@value": "0.0"
+			},
+			"welcome:dependsOn": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasInputRDFContents": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasNumberAttempts": {
+				"@type": "xsd:integer",
+				"@value": "0"
+			},
+			"welcome:hasOntologyType": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+			},
+			"welcome:hasStatus": {
+				"@id": "welcome:Pending"
+			},
+			"welcome:hasTCNAnswer": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:isOptional": {
+				"@type": "xsd:boolean",
+				"@value": "false"
+			}
+		},
+		{
+			"@id": "schooling:flagSchoolDegreeRequested",
+			"rdf:type": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+			},
+			"welcome:associatedWith": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:confidenceScore": {
+				"@type": "xsd:float",
+				"@value": "0.0"
+			},
+			"welcome:dependsOn": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasInputRDFContents": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasNumberAttempts": {
+				"@type": "xsd:integer",
+				"@value": "0"
+			},
+			"welcome:hasOntologyType": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+			},
+			"welcome:hasStatus": {
+				"@id": "welcome:Pending"
+			},
+			"welcome:hasTCNAnswer": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:isOptional": {
+				"@type": "xsd:boolean",
+				"@value": "false"
+			}
+		},
+		{
+			"@id": "schooling:flagUDiplomaInformed",
+			"rdf:type": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+			},
+			"welcome:associatedWith": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:confidenceScore": {
+				"@type": "xsd:float",
+				"@value": "0.0"
+			},
+			"welcome:dependsOn": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasInputRDFContents": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasNumberAttempts": {
+				"@type": "xsd:integer",
+				"@value": "0"
+			},
+			"welcome:hasOntologyType": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+			},
+			"welcome:hasStatus": {
+				"@id": "welcome:Pending"
+			},
+			"welcome:hasTCNAnswer": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:isOptional": {
+				"@type": "xsd:boolean",
+				"@value": "false"
+			}
+		},
+		{
+			"@id": "schooling:flagUDiplomaRequested",
+			"rdf:type": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+			},
+			"welcome:associatedWith": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:confidenceScore": {
+				"@type": "xsd:float",
+				"@value": "0.0"
+			},
+			"welcome:dependsOn": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasInputRDFContents": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasNumberAttempts": {
+				"@type": "xsd:integer",
+				"@value": "0"
+			},
+			"welcome:hasOntologyType": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+			},
+			"welcome:hasStatus": {
+				"@id": "welcome:Pending"
+			},
+			"welcome:hasTCNAnswer": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:isOptional": {
+				"@type": "xsd:boolean",
+				"@value": "false"
+			}
+		},
+		{
+			"@id": "schooling:informScenarioIntroduction",
+			"rdf:type": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
+			},
+			"welcome:associatedWith": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:confidenceScore": {
+				"@type": "xsd:float",
+				"@value": "0.0"
+			},
+			"welcome:dependsOn": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasInputRDFContents": [
+				{
+					"@id": "_:node1giutgk7ox421"
+				},
+				{
+					"@id": "_:node1giutgk7ox422"
+				},
+				{
+					"@id": "_:node1giutgk7ox423"
+				}
+			],
+			"welcome:hasNumberAttempts": {
+				"@type": "xsd:integer",
+				"@value": "0"
+			},
+			"welcome:hasOntologyType": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"
+			},
+			"welcome:hasStatus": {
+				"@id": "welcome:Pending"
+			},
+			"welcome:hasTCNAnswer": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasTemplateId": "TInformSchoolingScenarioIntroductionCARITAS",
+			"welcome:isOptional": {
+				"@type": "xsd:boolean",
+				"@value": "false"
+			}
+		},
+		{
+			"@id": "schooling:obtainSubtopic",
+			"rdf:type": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+			},
+			"welcome:associatedWith": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:confidenceScore": {
+				"@type": "xsd:float",
+				"@value": "0.0"
+			},
+			"welcome:dependsOn": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasInputRDFContents": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasNumberAttempts": {
+				"@type": "xsd:integer",
+				"@value": "0"
+			},
+			"welcome:hasOntologyType": {
+				"@type": "xsd:anyURI",
+				"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+			},
+			"welcome:hasStatus": {
+				"@id": "welcome:Pending"
+			},
+			"welcome:hasTCNAnswer": {
+				"@id": "welcome:Unknown"
+			},
+			"welcome:hasTemplateId": "TObtainSubtopic",
+			"welcome:isOptional": {
+				"@type": "xsd:boolean",
+				"@value": "false"
+			}
+		}
+	],
+	"@context": {
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"welcome": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+		"preregistration": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/PreregistrationProcedureService.owl#",
+		"simulateAppointment": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulateAppointmentService.owl#",
+		"fullpreregistration": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FullPreregistration.owl#",
+		"employment": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/CreateCV.owl#",
+		"schooling": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SchoolingCARITAS.owl#"
+	}
+}

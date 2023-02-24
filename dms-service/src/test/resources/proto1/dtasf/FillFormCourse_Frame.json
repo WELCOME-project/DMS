@@ -1,0 +1,245 @@
+{
+  "@id" : "frs:FillFormCourse",
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "frs:obtainCourseInstitutionLabourMarket",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCourseInstitution",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainYearCompletionLabourMarket",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainYearCompletion",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainDurationLabourMarket",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainDuration",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainCertificateLabourMarket",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCertificate",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainCourseNameCatalanSociety",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCourseName",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainCourseInstitutionCatalanSociety",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCourseInstitution",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainYearCompletionCatalanSociety",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainYearCompletion",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainDurationCatalanSociety",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainDuration",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainCertificateCatalanSociety",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCertificate",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainCourseNameCatalan",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCourseName",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainCourseInstitutionCatalan",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCourseInstitution",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainYearCompletionCatalan",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainYearCompletion",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainDurationCatalan",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainDuration",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainCertificateCatalan",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCertificate",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainCourseNameSpanish",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCourseName",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainCourseInstitutionSpanish",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCourseInstitution",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainYearCompletionSpanish",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainYearCompletion",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainDurationSpanish",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainDuration",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : true
+  }, {
+    "@id" : "frs:obtainCertificateSpanish",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCertificate",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainCourseNameLabourMarket",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainCourseName",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

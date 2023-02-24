@@ -1,0 +1,128 @@
+{
+  "@context" : {
+    "daml" : "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdf:predicate" : {
+      "@type" : "@id"
+    },
+    "rdf:subject" : {
+      "@type" : "@id"
+    },
+    "w3c" : "http://www.w3.org/2001/XMLSchema#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "welcome:confidenceScore" : {
+      "@type" : "w3c:float"
+    },
+    "welcome:hasDIPStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@container" : "@set"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "w3c:int"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSlot" : {
+      "@type" : "@id"
+    },
+    "welcome:hasSpeechActs" : {
+      "@container" : "@list"
+    },
+    "welcome:hasStatus" : {
+      "@type" : "@id"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@type" : "@id"
+    },
+    "welcome:isCurrentDIP" : {
+      "@type" : "w3c:boolean"
+    },
+    "welcome:isOptional" : {
+      "@type" : "w3c:boolean"
+    }
+  },
+  "@id" : "move_0",
+  "@type" : "welcome:DialogueMove",
+  "welcome:hasSpeechActs" : [ {
+    "@id" : "Wh_Question_0",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "Wh_Question",
+    "welcome:hasSlot" : {
+      "@id" : "ccv:obtainEmail",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+      "welcome:hasTemplateId" : "TObtainEmail",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email",
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:Unknown"
+      } ],
+      "welcome:hasStatus" : "welcome:NeedsUpdate",
+      "welcome:hasNumberAttempts" : 0,
+      "welcome:confidenceScore" : 1.0,
+      "welcome:isOptional" : false,
+      "welcome:hasTCNAnswer" : [ {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Email",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@value" : "testuser@example.com"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Email",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@value" : "testuser@example.com"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Email",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@value" : "testuser@example.com"
+        }
+      } ]
+    }
+  }, {
+    "@id" : "NeedsUpdateAnswer_1",
+    "@type" : "welcome:SpeechAct",
+    "welcome:hasLabel" : "NeedsUpdateAnswer",
+    "welcome:hasSlot" : {
+      "@id" : "ccv:obtainEmail",
+      "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+      "welcome:hasTemplateId" : "TObtainEmail",
+      "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email",
+      "welcome:hasInputRDFContents" : [ {
+        "@id" : "welcome:Unknown"
+      } ],
+      "welcome:hasStatus" : "welcome:NeedsUpdate",
+      "welcome:hasNumberAttempts" : 0,
+      "welcome:confidenceScore" : 1.0,
+      "welcome:isOptional" : false,
+      "welcome:hasTCNAnswer" : [ {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Email",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@value" : "testuser@example.com"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Email",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@value" : "testuser@example.com"
+        }
+      }, {
+        "@type" : "rdf:Statement",
+        "rdf:subject" : "welcome:Email",
+        "rdf:predicate" : "welcome:hasValue",
+        "rdf:object" : {
+          "@value" : "testuser@example.com"
+        }
+      } ]
+    }
+  } ]
+}

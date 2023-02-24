@@ -1,0 +1,27 @@
+{
+  "@id" : "welcome:ObtainRegistrationStatus",
+  "@type" : "welcome:DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:obtainName",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:obtainStatus",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

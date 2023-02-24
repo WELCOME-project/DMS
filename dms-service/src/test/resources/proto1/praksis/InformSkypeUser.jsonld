@@ -1,0 +1,367 @@
+[{
+  "@id" : "_:node1fbq3785qx17",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "English"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx18",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "English"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx19",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "French"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx20",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "Skype"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppName"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx21",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@id" : "https://schema.org/Friday"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://schema.org/dayOfWeek"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_thes"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx22",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "10:00"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://schema.org/closes"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_thes"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx23",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "09:00"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://schema.org/opens"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#slot_ef_thes"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx24",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "Skype"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppName"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx25",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "asylum.service"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSkypeId"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#skype_informEnglish"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx26",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "Skype"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppName"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx27",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "Skype"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#AppName"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx28",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "Asylum Service"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceName"
+  } ]
+}, {
+  "@id" : "_:node1fbq3785qx29",
+  "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#object" : [ {
+    "@value" : "Yes"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : [ {
+    "@id" : "_:node1fbq3785qx30"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#InformSkypeUser",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId" : [ {
+    "@value" : "1627546646530"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot" : [ {
+    "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#informTimeSlotSkypeID"
+  }, {
+    "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#informTimeSlot"
+  }, {
+    "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#informSkypeID"
+  }, {
+    "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#informAccess"
+  }, {
+    "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#obtainConfirmationSkypeUser"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCurrentDIP" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#informAccess",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "_:node1fbq3785qx27"
+  }, {
+    "@id" : "_:node1fbq3785qx28"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TInformAccessService_COVID"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#informSkypeID",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "_:node1fbq3785qx18"
+  }, {
+    "@id" : "_:node1fbq3785qx19"
+  }, {
+    "@id" : "_:node1fbq3785qx25"
+  }, {
+    "@id" : "_:node1fbq3785qx26"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TInformAppCallAccountID"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#informTimeSlot",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "_:node1fbq3785qx17"
+  }, {
+    "@id" : "_:node1fbq3785qx21"
+  }, {
+    "@id" : "_:node1fbq3785qx22"
+  }, {
+    "@id" : "_:node1fbq3785qx23"
+  }, {
+    "@id" : "_:node1fbq3785qx24"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TInformAppCallTimeSlot"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#informTimeSlotSkypeID",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "_:node1fbq3785qx20"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TInformAppCallConditions"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/PreregistrationProcedureService.owl#obtainConfirmationSkypeUser",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "1.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "_:node1fbq3785qx29"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainConfirmation"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+} ]

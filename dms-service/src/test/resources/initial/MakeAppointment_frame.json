@@ -1,0 +1,74 @@
+{
+  "@id" : "welcome:MakeAppointment",
+  "@type" : "welcome:DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:reactiveFlag",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:proposeTimeSlot",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:sa_4",
+      "rdf:predicate" : "https://schema.org/startTime",
+      "rdf:object" : "16:00"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:confirmTimeSlot",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:informMatterConcern",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:obtainMatterConcernStatus",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:informNeedAppointment",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

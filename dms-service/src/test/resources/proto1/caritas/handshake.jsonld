@@ -1,0 +1,6 @@
+[ {
+  "@id" : "http://localhost:8080/ajan/agents/caritas1",
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasMessage" : [ {
+    "@value" : "is ready"
+  } ]
+} ]

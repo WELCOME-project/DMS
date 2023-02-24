@@ -1,0 +1,25 @@
+{
+  "@id" : "welcome:ClosingUponFailure",
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:informMessage",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo",
+    "welcome:hasTemplateId" : "TInformMessage",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:reifiedReason2",
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:subTemplate",
+      "rdf:predicate" : "welcome:isReason",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "STReasonNoFoundService"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

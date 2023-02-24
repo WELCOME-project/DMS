@@ -1,0 +1,167 @@
+{
+  "@id" : "frs:FillFormOther",
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "frs:obtainMaritalStatus",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainMaritalStatus",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainAsylumClaim",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainAsylumClaim",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Spain",
+      "rdf:predicate" : "welcome:countryName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Spain"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainYearArrival",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainYearArrival",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:City",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Terrassa"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainYearArrivalRegion",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainYearArrivalRegion",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Catalonia",
+      "rdf:predicate" : "welcome:regionName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Catalonia"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainPreviousResidenceCatalonia",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainPreviousResidenceRegion",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Catalonia",
+      "rdf:predicate" : "welcome:regionName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Catalonia"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainPreviousResidenceSpain",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainPreviousResidenceOther",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Spain",
+      "rdf:predicate" : "welcome:countryName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Spain"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainPreviousResidenceOther",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainPreviousResidenceOther",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainRegistrationYear",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainRegistrationYear",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Catalonia",
+      "rdf:predicate" : "welcome:regionName",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "Catalonia"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainLearningHandicap",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainLearningHandicap",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "frs:obtainIlliteracy",
+    "rdf:type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : "TObtainIlliteracy",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

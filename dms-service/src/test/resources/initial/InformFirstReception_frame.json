@@ -1,0 +1,170 @@
+{
+  "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformFirstReception",
+  "@type" : "welcome:DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#ObtainInterestRegistration",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformDetailsCompletion",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformDetailsLanguage",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformDetailsTime",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformDetailsValue",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformLabourModule",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformLabourModuleAddress",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformLabourModuleHours",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformLanguageModule",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformLanguageModuleAddress",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformLanguageModuleHours",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformOverview",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformSocietyModule",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformSocietyModuleAddress",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "http://localhost:8080/WelcomeServicesOffers/FirstReceptionService.owl#InformSocietyModuleHours",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

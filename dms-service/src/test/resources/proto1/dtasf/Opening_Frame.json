@@ -1,0 +1,48 @@
+{
+  "@id" : "welcome:Opening",
+  "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:confirmCommunication",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : "TConfirmCommunication",
+    "welcome:hasOntologyType" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 1.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:confirmLanguage",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : "TConfirmLanguage",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language",
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Language",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : {
+        "@id" : null,
+        "@type" : null,
+        "@value" : "English"
+      }
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 1.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:obtainRequest",
+    "rdf:type" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+    "welcome:hasTemplateId" : "TObtainMatterConcern",
+    "welcome:hasOntologyType" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest",
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 1.0,
+    "welcome:isOptional" : false
+  } ]
+}

@@ -1,0 +1,74 @@
+{
+  "@context": [{
+    "schema": "https://schema.org/",
+    "w3c": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "daml": "http://www.daml.org/services/owl-s/1.1/ActorDefault.owl#",
+    "welcome": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "frs": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FirstReceptionService.owl#",
+    "pas": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#",
+    "pps": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/PreregistrationProcedureService.owl#",
+    "fpr": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FullPreregistration.owl#",
+    "sa": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulateAppointmentService.owl#",
+    "ccv": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/CreateCV.owl#",
+    "schc": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SchoolingCARITAS.owl#",
+    "schd": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SchoolingDIFE.owl#",
+    "hlth": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/Health.owl#",
+    "rdf:type": {
+      "@type": "w3c:anyURI"
+    },
+    "rdf:subject": {
+      "@type": "@id"
+    },
+    "rdf:predicate": {
+      "@type": "@id"
+    },
+    "welcome:hasSlot": {
+      "@container": "@set"
+    },
+    "welcome:hasOntologyType": {
+      "@type": "w3c:anyURI"
+    },
+    "welcome:hasStatus": {
+      "@type": "@id"
+    },
+    "welcome:isCurrentDIP": {
+      "@type": "w3c:boolean"
+    },
+    "welcome:hasDIPStatus": {
+      "@type": "@id"
+    },
+    "welcome:hasInputRDFContents": {
+      "@container": "@set"
+    },
+    "welcome:hasTCNAnswer": {
+      "@container": "@set"
+    },
+    "welcome:confidenceScore": {
+      "@type": "w3c:float"
+    },
+    "welcome:hasNumberAttempts": {
+      "@type": "w3c:integer"
+    },
+    "welcome:isOptional": {
+      "@type": "w3c:boolean"
+    }
+  }],
+
+  "rdf:type": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome#hasSlot": {
+    "@container": "@list",    
+    "@type": "welcome:SystemDemand",
+    "@type": "welcome:SystemInfo",
+    "welcome:hasInputRDFContents": {
+      "@container": "@set",      
+      "@type": "welcome:Unknown",
+      "@type": "rdf:Statement"
+    },
+    "welcome:hasTCNAnswer": {
+      "@container": "@set",      
+      "@type": "welcome:Unknown",
+      "@type": "rdf:Statement"
+    }
+  } 
+}

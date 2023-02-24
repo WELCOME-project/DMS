@@ -1,0 +1,367 @@
+[ {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#FillFormAddressInfo",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId" : [ {
+    "@value" : "444444444"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot" : [ {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainEntrance"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainBuildingType"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainFloorNumber"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainDoorNumber"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainPostCode"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainProvince"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainMunicipality"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainStreetType"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainStreetName"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainStreetNumber"
+  }, {
+    "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainBuildingName"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCurrentDIP" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainBuildingName",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainBuildingName"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainBuildingType",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainBuildingType"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainDoorNumber",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainDoorNumber"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainEntrance",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainEntrance"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainFloorNumber",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainFloorNumber"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainMunicipality",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainMunicipality"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainPostCode",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainPostCode"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainProvince",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainProvince"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainStreetName",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainStreetName"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainStreetNumber",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainStreetNumber"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ]
+}, {
+  "@id" : "http://localhost:8080/services/FirstReceptionService.owl#obtainStreetType",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "welcome:SystemDemand"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "0.0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer" : [ {
+    "@id" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId" : [ {
+    "@value" : "TObtainStreetType"
+  } ],
+  "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+} ]

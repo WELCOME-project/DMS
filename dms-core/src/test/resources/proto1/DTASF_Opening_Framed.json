@@ -1,0 +1,73 @@
+{
+  "@id": "welcome:Opening",
+  "rdf:type": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP",
+  "welcome:DIPId": "1626277469451",
+  "welcome:hasSlot": [
+    {
+      "@id": "welcome:confirmCommunication",
+      "rdf:type": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+      "welcome:confidenceScore": "1.0",
+      "welcome:hasInputRDFContents": [
+        {
+          "@id": "welcome:Unknown"
+        }
+      ],
+      "welcome:hasNumberAttempts": "0",
+      "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": {
+        "@id": "w3c:boolean"
+      },
+      "welcome:hasStatus": "welcome:Completed",
+      "welcome:hasTCNAnswer": {
+        "@type": "rdf:Statement",
+        "rdf:object": "Yes",
+        "rdf:predicate": "welcome:hasValue",
+        "rdf:subject": "welcome:Boolean"
+      },
+      "welcome:hasTemplateId": "TConfirmCommunication",
+      "welcome:isOptional": "false"
+    },
+    {
+      "@id": "welcome:confirmLanguage",
+      "rdf:type": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+      "welcome:confidenceScore": "1.0",
+      "welcome:hasInputRDFContents": [
+        {
+          "@type": "rdf:Statement",
+          "rdf:object": "English",
+          "rdf:predicate": "welcome:hasValue",
+          "rdf:subject": "welcome:Language"
+        }
+      ],
+      "welcome:hasNumberAttempts": "0",
+      "welcome:hasOntologyType": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language",
+      "welcome:hasStatus": "welcome:Completed",
+      "welcome:hasTCNAnswer": {
+        "@type": "rdf:Statement",
+        "rdf:object": "English",
+        "rdf:predicate": "welcome:hasValue",
+        "rdf:subject": "welcome:Language"
+      },
+      "welcome:hasTemplateId": "TConfirmLanguage",
+      "welcome:isOptional": "false"
+    },
+    {
+      "@id": "welcome:obtainRequest",
+      "rdf:type": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand",
+      "welcome:confidenceScore": "1.0",
+      "welcome:hasInputRDFContents": [
+        {
+          "@id": "welcome:Unknown"
+        }
+      ],
+      "welcome:hasNumberAttempts": "0",
+      "welcome:hasOntologyType": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest",
+      "welcome:hasStatus": "welcome:Pending",
+      "welcome:hasTCNAnswer":  {
+      "@id" : "welcome:Unknown"
+    },
+      "welcome:hasTemplateId": "TObtainMatterConcern",
+      "welcome:isOptional": "false"
+    }
+  ],
+  "welcome:isCurrentDIP": "true"
+}

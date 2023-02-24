@@ -1,0 +1,54 @@
+{
+  "@id" : "welcome:SimulationIntroduction",
+  "@type" : "welcome:DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:informAuthority",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:jobcenter",
+      "rdf:predicate" : "welcome:hasName",
+      "rdf:object" : "Job Center"
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:Hamm",
+      "rdf:predicate" : "welcome:hasValue",
+      "rdf:object" : "Hamm"
+    }, {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:SimulationAgent",
+      "rdf:predicate" : "welcome:hasName",
+      "rdf:object" : "Mr. Muller"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:informPersonName",
+    "@type" : "welcome:SystemInfo",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@type" : "rdf:Statement",
+      "rdf:subject" : "welcome:SimulationAgent",
+      "rdf:predicate" : "welcome:hasName",
+      "rdf:object" : "Mr. Muller"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:obtainMatterConcern",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

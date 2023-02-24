@@ -1,0 +1,38 @@
+{
+  "@id" : "welcome:OpeningDIP",
+  "@type" : "welcome:DIP",
+  "welcome:hasSlot" : [ {
+    "@id" : "welcome:confirmCommunication",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:confirmLanguage",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:EN"
+    } ],
+    "welcome:hasStatus" : "welcome:Completed",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.22,
+    "welcome:isOptional" : false
+  }, {
+    "@id" : "welcome:obtainRequest",
+    "@type" : "welcome:SystemDemand",
+    "welcome:hasTemplateId" : null,
+    "welcome:hasInputRDFContents" : [ {
+      "@id" : "welcome:Unknown"
+    } ],
+    "welcome:hasStatus" : "welcome:Pending",
+    "welcome:hasNumberAttempts" : 0,
+    "welcome:confidenceScore" : 0.0,
+    "welcome:isOptional" : false
+  } ]
+}

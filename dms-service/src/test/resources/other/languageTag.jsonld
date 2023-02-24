@@ -1,0 +1,1220 @@
+[
+	{
+		"@graph": [
+			{
+				"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439478",
+				"@type": [
+					"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+					{
+						"@value": "Unknown"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+					}
+				]
+			},
+			{
+				"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439479",
+				"@type": [
+					"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+					{
+						"@language": "eng",
+						"@value": "personal information"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#cvSection"
+					}
+				]
+			},
+			{
+				"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439480",
+				"@type": [
+					"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+					{
+						"@language": "ell",
+						"@value": "προσωπικές πληροφορίες"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#cvSection"
+					}
+				]
+			},
+			{
+				"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439481",
+				"@type": [
+					"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+					{
+						"@value": "Unknown"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname"
+					}
+				]
+			},
+			{
+				"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439482",
+				"@type": [
+					"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+					{
+						"@value": "Unknown"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday"
+					}
+				]
+			},
+			{
+				"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439483",
+				"@type": [
+					"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+					{
+						"@value": "Unknown"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name"
+					}
+				]
+			},
+			{
+				"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439484",
+				"@type": [
+					"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+					{
+						"@value": "Unknown"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Country"
+					}
+				]
+			},
+			{
+				"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439485",
+				"@type": [
+					"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+					{
+						"@value": "Unknown"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasValue"
+					}
+				],
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetName"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#PersonalInfo",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIPId": [
+					{
+						"@value": "1663155553798"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#belongsTo": [
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#SimulatePhoneAppointmentService"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasDIPStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasSlot": [
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#informIntroductionSection"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainApartmentNumber"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainBirthDay"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainCity"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainEmail"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainFirstSurname"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainFloorNumber"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainIncludeFullAddress"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainLandline"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainMobilePhone"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainMotherTongue"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainName"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainPersonalInfoConfirmation"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainPostCode"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainSecondSurname"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainStreetName"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainStreetNumber"
+					},
+					{
+						"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainStreetType"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isCurrentDIP": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "true"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#informIntroductionSection",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemInfo"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "1"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Template"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainApartmentNumber",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ApartmentNumber"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainBirthDay",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439482"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Birthday"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainCity",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439484"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#City"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainEmail",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Email"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainFirstSurname",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439481"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FirstSurname"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainFloorNumber",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#FloorNumber"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainIncludeFullAddress",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "1.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439478"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainLandline",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Landline"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainMobilePhone",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#MobilePhone"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainMotherTongue",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#NativeLanguageName"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainName",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439483"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Name"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainPersonalInfoConfirmation",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "1"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439479"
+					},
+					{
+						"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439480"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Boolean"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Pending"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainPostCode",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#PostCode"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainSecondSurname",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SecondSurname"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainStreetName",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetName"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainStreetNumber",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetNumber"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			},
+			{
+				"@id": "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulatePhoneAppointmentService.owl#obtainStreetType",
+				"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#confidenceScore": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#float",
+						"@value": "0.0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasInputRDFContents": [
+					{
+						"@id": "_:genid-f648e1376c5248dbac1ac8034bb6f272-node49439485"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasNumberAttempts": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#integer",
+						"@value": "0"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasOntologyType": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+						"@value": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#StreetType"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasStatus": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Completed"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTCNAnswer": [
+					{
+						"@id": "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Unknown"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#hasTemplateId": [
+					{
+						"@value": "TInformAuthority"
+					}
+				],
+				"https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#isOptional": [
+					{
+						"@type": "http://www.w3.org/2001/XMLSchema#boolean",
+						"@value": "false"
+					}
+				]
+			}
+		],
+		"@id": "http://www.ontotext.com/explicit"
+	}
+]
