@@ -21,4 +21,7 @@ public class Frame {
 
     @JsonProperty("welcome:hasSlot")
     public List<Slot> slots = new ArrayList<>();
+    
+    @JsonProperty("welcome:tcnResponseStatus")
+    public TCNResponseStatus tcnResponseStatus;
 }

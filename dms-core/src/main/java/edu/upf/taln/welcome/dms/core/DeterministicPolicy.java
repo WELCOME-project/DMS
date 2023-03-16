@@ -4,6 +4,7 @@ import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.input.Slot;
 import edu.upf.taln.welcome.dms.commons.input.Status;
+import edu.upf.taln.welcome.dms.commons.input.TCNResponseStatus;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.output.SpeechActLabel;
@@ -21,6 +22,8 @@ public class DeterministicPolicy implements Policy {
     private static final String CONFIRMATION_REQUEST_SLOT_TYPE = "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest";
 	
     private final SpeechActDictionary speechActDictionary = new SpeechActDictionary();
+    
+    private String inputForm = null;
 
     /**
      * Main method of the policy mapping a DIP to a dialogue move
@@ -30,9 +33,16 @@ public class DeterministicPolicy implements Policy {
     @Override
     public DialogueMove map(Frame frame) throws WelcomeException {
         
-        ArrayList<SpeechAct> acts = new ArrayList<>();
+        List<SpeechAct> acts = new ArrayList<>();
         
         boolean pickMore = checkUnforeseenSituations(frame, acts);
+        
+        if(frame.tcnResponseStatus != null && frame.tcnResponseStatus.id == Status.PreviousSlotFailed) {
+        	List<SpeechAct> tempActs = new ArrayList<>();
+        	tempActs.add(new SpeechAct(SpeechActLabel.PreviousSlotFailedInfo, null));
+        	tempActs.addAll(acts);
+        	acts = tempActs;
+        }
         
         int idx = 0;
         while (pickMore && idx < frame.slots.size()) {
@@ -90,7 +100,7 @@ public class DeterministicPolicy implements Policy {
 			SpeechActLabel label = null;
 			switch(slot.status) {
 				
-				case FailedAnalysis:
+				
 				case UnclearAnalysis:
 				{
 					if (slot.numAttempts > 0 && slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
@@ -101,6 +111,18 @@ public class DeterministicPolicy implements Policy {
 					}
 					more_moves = false;
 				}
+				break;
+				case FailedAnalysis:
+					if (slot.numAttempts == 2 && inputForm != null && inputForm.toUpperCase().equals("SPEECH")) {
+						label = SpeechActLabel.SuggestTyping;
+						extraSpeechAct = ExtraSpeechAct.end;
+					} else if (slot.numAttempts > 0 && slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
+						label = SpeechActLabel.Say_Yes_No;
+						extraSpeechAct = ExtraSpeechAct.start;
+					} else {
+						label = SpeechActLabel.Signal_non_understanding;
+					}
+					more_moves = false;
 				break;
 
 				case TopicSwitch:
@@ -173,4 +195,9 @@ public class DeterministicPolicy implements Policy {
 
         return more_moves;
     }
+
+	@Override
+	public void setInputForm(String inputForm) {
+		this.inputForm = inputForm;
+	}
 }

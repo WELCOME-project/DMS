@@ -20,4 +20,8 @@ public class DialogueManager {
     {
         return policy.map(frame);
     }
+    
+    public void setPolicyInputForm(String inputForm) {
+    	policy.setInputForm(inputForm);
+    }
 }

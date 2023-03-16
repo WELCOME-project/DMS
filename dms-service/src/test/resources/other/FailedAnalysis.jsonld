@@ -1,0 +1,155 @@
+{
+  "@graph" : [ {
+    "@id" : "_:node1grdrkvavx10",
+    "@type" : "rdf:Statement",
+    "rdf:object" : "Unknown",
+    "rdf:predicate" : {
+      "@id" : "welcome:hasValue"
+    },
+    "rdf:subject" : {
+      "@id" : "welcome:Language"
+    }
+  }, {
+    "@id" : "_:node1grdrkvavx8",
+    "@type" : "rdf:Statement",
+    "rdf:object" : "English",
+    "rdf:predicate" : {
+      "@id" : "welcome:hasValue"
+    },
+    "rdf:subject" : {
+      "@id" : "welcome:Language"
+    }
+  }, {
+    "@id" : "_:node1grdrkvavx9",
+    "@type" : "rdf:Statement",
+    "rdf:object" : "English",
+    "rdf:predicate" : {
+      "@id" : "welcome:hasValue"
+    },
+    "rdf:subject" : {
+      "@id" : "welcome:Language"
+    }
+  }, {
+    "@id" : "welcome:Opening",
+    "rdf:type" : {
+      "@type" : "xsd:anyURI",
+      "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#DIP"
+    },
+    "welcome:DIPId" : "Example3NewProperty",
+    "welcome:hasSlot" : [ {
+      "@id" : "welcome:confirmCommunication"
+    }, {
+      "@id" : "welcome:confirmLanguage"
+    }, {
+      "@id" : "welcome:obtainRequest"
+    } ],
+    "welcome:isCurrentDIP" : {
+      "@type" : "xsd:boolean",
+      "@value" : "true"
+    }
+  }, {
+    "@id" : "welcome:confirmCommunication",
+    "rdf:type" : {
+      "@type" : "xsd:anyURI",
+      "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+    },
+    "welcome:confidenceScore" : {
+      "@type" : "xsd:float",
+      "@value" : "1.0"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@id" : "welcome:Unknown"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "xsd:integer",
+      "@value" : "2"
+    },
+    "welcome:hasOntologyType" : {
+      "@id" : "xsd:boolean"
+    },
+    "welcome:hasStatus" : {
+      "@id" : "welcome:FailedAnalysis"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@id" : "welcome:Unknown"
+    },
+    "welcome:hasTemplateId" : "TConfirmCommunication",
+    "welcome:isOptional" : {
+      "@type" : "xsd:boolean",
+      "@value" : "false"
+    }
+  }, {
+    "@id" : "welcome:confirmLanguage",
+    "rdf:type" : {
+      "@type" : "xsd:anyURI",
+      "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+    },
+    "welcome:confidenceScore" : {
+      "@type" : "xsd:float",
+      "@value" : "1.0"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@id" : "_:node1grdrkvavx8"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "xsd:integer",
+      "@value" : "0"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "xsd:anyURI",
+      "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#Language"
+    },
+    "welcome:hasStatus" : {
+      "@id" : "welcome:Pending"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@id" : "_:node1grdrkvavx9"
+    },
+    "welcome:hasTemplateId" : "TConfirmLanguage",
+    "welcome:isOptional" : {
+      "@type" : "xsd:boolean",
+      "@value" : "false"
+    }
+  }, {
+    "@id" : "welcome:obtainRequest",
+    "rdf:type" : {
+      "@type" : "xsd:anyURI",
+      "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#SystemDemand"
+    },
+    "welcome:confidenceScore" : {
+      "@type" : "xsd:float",
+      "@value" : "1.0"
+    },
+    "welcome:hasInputRDFContents" : {
+      "@id" : "welcome:Unknown"
+    },
+    "welcome:hasNumberAttempts" : {
+      "@type" : "xsd:integer",
+      "@value" : "0"
+    },
+    "welcome:hasOntologyType" : {
+      "@type" : "xsd:anyURI",
+      "@value" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ServiceRequest"
+    },
+    "welcome:hasStatus" : {
+      "@id" : "welcome:Completed"
+    },
+    "welcome:hasTCNAnswer" : {
+      "@id" : "_:node1grdrkvavx10"
+    },
+    "welcome:hasTemplateId" : "TObtainMatterConcern",
+    "welcome:isOptional" : {
+      "@type" : "xsd:boolean",
+      "@value" : "false"
+    }
+  } ],
+  "@context" : {
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "welcome" : "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#",
+    "preregistration" : "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/PreregistrationProcedureService.owl#",
+    "simulateAppointment" : "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/SimulateAppointmentService.owl#",
+    "fullpreregistration" : "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/FullPreregistration.owl#",
+    "employment" : "http://localhost:8060/welcome/integration/coordination/ajan/agents/welcome/services/CreateCV.owl#"
+  }
+} 

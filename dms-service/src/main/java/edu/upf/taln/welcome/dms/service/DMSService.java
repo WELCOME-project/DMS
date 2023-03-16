@@ -1509,10 +1509,17 @@ public class DMSService {
 		
 		String language = "eng";
 		List<String> languageArray = headers.getRequestHeader("x-language");
-		if(languageArray != null) {
+		if(languageArray != null && !languageArray.isEmpty()) {
 			language = languageArray.get(0);
 		}
 		logger.log(Level.INFO, "Language: " + language);
+		
+		String inputForm = null;
+		List<String> inputFormArray = headers.getRequestHeader("x-original-input-form");
+		if(inputFormArray != null && !inputFormArray.isEmpty()) {
+			inputForm = inputFormArray.get(0);
+			manager.setPolicyInputForm(inputForm);
+		}
 		
 		try {
             String content = input.toString();
