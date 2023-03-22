@@ -135,4 +135,10 @@ public class OtherTest {
 		
         testFrame(new File("src/test/resources/other/PreviousSlotFailed.jsonld"), null, "speech");
     }
+	
+	@Test
+	public void hasAllowedValuesTest() throws Exception {
+		
+        testFrame(new File("src/test/resources/other/HasAllowedValues.jsonld"));
+    }
 }

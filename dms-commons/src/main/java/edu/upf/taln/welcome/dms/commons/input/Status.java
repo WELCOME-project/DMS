@@ -39,5 +39,8 @@ public enum Status {
 	NeedsUpdate,
 	
 	@JsonProperty("welcome:PreviousSlotFailed")
-    PreviousSlotFailed
+    PreviousSlotFailed,
+    
+    @JsonProperty("welcome:Unknown")
+    Unknown
 }

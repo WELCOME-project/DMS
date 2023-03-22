@@ -65,13 +65,13 @@
     },
     "welcome:hasNumberAttempts" : {
       "@type" : "xsd:integer",
-      "@value" : "2"
+      "@value" : "0"
     },
     "welcome:hasOntologyType" : {
       "@id" : "xsd:boolean"
     },
     "welcome:hasStatus" : {
-      "@id" : "welcome:FailedAnalysis"
+      "@id" : "welcome:Pending"
     },
     "welcome:hasTCNAnswer" : {
       "@id" : "welcome:Unknown"

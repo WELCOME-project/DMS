@@ -1465,8 +1465,14 @@ public class DMSService {
 			description = "Returns the data needed to generate the next utterance.",
 			parameters = {
 			    @Parameter(in = ParameterIn.HEADER,
-			        name = "X-Language",
+			        name = "x-language",
 			        description = "Templates Language",
+			        required = false,
+			        schema = @Schema(type = "string")
+			    ),
+			    @Parameter(in = ParameterIn.HEADER,
+			        name = "x-original-input-form",
+			        description = "Original input form",
 			        required = false,
 			        schema = @Schema(type = "string")
 			    )
