@@ -4,6 +4,7 @@ import edu.upf.taln.welcome.dms.commons.exceptions.WelcomeException;
 import edu.upf.taln.welcome.dms.commons.input.Frame;
 import edu.upf.taln.welcome.dms.commons.input.Slot;
 import edu.upf.taln.welcome.dms.commons.input.Status;
+import edu.upf.taln.welcome.dms.commons.input.TCNResponseStatus;
 import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
 import edu.upf.taln.welcome.dms.commons.output.SpeechAct;
 import edu.upf.taln.welcome.dms.commons.output.SpeechActLabel;
@@ -21,6 +22,8 @@ public class DeterministicPolicy implements Policy {
     private static final String CONFIRMATION_REQUEST_SLOT_TYPE = "https://raw.githubusercontent.com/gtzionis/WelcomeOntology/main/welcome.ttl#ConfirmationRequest";
 	
     private final SpeechActDictionary speechActDictionary = new SpeechActDictionary();
+    
+    private String inputForm = null;
 
     /**
      * Main method of the policy mapping a DIP to a dialogue move
@@ -30,9 +33,16 @@ public class DeterministicPolicy implements Policy {
     @Override
     public DialogueMove map(Frame frame) throws WelcomeException {
         
-        ArrayList<SpeechAct> acts = new ArrayList<>();
+        List<SpeechAct> acts = new ArrayList<>();
         
         boolean pickMore = checkUnforeseenSituations(frame, acts);
+        
+        if(frame.tcnResponseStatus != null && frame.tcnResponseStatus.id == Status.PreviousSlotFailed) {
+        	List<SpeechAct> tempActs = new ArrayList<>();
+        	tempActs.add(new SpeechAct(SpeechActLabel.PreviousSlotFailedInfo, null));
+        	tempActs.addAll(acts);
+        	acts = tempActs;
+        }
         
         int idx = 0;
         while (pickMore && idx < frame.slots.size()) {
@@ -87,29 +97,50 @@ public class DeterministicPolicy implements Policy {
 			Slot slot = slots.get(idx);
 
 			ExtraSpeechAct extraSpeechAct = ExtraSpeechAct.none;
-			SpeechActLabel label = null;
+			List<SpeechActLabel> labels = new ArrayList<>();
+			List<Boolean> slotForLabels = new ArrayList<>();
 			switch(slot.status) {
 				
-				case FailedAnalysis:
+				
 				case UnclearAnalysis:
 				{
 					if (slot.numAttempts > 0 && slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
-						label = SpeechActLabel.Say_Yes_No;
+						labels.add(SpeechActLabel.Say_Yes_No);
+						slotForLabels.add(false);
 						extraSpeechAct = ExtraSpeechAct.start;
 					} else {
-						label = SpeechActLabel.Signal_non_understanding;
+						labels.add(SpeechActLabel.Signal_non_understanding);
+						slotForLabels.add(true);
 					}
 					more_moves = false;
 				}
+				break;
+				case FailedAnalysis:
+					if (slot.numAttempts == 2 && inputForm != null && inputForm.toUpperCase().equals("SPEECH")) {
+						labels.add(SpeechActLabel.Signal_non_understanding);
+						slotForLabels.add(true);
+						labels.add(SpeechActLabel.SuggestTyping);
+						slotForLabels.add(false);
+					} else if (slot.numAttempts > 0 && slot.type.equals(CONFIRMATION_REQUEST_SLOT_TYPE)) {
+						labels.add(SpeechActLabel.Say_Yes_No);
+						slotForLabels.add(false);
+						extraSpeechAct = ExtraSpeechAct.start;
+					} else {
+						labels.add(SpeechActLabel.Signal_non_understanding);
+						slotForLabels.add(true);
+					}
+					more_moves = false;
 				break;
 
 				case TopicSwitch:
 				case TCNClarifyRequest:
 				{
 					if (slot.type.equals(SYSTEM_DEMAND_SLOT_TYPE)) {				
-						label = SpeechActLabel.Apology_Repeat_Question;
+						labels.add(SpeechActLabel.Apology_Repeat_Question);
+						slotForLabels.add(false);
 					} else {
-						label = SpeechActLabel.Apology_Repeat_Information;
+						labels.add(SpeechActLabel.Apology_Repeat_Information);
+						slotForLabels.add(false);
 					}
 					more_moves = false;
 					extraSpeechAct = ExtraSpeechAct.start;
@@ -119,12 +150,14 @@ public class DeterministicPolicy implements Policy {
 				case TCNElaborateRequest:
 				{
 					if (slot.type.equals(SYSTEM_DEMAND_SLOT_TYPE)) {				
-						label = SpeechActLabel.Apology_Repeat_Question;
+						labels.add(SpeechActLabel.Apology_Repeat_Question);
+						slotForLabels.add(false);
 						more_moves = false;
 						extraSpeechAct = ExtraSpeechAct.start;
 
 					} else {
-						label = SpeechActLabel.Apology_No_Extra_Information;
+						labels.add(SpeechActLabel.Apology_No_Extra_Information);
+						slotForLabels.add(true);
 						more_moves = true;
 					}
 				}
@@ -132,9 +165,11 @@ public class DeterministicPolicy implements Policy {
 				
 				case NeedsUpdate:
 					if (slot.tcnAnswer == null) {
-						label = SpeechActLabel.NeedsUpdate;
+						labels.add(SpeechActLabel.NeedsUpdate);
+						slotForLabels.add(true);
 					} else {
-						label = SpeechActLabel.NeedsUpdateAnswer;
+						labels.add(SpeechActLabel.NeedsUpdateAnswer);
+						slotForLabels.add(true);
 						extraSpeechAct = ExtraSpeechAct.end;
 					}
 					more_moves = false;
@@ -144,11 +179,19 @@ public class DeterministicPolicy implements Policy {
 					break;
 			}
 			
-			if (label != null) {
+			if (!labels.isEmpty() && !slotForLabels.isEmpty() && labels.size() == slotForLabels.size()) {
 				switch(extraSpeechAct) {
 					case start:
-						SpeechAct sp1 = new SpeechAct(label, null);
-						moves.add(sp1);
+						for (int i = 0; i < labels.size(); i++) {
+							SpeechActLabel label = labels.get(i);
+							Boolean bslot = slotForLabels.get(i);
+							SpeechAct sp1;
+							if (bslot)
+								sp1 = new SpeechAct(label, slot);
+							else
+								sp1 = new SpeechAct(label, null);
+							moves.add(sp1);
+						}
 						
 						SpeechActLabel repeatLabel = speechActDictionary.get(slot.id);
 						SpeechAct sp2 = new SpeechAct(repeatLabel, slot);
@@ -156,15 +199,30 @@ public class DeterministicPolicy implements Policy {
 						break;
 					case end:
 						repeatLabel = speechActDictionary.get(slot.id);
-						sp1 = new SpeechAct(repeatLabel, slot);
+						SpeechAct sp1 = new SpeechAct(repeatLabel, slot);
 						moves.add(sp1);
 						
-						sp2 = new SpeechAct(label, slot);
-						moves.add(sp2);
+						for (int i = 0; i < labels.size(); i++) {
+							SpeechActLabel label = labels.get(i);
+							Boolean bslot = slotForLabels.get(i);
+							if (bslot)
+								sp2 = new SpeechAct(label, slot);
+							else
+								sp2 = new SpeechAct(label, null);
+							moves.add(sp2);
+						}
+						
 						break;
 					default:
-						SpeechAct sp = new SpeechAct(label, slot);
-						moves.add(sp);
+						for (int i = 0; i < labels.size(); i++) {
+							SpeechActLabel label = labels.get(i);
+							Boolean bslot = slotForLabels.get(i);
+							if (bslot)
+								sp1 = new SpeechAct(label, slot);
+							else
+								sp1 = new SpeechAct(label, null);
+							moves.add(sp1);
+						}
 				}
 			}
 			
@@ -173,4 +231,9 @@ public class DeterministicPolicy implements Policy {
 
         return more_moves;
     }
+
+	@Override
+	public void setInputForm(String inputForm) {
+		this.inputForm = inputForm;
+	}
 }

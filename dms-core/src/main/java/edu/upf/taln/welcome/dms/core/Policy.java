@@ -10,4 +10,5 @@ import edu.upf.taln.welcome.dms.commons.output.DialogueMove;
  */
 public interface Policy {
     DialogueMove map(Frame frame) throws WelcomeException;
+    void setInputForm(String inputForm);
 }

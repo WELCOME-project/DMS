@@ -1465,8 +1465,14 @@ public class DMSService {
 			description = "Returns the data needed to generate the next utterance.",
 			parameters = {
 			    @Parameter(in = ParameterIn.HEADER,
-			        name = "X-Language",
+			        name = "x-language",
 			        description = "Templates Language",
+			        required = false,
+			        schema = @Schema(type = "string")
+			    ),
+			    @Parameter(in = ParameterIn.HEADER,
+			        name = "x-original-input-form",
+			        description = "Original input form",
 			        required = false,
 			        schema = @Schema(type = "string")
 			    )
@@ -1509,10 +1515,17 @@ public class DMSService {
 		
 		String language = "eng";
 		List<String> languageArray = headers.getRequestHeader("x-language");
-		if(languageArray != null) {
+		if(languageArray != null && !languageArray.isEmpty()) {
 			language = languageArray.get(0);
 		}
 		logger.log(Level.INFO, "Language: " + language);
+		
+		String inputForm = null;
+		List<String> inputFormArray = headers.getRequestHeader("x-original-input-form");
+		if(inputFormArray != null && !inputFormArray.isEmpty()) {
+			inputForm = inputFormArray.get(0);
+			manager.setPolicyInputForm(inputForm);
+		}
 		
 		try {
             String content = input.toString();

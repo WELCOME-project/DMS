@@ -113,7 +113,9 @@ public class SpeechActDictionary {
         dictionary.put("frs:obtainYearCompletionCatalanSociety", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainYearCompletionLabourMarket", SpeechActLabel.Wh_Question);
         dictionary.put("frs:obtainYearCompletionSpanish", SpeechActLabel.Wh_Question);
-		
+        dictionary.put("frs:obtainShallProceed", SpeechActLabel.Yes_No_Question);
+        dictionary.put("frs:obtainShallContinue", SpeechActLabel.Yes_No_Question);
+        dictionary.put("frs:obtainConfirmationLanguage", SpeechActLabel.Yes_No_Question);
 		
         dictionary.put("pas:confirmCommunication", SpeechActLabel.Yes_No_Question);
         dictionary.put("pas:confirmLanguage", SpeechActLabel.Yes_No_Question);

@@ -53,5 +53,7 @@ public enum SpeechActLabel {
 	NeedsUpdateAnswer,
 	Say_Yes_No,
 	Say_Yes_No_Information,
+	SuggestTyping,
+	PreviousSlotFailedInfo
 }
 
